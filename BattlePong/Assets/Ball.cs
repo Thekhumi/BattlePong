@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour {
 	[SerializeField] float speed = 5f;
+	[SerializeField] float sum = 0f;
 	Rigidbody2D body;
 	// Use this for initialization
 	void Start () {
@@ -15,6 +16,10 @@ public class Ball : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D otro){
 		Debug.Log (otro.gameObject.name);	
+		if (otro.gameObject.layer == 8) {
+			speed += sum;
+			Debug.Log ("bump");
+		}
 	}
 
 	void LateUpdate () {
