@@ -11,14 +11,16 @@ public class GameManager : MonoBehaviour {
 	[Tooltip("From Left to Right")]
 	[SerializeField] GameObject[] _levelScreens;
 	[SerializeField] GameObject _levelElements;
-	[SerializeField] GameObject _bump1;
-	[SerializeField] GameObject _bump2;
-	[SerializeField] GameObject _ball;
-	[SerializeField] Camera _mainCamera;
+	[SerializeField] Bumper _bump1;
+	[SerializeField] Bumper _bump2;
+	[SerializeField] Ball _ball;
+	[SerializeField] CameraMov _mainCamera;
 	[SerializeField] private float _cameraSpeed;
 	[SerializeField] private float _ballReset;
 	private int _cameraState;
+	private Camera _cam;
 	void Start(){
+		_cam = Camera.main;
 		_cameraState = _cameraScreens.Length / 2;
 	}
 	void Update(){
@@ -32,10 +34,10 @@ public class GameManager : MonoBehaviour {
 			BallStart ();
 			_winnerRight = false; _winnerLeft = false;
 		}
-		_mainCamera.GetComponent<CameraMov>().Move(_cameraScreens[_cameraState].transform,_cameraSpeed);
-		if (_mainCamera.transform.position == _cameraScreens [_cameraState].transform.position) {
-			_bump1.GetComponent<Bumper> ().Move = true;
-			_bump2.GetComponent<Bumper> ().Move = true;
+		_mainCamera.Move(_cameraScreens[_cameraState].transform,_cameraSpeed);
+		if (_cam.transform.position == _cameraScreens [_cameraState].transform.position) {
+			_bump1.Move = true;
+			_bump2.Move = true;
 		}
 	}
 	public void SetWinnerLeft(){
@@ -51,18 +53,18 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 	private void BallReset(){
-		_ball.GetComponent<Ball> ().Reset ();
+		_ball.Reset ();
 	}
 	private void BallStart(){
-		_ball.GetComponent<Ball> ().Stop ();
-		_ball.GetComponent<Ball> ().ResetPosition ();
+		_ball.Stop ();
+		_ball.ResetPosition ();
 		Invoke ("BallReset", _ballReset);
 	}
 	private void CameraMov(){
 		_levelElements.transform.position = _levelScreens [_cameraState].transform.position;
-		_bump1.GetComponent<Bumper> ().Move = false;
-		_bump2.GetComponent<Bumper> ().Move = false;
-		_bump1.GetComponent<Bumper> ().ResetPos ();
-		_bump2.GetComponent<Bumper> ().ResetPos ();
+		_bump1.Move = false;
+		_bump2.Move = false;
+		_bump1.ResetPos ();
+		_bump2.ResetPos ();
 	}
 }

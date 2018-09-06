@@ -1259,12 +1259,12 @@ MonoBehaviour:
   - {fileID: 1498713928}
   - {fileID: 1106882839}
   _levelElements: {fileID: 2131362032}
-  _bump1: {fileID: 1863563602}
-  _bump2: {fileID: 1531538404}
-  _ball: {fileID: 559608182}
-  _mainCamera: {fileID: 519420031}
+  _bump1: {fileID: 1863563605}
+  _bump2: {fileID: 1531538407}
+  _ball: {fileID: 559608186}
+  _mainCamera: {fileID: 519420030}
   _cameraSpeed: 15
-  _ballReset: 2
+  _ballReset: 1.5
 --- !u!4 &1139723220
 Transform:
   m_ObjectHideFlags: 0

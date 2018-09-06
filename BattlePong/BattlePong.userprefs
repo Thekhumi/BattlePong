@@ -5,7 +5,7 @@
       <File FileName="Assets\Bumper.cs" Line="19" Column="17" />
       <File FileName="Assets\Ball.cs" Line="36" Column="4" />
       <File FileName="Assets\CameraMov.cs" Line="8" Column="31" />
-      <File FileName="Assets\GameManager.cs" Line="54" Column="40" />
+      <File FileName="Assets\GameManager.cs" Line="37" Column="14" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
