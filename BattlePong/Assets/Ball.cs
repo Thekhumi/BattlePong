@@ -36,7 +36,7 @@ public class Ball : MonoBehaviour {
 	//	}
 	}
 
-	void LateUpdate () {
+	void FixedUpdate () {
 		body.velocity = speed * (body.velocity.normalized);
 	}
 	public void Reset(){
