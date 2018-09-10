@@ -56,6 +56,7 @@
      <Compile Include="Assets\Ball.cs" />
      <Compile Include="Assets\Bumper.cs" />
      <Compile Include="Assets\CameraMov.cs" />
+     <Compile Include="Assets\FlashColor.cs" />
      <Compile Include="Assets\GameManager.cs" />
      <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />
      <Compile Include="Assets\Scripts\ApplicationManager.cs" />

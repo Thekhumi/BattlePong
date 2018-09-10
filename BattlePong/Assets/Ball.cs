@@ -20,7 +20,19 @@ public class Ball : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D otro){
 		//Debug.Log (otro.gameObject.name);
-		//if (otro.gameObject.tag != "END GAME") {
+		if (otro.gameObject.tag == "END GAME") {
+			switch (otro.gameObject.layer) {
+			case 9:
+				_manager.SetResultRight();
+				_manager.SetWinnerRight ();
+				break;
+			case 10:
+				_manager.SetResultLeft();
+				_manager.SetWinnerLeft ();
+				break;
+			}
+		}
+		else{
 			switch (otro.gameObject.layer) {
 			case 8:
 				speed += sum;
@@ -33,7 +45,7 @@ public class Ball : MonoBehaviour {
 				_manager.SetWinnerLeft ();
 				break;
 			}
-	//	}
+		}
 	}
 
 	void FixedUpdate () {
