@@ -32,6 +32,9 @@ public class Ball : MonoBehaviour {
 				break;
 			}
 		}
+		if (otro.gameObject.tag == "BreakableWall") {
+			otro.gameObject.SetActive (false);
+		}
 		else{
 			switch (otro.gameObject.layer) {
 			case 8:

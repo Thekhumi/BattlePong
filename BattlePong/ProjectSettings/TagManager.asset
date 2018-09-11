@@ -6,6 +6,7 @@ TagManager:
   tags:
   - END GAME
   - BoundWall
+  - BreakableWall
   layers:
   - Default
   - TransparentFX
