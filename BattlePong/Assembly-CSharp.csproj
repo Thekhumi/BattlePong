@@ -59,6 +59,7 @@
      <Compile Include="Assets\CollisionColor.cs" />
      <Compile Include="Assets\FlashColor.cs" />
      <Compile Include="Assets\GameManager.cs" />
+     <Compile Include="Assets\ReactivateBricks.cs" />
      <Compile Include="Assets\UI assets\Scripts\ActiveStateToggler.cs" />
      <Compile Include="Assets\UI assets\Scripts\ApplicationManager.cs" />
      <Compile Include="Assets\UI assets\Scripts\ChangeColor.cs" />

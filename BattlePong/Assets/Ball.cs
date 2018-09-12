@@ -7,6 +7,7 @@ public class Ball : MonoBehaviour {
 	[SerializeField] float sum = 0f;
 	[SerializeField] GameManager _manager;
 	private float _originalSpeed;
+	private bool _scored = false;
 
 	Rigidbody2D body;
 	// Use this for initialization
@@ -23,7 +24,7 @@ public class Ball : MonoBehaviour {
 		if (otro.gameObject.tag == "END GAME") {
 			switch (otro.gameObject.layer) {
 			case 9:
-				_manager.SetResultRight();
+				_manager.SetResultRight ();
 				_manager.SetWinnerRight ();
 				break;
 			case 10:
@@ -43,9 +44,13 @@ public class Ball : MonoBehaviour {
 				break;
 			case 9:
 				_manager.SetWinnerRight ();
+				Debug.Log ("true");
+				_scored = true;
 				break;
 			case 10:
 				_manager.SetWinnerLeft ();
+				Debug.Log ("true");
+				_scored = true;
 				break;
 			}
 		}
@@ -59,11 +64,17 @@ public class Ball : MonoBehaviour {
 		float sx = Random.Range (0, 2) == 0 ? -1 : 1;
 		float sy = Random.Range (0, 2) == 0 ? -1 : 1;
 		body.velocity = new Vector2 (speed * sx, speed * sy);
+		Debug.Log ("false");
+		_scored = false;
 	}
 	public void Stop(){
 		speed = 0;
 	}
 	public void ResetPosition(){
 		transform.position = transform.parent.position;
+	}
+	public bool Scored{
+		get{return _scored;}
+		set{_scored=value;}
 	}
 }
