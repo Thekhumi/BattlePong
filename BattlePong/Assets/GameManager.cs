@@ -38,6 +38,9 @@ public class GameManager : MonoBehaviour {
 		ScoreUpdate();
 	}
 	void Update(){
+		if (Input.GetButtonDown ("Cancel")) {
+			MainMenu ();
+		}
 		if (_winnerLeft) {
 			CameraMov ();
 			BallStart ();
