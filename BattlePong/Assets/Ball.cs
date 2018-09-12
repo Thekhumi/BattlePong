@@ -20,16 +20,15 @@ public class Ball : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D otro){
-		//Debug.Log (otro.gameObject.name);
 		if (otro.gameObject.tag == "END GAME") {
 			switch (otro.gameObject.layer) {
 			case 9:
 				_manager.SetResultRight ();
-				_manager.SetWinnerRight ();
+				Stop ();
 				break;
 			case 10:
-				_manager.SetResultLeft();
-				_manager.SetWinnerLeft ();
+				_manager.SetResultLeft ();
+				Stop ();
 				break;
 			}
 		}
@@ -40,16 +39,13 @@ public class Ball : MonoBehaviour {
 			switch (otro.gameObject.layer) {
 			case 8:
 				speed += sum;
-			//Debug.Log ("bump");
 				break;
 			case 9:
 				_manager.SetWinnerRight ();
-				Debug.Log ("true");
 				_scored = true;
 				break;
 			case 10:
 				_manager.SetWinnerLeft ();
-				Debug.Log ("true");
 				_scored = true;
 				break;
 			}
@@ -64,7 +60,6 @@ public class Ball : MonoBehaviour {
 		float sx = Random.Range (0, 2) == 0 ? -1 : 1;
 		float sy = Random.Range (0, 2) == 0 ? -1 : 1;
 		body.velocity = new Vector2 (speed * sx, speed * sy);
-		Debug.Log ("false");
 		_scored = false;
 	}
 	public void Stop(){

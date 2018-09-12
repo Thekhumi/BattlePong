@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour {
 	[SerializeField] Text _textScoreP2;
 	[SerializeField] Text _textResult;
 	[SerializeField] FlashColor flash;
+	[SerializeField] float _menuDelay;
+	private SceneChange _sceneManager;
 	private int _cameraState;
 	private Camera _cam;
 	private string _result;
@@ -32,6 +34,7 @@ public class GameManager : MonoBehaviour {
 		_cameraState = _cameraScreens.Length / 2;
 		_scoreP1 = 0;
 		_scoreP2 = 0;
+		_sceneManager = gameObject.GetComponent<SceneChange> ();
 		ScoreUpdate();
 	}
 	void Update(){
@@ -72,12 +75,14 @@ public class GameManager : MonoBehaviour {
 		_textResult.text = _result + " WINS!";
 		flash.SetColorBlue ();
 		_textResult.gameObject.SetActive (true);
+		Invoke ("MainMenu", _menuDelay);
 	}
 	public void SetResultRight(){
 		_result = "RED";
 		_textResult.text = _result + " WINS!";
 		flash.SetColorRed ();
 		_textResult.gameObject.SetActive (true);
+		Invoke ("MainMenu", _menuDelay);
 	}
 	private void ScoreUpdate(){	
 		_textScoreP1.text = _scoreP1.ToString ();
@@ -97,5 +102,8 @@ public class GameManager : MonoBehaviour {
 		_bump2.Move = false;
 		_bump1.ResetPos ();
 		_bump2.ResetPos ();
+	}
+	private void MainMenu(){
+		_sceneManager.MainMenu ();
 	}
 }
