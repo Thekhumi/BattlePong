@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour {
 	[SerializeField] GameObject _levelElements;
 	[SerializeField] Bumper _bump1;
 	[SerializeField] Bumper _bump2;
-	[SerializeField] Ball _ball;
+	[SerializeField] bool _pinballMode;
 	[SerializeField] CameraMov _mainCamera;
 	[SerializeField] private float _cameraSpeed;
 	[SerializeField] private float _ballReset;
@@ -25,11 +25,22 @@ public class GameManager : MonoBehaviour {
 	[SerializeField] Text _textResult;
 	[SerializeField] FlashColor flash;
 	[SerializeField] float _menuDelay;
+	private Ball _ball;
+	private PinballBall _pinballBall;
 	private SceneChange _sceneManager;
 	private int _cameraState;
 	private Camera _cam;
 	private string _result;
 	void Start(){
+		switch (_pinballMode) {
+		case true:
+			_pinballBall = GameObject.FindGameObjectWithTag ("PinballBall").GetComponent<PinballBall> ();
+			Physics2D.gravity = new Vector2 (0f, 0f);
+			break;
+		case false:
+			_ball = GameObject.FindGameObjectWithTag ("Ball").GetComponent<Ball> ();
+			break;
+		}
 		_cam = Camera.main;
 		_cameraState = _cameraScreens.Length / 2;
 		_scoreP1 = 0;
@@ -92,12 +103,27 @@ public class GameManager : MonoBehaviour {
 		_textScoreP2.text = _scoreP2.ToString ();
 	}
 	private void BallReset(){
-		_ball.Reset ();
+		switch (_pinballMode) {
+		case true:
+			_pinballBall.Reset ();
+			break;
+		case false:
+			_ball.Reset ();
+			break;
+		}
 	}
 	private void BallStart(){
-		_ball.Stop ();
-		_ball.ResetPosition ();
-		Invoke ("BallReset", _ballReset);
+		switch (_pinballMode) {
+		case true:
+			_pinballBall.ResetPosition ();
+			Invoke ("BallReset", _ballReset);
+			break;
+		case false:
+			_ball.Stop ();
+			_ball.ResetPosition ();
+			Invoke ("BallReset", _ballReset);
+			break;
+		}
 	}
 	private void CameraMov(){
 		_levelElements.transform.position = _levelScreens [_cameraState].transform.position;

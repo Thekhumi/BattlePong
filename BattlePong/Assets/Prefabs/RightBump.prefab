@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4625441704130988}
   - component: {fileID: 212161620133395886}
   - component: {fileID: 50485496299917266}
-  - component: {fileID: 61803468238601446}
   - component: {fileID: 114192868878657276}
   - component: {fileID: 114754857171912138}
+  - component: {fileID: 70877940688947840}
   m_Layer: 8
   m_Name: RightBump
   m_TagString: Untagged
@@ -64,8 +64,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
---- !u!61 &61803468238601446
-BoxCollider2D:
+--- !u!70 &70877940688947840
+CapsuleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -77,18 +77,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.35, y: 3.05}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 3}
-  m_EdgeRadius: 0
+  m_Size: {x: 1.35, y: 3.0499997}
+  m_Direction: 0
 --- !u!114 &114192868878657276
 MonoBehaviour:
   m_ObjectHideFlags: 1

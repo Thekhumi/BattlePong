@@ -311,9 +311,30 @@
   <ItemGroup>
     <Compile Include="Assets\Ball.cs" />
     <Compile Include="Assets\Bumper.cs" />
+    <Compile Include="Assets\CameraMov.cs" />
+    <Compile Include="Assets\CollisionColor.cs" />
+    <Compile Include="Assets\FlashColor.cs" />
     <Compile Include="Assets\GameManager.cs" />
+    <Compile Include="Assets\Gravity.cs" />
+    <Compile Include="Assets\NewBehaviourScript.cs" />
+    <Compile Include="Assets\ReactivateBricks.cs" />
+    <Compile Include="Assets\SceneChange.cs" />
+    <Compile Include="Assets\UI assets\Scripts\ActiveStateToggler.cs" />
+    <Compile Include="Assets\UI assets\Scripts\ApplicationManager.cs" />
+    <Compile Include="Assets\UI assets\Scripts\ChangeColor.cs" />
+    <Compile Include="Assets\UI assets\Scripts\DragMe.cs" />
+    <Compile Include="Assets\UI assets\Scripts\DragPanel.cs" />
+    <Compile Include="Assets\UI assets\Scripts\DropMe.cs" />
+    <Compile Include="Assets\UI assets\Scripts\PanelManager.cs" />
+    <Compile Include="Assets\UI assets\Scripts\ResizePanel.cs" />
+    <Compile Include="Assets\UI assets\Scripts\ScrollDetailTexture.cs" />
+    <Compile Include="Assets\UI assets\Scripts\ShowSliderValue.cs" />
+    <Compile Include="Assets\UI assets\Scripts\TiltWindow.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\UI assets\Fonts\Jupiter\LICENSE.txt" />
+    <None Include="Assets\UI assets\Materials\UI-Default-No-Alpha.shader" />
+    <None Include="Assets\UI assets\Textures and Sprites\SF UI\Background\LICENSE.txt" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Light.uss" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\Alert.uxml" />

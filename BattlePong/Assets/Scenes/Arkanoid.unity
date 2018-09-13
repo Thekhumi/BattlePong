@@ -1552,12 +1552,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4631994174772756, guid: 82979e2e497b72b469814efac6245dc7,
     type: 2}
   m_PrefabInternal: {fileID: 1529059303}
---- !u!114 &559608186 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114787107356873638, guid: 82979e2e497b72b469814efac6245dc7,
-    type: 2}
-  m_PrefabInternal: {fileID: 1529059303}
-  m_Script: {fileID: 11500000, guid: 9bda3ffc5eacde34981853a8842f2bf5, type: 3}
 --- !u!4 &569582364 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4925212743480510, guid: c1cebf128290db544a431a00928d3828,
@@ -2866,7 +2860,7 @@ MonoBehaviour:
   _levelElements: {fileID: 2131362032}
   _bump1: {fileID: 1863563605}
   _bump2: {fileID: 1531538407}
-  _ball: {fileID: 559608186}
+  _pinballMode: 0
   _mainCamera: {fileID: 519420030}
   _cameraSpeed: 40
   _ballReset: 1.5
