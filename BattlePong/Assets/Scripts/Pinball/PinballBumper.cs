@@ -17,29 +17,29 @@ public class PinballBumper : MonoBehaviour {
 		_initialRot = transform.rotation;
 		_Flipper = gameObject.GetComponent<Rigidbody2D> ();
 	}
-	void Update () {
-		if (_moving) {
+	void FixedUpdate () {
+		//if (_moving) {
 			if (isBumpLeftUp) {
-				if (Input.GetButtonDown("W")) {
-					_Flipper.AddTorque (speed * Time.deltaTime);
+				if (Input.GetButton("W")) {
+					_Flipper.AddTorque (speed);
 				}
 			}
 			if (isBumpLeftDown) {
-				if (Input.GetButtonDown("S")) {
-					_Flipper.AddTorque (speed * Time.deltaTime);
+				if (Input.GetButton("S")) {
+					_Flipper.AddTorque (speed);
 				}
 			}
 			if (isBumpRightUp) {
-				if (Input.GetButtonDown("Up")) {
-					_Flipper.AddTorque (speed * Time.deltaTime);
+				if (Input.GetButton("Up")) {
+					_Flipper.AddTorque (speed);
 				}
 			}
 			if (isBumpRightDown) {
-				if (Input.GetButtonDown("Down")) {
-					_Flipper.AddTorque (speed * Time.deltaTime);
+				if (Input.GetButton("Down")) {
+					_Flipper.AddTorque (speed);
 				}
 			}
-		}
+		//}
 	}
 		
 	public void ResetPos(){
