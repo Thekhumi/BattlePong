@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 70260532321488992}
   m_Layer: 8
   m_Name: LeftBump
-  m_TagString: Untagged
+  m_TagString: Bumper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,8 +104,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e69797254a6c3547a0fbe52b7581fe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameMode: 0
   isBump1: 1
   speed: 10
+  isBumpLeftUp: 0
+  isBumpLeftDown: 0
+  isBumpRightUp: 0
+  isBumpRightDown: 0
 --- !u!212 &212547944401563922
 SpriteRenderer:
   m_ObjectHideFlags: 1

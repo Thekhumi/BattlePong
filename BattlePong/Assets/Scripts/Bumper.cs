@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bumper : MonoBehaviour {
 
 	//state
-	public enum GameMode { Normal, Flappy, }
+	public enum GameMode { Normal, Flappy, Pinball,}
 	[SerializeField] GameMode _gameMode = GameMode.Normal;
 	private delegate void UpdateDelegate();
 	private UpdateDelegate currentUpdate;
@@ -19,6 +19,13 @@ public class Bumper : MonoBehaviour {
 	SpriteRenderer sprite;
 	SpriteRenderer WallSprite;
 	Camera cam;
+
+	[SerializeField]bool isBumpLeftUp;
+	[SerializeField]bool isBumpLeftDown;
+	[SerializeField]bool isBumpRightUp;
+	[SerializeField]bool isBumpRightDown;
+	Rigidbody2D _Flipper;
+
 	void Awake(){
 		switch (_gameMode) {
 		case GameMode.Normal:
@@ -26,6 +33,10 @@ public class Bumper : MonoBehaviour {
 			break;
 		case GameMode.Flappy:
 			currentUpdate = UpdateFlappy;
+			break;
+		case GameMode.Pinball:
+			_Flipper = gameObject.GetComponent<Rigidbody2D> ();
+			currentUpdate = UpdatePinball;
 			break;
 		}
 		_rb = GetComponent<Rigidbody2D> ();
@@ -82,6 +93,31 @@ public class Bumper : MonoBehaviour {
 				transform.position.z);
 		}
 	}
+	//PINBALL GAMEPLAY
+	void UpdatePinball(){
+		if (_moving) {
+			if (isBumpLeftUp) {
+				if (Input.GetButton("W")) {
+					_Flipper.AddTorque (speed);
+				}
+			}
+			if (isBumpLeftDown) {
+				if (Input.GetButton("S")) {
+					_Flipper.AddTorque (speed);
+				}
+			}
+			if (isBumpRightUp) {
+				if (Input.GetButton("Up")) {
+					_Flipper.AddTorque (speed);
+				}
+			}
+			if (isBumpRightDown) {
+				if (Input.GetButton("Down")) {
+					_Flipper.AddTorque (speed);
+				}
+			}
+		}
+	}
 	public void ResetPos(){
 		transform.position = new Vector3 (transform.position.x, _thisY, _thisZ);
 	}
@@ -89,8 +125,5 @@ public class Bumper : MonoBehaviour {
 		get{ return _moving; }
 		set{ _moving = value; }
 	}
-
-	public class Flappy : Bumper{
 		
-	}
 }

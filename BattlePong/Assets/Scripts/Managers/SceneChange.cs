@@ -14,4 +14,7 @@ public class SceneChange : MonoBehaviour {
 	public void Arkanoid(){
 		SceneManager.LoadScene ("Arkanoid");
 	}
+	public void Pinball(){
+		SceneManager.LoadScene ("Pinball");
+	}
 }

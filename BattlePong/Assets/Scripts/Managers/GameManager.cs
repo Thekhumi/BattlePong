@@ -14,8 +14,8 @@ public class GameManager : MonoBehaviour {
 	[Tooltip("From Left to Right")]
 	[SerializeField] GameObject[] _levelScreens;
 	[SerializeField] GameObject _levelElements;
-	[SerializeField] Bumper _bump1;
-	[SerializeField] Bumper _bump2;
+	//[SerializeField] Bumper _bump1;
+	//[SerializeField] Bumper _bump2;
 	[SerializeField] bool _pinballMode;
 	[SerializeField] CameraMov _mainCamera;
 	[SerializeField] private float _cameraSpeed;
@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour {
 	[SerializeField] FlashColor flash;
 	[SerializeField] float _menuDelay;
 	private Ball _ball;
+	private GameObject[] _bump;
 	private PinballBall _pinballBall;
 	private SceneChange _sceneManager;
 	private int _cameraState;
@@ -46,6 +47,7 @@ public class GameManager : MonoBehaviour {
 		_scoreP1 = 0;
 		_scoreP2 = 0;
 		_sceneManager = gameObject.GetComponent<SceneChange> ();
+		_bump = GameObject.FindGameObjectsWithTag ("Bumper");
 		ScoreUpdate();
 	}
 	void Update(){
@@ -64,8 +66,12 @@ public class GameManager : MonoBehaviour {
 		}
 		_mainCamera.Move(_cameraScreens[_cameraState].transform,_cameraSpeed);
 		if (_cam.transform.position == _cameraScreens [_cameraState].transform.position) {
-			_bump1.Move = true;
-			_bump2.Move = true;
+			_bump[0].GetComponent<Bumper>().Move = true;
+			_bump[1].GetComponent<Bumper>().Move = true;
+			if (_pinballMode) {
+				_bump[2].GetComponent<Bumper>().Move = true;
+				_bump[3].GetComponent<Bumper>().Move = true;
+			}
 		}
 	}
 	public void SetWinnerLeft(){
@@ -116,6 +122,7 @@ public class GameManager : MonoBehaviour {
 		switch (_pinballMode) {
 		case true:
 			_pinballBall.ResetPosition ();
+			_pinballBall.Stop ();
 			Invoke ("BallReset", _ballReset);
 			break;
 		case false:
@@ -127,10 +134,16 @@ public class GameManager : MonoBehaviour {
 	}
 	private void CameraMov(){
 		_levelElements.transform.position = _levelScreens [_cameraState].transform.position;
-		_bump1.Move = false;
-		_bump2.Move = false;
-		_bump1.ResetPos ();
-		_bump2.ResetPos ();
+		_bump[0].GetComponent<Bumper>().Move = false;
+		_bump[1].GetComponent<Bumper>().Move = false;
+		if (_pinballMode) {
+			_bump[2].GetComponent<Bumper>().Move = false;
+			_bump[3].GetComponent<Bumper>().Move = false;
+		}
+		if (!_pinballMode) {
+			_bump [0].GetComponent<Bumper> ().ResetPos ();
+			_bump [1].GetComponent<Bumper> ().ResetPos ();
+		}
 	}
 	private void MainMenu(){
 		_sceneManager.MainMenu ();

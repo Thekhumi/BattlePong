@@ -18,7 +18,7 @@ public class PinballBumper : MonoBehaviour {
 		_Flipper = gameObject.GetComponent<Rigidbody2D> ();
 	}
 	void FixedUpdate () {
-		//if (_moving) {
+		if (_moving) {
 			if (isBumpLeftUp) {
 				if (Input.GetButton("W")) {
 					_Flipper.AddTorque (speed);
@@ -39,7 +39,7 @@ public class PinballBumper : MonoBehaviour {
 					_Flipper.AddTorque (speed);
 				}
 			}
-		//}
+		}
 	}
 		
 	public void ResetPos(){

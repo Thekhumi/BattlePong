@@ -14,7 +14,6 @@ public class PinballBall : MonoBehaviour {
 		float sx = Random.Range (0, 2) == 0 ? -1 : 1;
 		body.AddForce ((Vector2.right * sx) * _magnitude);
 	}
-
 	void OnCollisionEnter2D(Collision2D otro){
 		if (otro.gameObject.tag == "END GAME") {
 			switch (otro.gameObject.layer) {
@@ -42,14 +41,16 @@ public class PinballBall : MonoBehaviour {
 			}
 		}
 	}
-		
+	public void Stop(){
+		body.velocity = Vector2.zero;
+	}
 	public void Reset(){
 		float sx = Random.Range (0, 2) == 0 ? -1 : 1;
 		body.AddForce ((transform.forward * sx) * _magnitude);
 		_scored = false;
 	}
 	public void ResetPosition(){
-		transform.position = transform.parent.position;
+		transform.position = transform.parent.position+new Vector3(0.0f,1.0f,0.0f);
 	}
 	public bool Scored{
 		get{return _scored;}

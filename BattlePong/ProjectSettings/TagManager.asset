@@ -9,6 +9,7 @@ TagManager:
   - BreakableWall
   - Ball
   - PinballBall
+  - Bumper
   layers:
   - Default
   - TransparentFX
