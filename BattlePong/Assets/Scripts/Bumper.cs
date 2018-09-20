@@ -3,10 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bumper : MonoBehaviour {
-
-	//state
-	public enum GameMode { Normal, Flappy, Pinball,}
-	[SerializeField] GameMode _gameMode = GameMode.Normal;
 	private delegate void UpdateDelegate();
 	private UpdateDelegate currentUpdate;
 	[SerializeField] bool isBump1;
@@ -27,14 +23,14 @@ public class Bumper : MonoBehaviour {
 	Rigidbody2D _Flipper;
 
 	void Awake(){
-		switch (_gameMode) {
-		case GameMode.Normal:
+		switch (GameManager.instance.getGameMode()) {
+		case GameManager.GameMode.Normal:
 			currentUpdate = UpdateNormal;
 			break;
-		case GameMode.Flappy:
+		case GameManager.GameMode.Flappy:
 			currentUpdate = UpdateFlappy;
 			break;
-		case GameMode.Pinball:
+		case GameManager.GameMode.Pinball:
 			_Flipper = gameObject.GetComponent<Rigidbody2D> ();
 			currentUpdate = UpdatePinball;
 			break;

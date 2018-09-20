@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
-
+	public enum GameMode { Normal, Flappy, Pinball,}
+	[SerializeField] private GameManager.GameMode _gameMode = GameManager.GameMode.Normal;
+	public static GameManager instance = null;
 	private bool _winnerLeft = false;
 	private bool _winnerRight = false;
 	private int _scoreP1;
@@ -32,7 +34,13 @@ public class GameManager : MonoBehaviour {
 	private int _cameraState;
 	private Camera _cam;
 	private string _result;
-	void Start(){
+	void Awake(){
+		if (instance == null){
+			instance = this;
+		}
+			else if(instance != this){
+			Destroy (gameObject);
+		}
 		switch (_pinballMode) {
 		case true:
 			_pinballBall = GameObject.FindGameObjectWithTag ("PinballBall").GetComponent<PinballBall> ();
@@ -147,5 +155,11 @@ public class GameManager : MonoBehaviour {
 	}
 	private void MainMenu(){
 		_sceneManager.MainMenu ();
+	}
+	public GameMode getGameMode(){
+		return _gameMode;
+	}
+	public void setGameMode(GameMode gameMode){
+		_gameMode = gameMode;
 	}
 }
