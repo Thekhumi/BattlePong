@@ -34,6 +34,7 @@ public class Ball : MonoBehaviour {
 		}
 		if (otro.gameObject.tag == "BreakableWall") {
 			otro.gameObject.SetActive (false);
+
 		}
 		else{
 			switch (otro.gameObject.layer) {
@@ -62,6 +63,8 @@ public class Ball : MonoBehaviour {
 		body.velocity = new Vector2 (speed * sx, speed * sy);
 		_scored = false;
 	}
+
+	public 
 	public void Stop(){
 		speed = 0;
 	}

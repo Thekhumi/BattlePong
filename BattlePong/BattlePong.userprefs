@@ -1,13 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Managers\GameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Bumper.cs">
     <Files>
-      <File FileName="Assets\Scripts\Ball.cs" Line="65" Column="2" />
-      <File FileName="Assets\Scripts\Pinball\PinballBumper.cs" Line="18" Column="3" />
-      <File FileName="Assets\Scripts\Bumper.cs" Line="118" Column="4" />
-      <File FileName="Assets\Scripts\Pinball\PinballBall.cs" Line="16" Column="3" />
-      <File FileName="Assets\Scripts\Managers\SceneChange.cs" Line="18" Column="35" />
-      <File FileName="Assets\Scripts\Managers\GameManager.cs" Line="53" Column="16" NotebookId="1" />
+      <File FileName="Assets\Scripts\Ball.cs" Line="67" Column="9" />
+      <File FileName="Assets\Scripts\Pinball\PinballBumper.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Bumper.cs" Line="44" Column="34" />
+      <File FileName="Assets\Scripts\Pinball\PinballBall.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Managers\SceneChange.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Managers\GameManager.cs" Line="62" Column="59" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

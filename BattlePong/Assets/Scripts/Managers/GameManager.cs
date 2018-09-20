@@ -41,6 +41,12 @@ public class GameManager : MonoBehaviour {
 			else if(instance != this){
 			Destroy (gameObject);
 		}
+		_scoreP1 = 0;
+		_scoreP2 = 0;
+		ScoreUpdate();
+	}
+
+	void Start(){
 		switch (_pinballMode) {
 		case true:
 			_pinballBall = GameObject.FindGameObjectWithTag ("PinballBall").GetComponent<PinballBall> ();
@@ -52,12 +58,10 @@ public class GameManager : MonoBehaviour {
 		}
 		_cam = Camera.main;
 		_cameraState = _cameraScreens.Length / 2;
-		_scoreP1 = 0;
-		_scoreP2 = 0;
-		_sceneManager = gameObject.GetComponent<SceneChange> ();
 		_bump = GameObject.FindGameObjectsWithTag ("Bumper");
-		ScoreUpdate();
+		_sceneManager = gameObject.GetComponent<SceneChange> ();
 	}
+
 	void Update(){
 		if (Input.GetButtonDown ("Cancel")) {
 			MainMenu ();

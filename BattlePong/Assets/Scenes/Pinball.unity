@@ -2752,6 +2752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a30e8b022745854583242dd4991b7bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameMode: 2
   _cameraScreens:
   - {fileID: 445763370}
   - {fileID: 1696266456}

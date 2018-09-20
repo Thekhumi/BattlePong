@@ -23,6 +23,15 @@ public class Bumper : MonoBehaviour {
 	Rigidbody2D _Flipper;
 
 	void Awake(){
+		_rb = GetComponent<Rigidbody2D> ();
+		cam = Camera.main;
+		sprite = GetComponent<SpriteRenderer> ();
+		_thisY = transform.position.y;
+		_thisZ = transform.position.z;
+		_moving = false;
+	}
+
+	void Start(){
 		switch (GameManager.instance.getGameMode()) {
 		case GameManager.GameMode.Normal:
 			currentUpdate = UpdateNormal;
@@ -35,15 +44,11 @@ public class Bumper : MonoBehaviour {
 			currentUpdate = UpdatePinball;
 			break;
 		}
-		_rb = GetComponent<Rigidbody2D> ();
-		cam = Camera.main;
-		sprite = GetComponent<SpriteRenderer> ();
 		Wall = GameObject.FindGameObjectsWithTag ("BoundWall")[0];
 		WallSprite = Wall.GetComponent<SpriteRenderer> ();
-		_thisY = transform.position.y;
-		_thisZ = transform.position.z;
-		_moving = false;
+
 	}
+		
 	void Update(){
 		if (currentUpdate != null) {
 			currentUpdate ();
