@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4828270740861498}
   - component: {fileID: 212560980898161446}
   - component: {fileID: 114165780487489656}
-  - component: {fileID: 114184464733731784}
   - component: {fileID: 50461196217475000}
   - component: {fileID: 233200519279898596}
   - component: {fileID: 231120445077371968}
@@ -58,7 +57,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -128,22 +127,6 @@ MonoBehaviour:
   _normal: {fileID: 21300000, guid: f48d9028b6e9bd94cb797712b0907639, type: 3}
   _light: {fileID: 21300000, guid: 64e00eb237f9f4b4fbae272beffe37ed, type: 3}
   _lightDelay: 0.1
---- !u!114 &114184464733731784
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1421417827978424}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 981fa1eb0eae5ab4b8d72a29c875dee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isBumpLeftUp: 0
-  isBumpLeftDown: 0
-  isBumpRightUp: 0
-  isBumpRightDown: 1
-  speed: 400
 --- !u!114 &114663361968097404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -155,9 +138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e69797254a6c3547a0fbe52b7581fe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameMode: 2
   isBump1: 0
-  speed: 400
+  speed: 50
   isBumpLeftUp: 0
   isBumpLeftDown: 0
   isBumpRightUp: 0

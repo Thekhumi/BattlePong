@@ -16,9 +16,6 @@ public class GameManager : MonoBehaviour {
 	[Tooltip("From Left to Right")]
 	[SerializeField] GameObject[] _levelScreens;
 	[SerializeField] GameObject _levelElements;
-	//[SerializeField] Bumper _bump1;
-	//[SerializeField] Bumper _bump2;
-	[SerializeField] bool _pinballMode;
 	[SerializeField] CameraMov _mainCamera;
 	[SerializeField] private float _cameraSpeed;
 	[SerializeField] private float _ballReset;
@@ -47,15 +44,14 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void Start(){
-		switch (_pinballMode) {
-		case true:
+		if (_gameMode==GameMode.Pinball) {
 			_pinballBall = GameObject.FindGameObjectWithTag ("PinballBall").GetComponent<PinballBall> ();
 			Physics2D.gravity = new Vector2 (0f, 0f);
-			break;
-		case false:
-			_ball = GameObject.FindGameObjectWithTag ("Ball").GetComponent<Ball> ();
-			break;
 		}
+		if (_gameMode != GameMode.Pinball) {
+			_ball = GameObject.FindGameObjectWithTag ("Ball").GetComponent<Ball> ();
+		}
+			
 		_cam = Camera.main;
 		_cameraState = _cameraScreens.Length / 2;
 		_bump = GameObject.FindGameObjectsWithTag ("Bumper");
@@ -78,11 +74,8 @@ public class GameManager : MonoBehaviour {
 		}
 		_mainCamera.Move(_cameraScreens[_cameraState].transform,_cameraSpeed);
 		if (_cam.transform.position == _cameraScreens [_cameraState].transform.position) {
-			_bump[0].GetComponent<Bumper>().Move = true;
-			_bump[1].GetComponent<Bumper>().Move = true;
-			if (_pinballMode) {
-				_bump[2].GetComponent<Bumper>().Move = true;
-				_bump[3].GetComponent<Bumper>().Move = true;
+			foreach (GameObject bumper in _bump) {
+				bumper.GetComponent<Bumper>().Move = true;
 			}
 		}
 	}
@@ -121,40 +114,36 @@ public class GameManager : MonoBehaviour {
 		_textScoreP2.text = _scoreP2.ToString ();
 	}
 	private void BallReset(){
-		switch (_pinballMode) {
-		case true:
+		if (_gameMode == GameMode.Pinball) {
 			_pinballBall.Reset ();
-			break;
-		case false:
+		} else {
 			_ball.Reset ();
-			break;
 		}
 	}
 	private void BallStart(){
-		switch (_pinballMode) {
-		case true:
+		if (_gameMode == GameMode.Pinball) {
 			_pinballBall.ResetPosition ();
 			_pinballBall.Stop ();
 			Invoke ("BallReset", _ballReset);
-			break;
-		case false:
+		}else{
 			_ball.Stop ();
 			_ball.ResetPosition ();
 			Invoke ("BallReset", _ballReset);
-			break;
 		}
 	}
 	private void CameraMov(){
 		_levelElements.transform.position = _levelScreens [_cameraState].transform.position;
-		_bump[0].GetComponent<Bumper>().Move = false;
-		_bump[1].GetComponent<Bumper>().Move = false;
-		if (_pinballMode) {
-			_bump[2].GetComponent<Bumper>().Move = false;
-			_bump[3].GetComponent<Bumper>().Move = false;
+		foreach (GameObject bumper in _bump) {
+			bumper.GetComponent<Bumper>().Move = false;
 		}
-		if (!_pinballMode) {
-			_bump [0].GetComponent<Bumper> ().ResetPos ();
-			_bump [1].GetComponent<Bumper> ().ResetPos ();
+		if(_gameMode == GameMode.Pinball) {
+			foreach (GameObject bumper in _bump) {
+				bumper.GetComponent<Bumper> ().ResetAngle ();
+			}
+		}else{
+			foreach (GameObject bumper in _bump) {
+				bumper.GetComponent<Bumper> ().ResetPos ();
+			}
 		}
 	}
 	private void MainMenu(){

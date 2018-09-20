@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4532482694471862}
   - component: {fileID: 212562970075009050}
   - component: {fileID: 114066393536444814}
-  - component: {fileID: 114811199478526452}
   - component: {fileID: 50037145321732774}
   - component: {fileID: 233654232156713214}
   - component: {fileID: 231253693611524952}
@@ -58,7 +57,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -139,29 +138,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e69797254a6c3547a0fbe52b7581fe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameMode: 2
   isBump1: 0
-  speed: -400
+  speed: -50
   isBumpLeftUp: 0
   isBumpLeftDown: 1
   isBumpRightUp: 0
   isBumpRightDown: 0
---- !u!114 &114811199478526452
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1814743440678512}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 981fa1eb0eae5ab4b8d72a29c875dee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isBumpLeftUp: 0
-  isBumpLeftDown: 1
-  isBumpRightUp: 0
-  isBumpRightDown: 0
-  speed: -400
 --- !u!212 &212562970075009050
 SpriteRenderer:
   m_ObjectHideFlags: 1

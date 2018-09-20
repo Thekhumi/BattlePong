@@ -21,6 +21,7 @@ public class Bumper : MonoBehaviour {
 	[SerializeField]bool isBumpRightUp;
 	[SerializeField]bool isBumpRightDown;
 	Rigidbody2D _Flipper;
+	Vector3 _originalRot;
 
 	void Awake(){
 		_rb = GetComponent<Rigidbody2D> ();
@@ -28,6 +29,7 @@ public class Bumper : MonoBehaviour {
 		sprite = GetComponent<SpriteRenderer> ();
 		_thisY = transform.position.y;
 		_thisZ = transform.position.z;
+		_originalRot = transform.eulerAngles;
 		_moving = false;
 	}
 
@@ -101,28 +103,31 @@ public class Bumper : MonoBehaviour {
 		if (_moving) {
 			if (isBumpLeftUp) {
 				if (Input.GetButton("W")) {
-					_Flipper.AddTorque (speed);
+					_Flipper.AddTorque (speed,ForceMode2D.Impulse);
 				}
 			}
 			if (isBumpLeftDown) {
 				if (Input.GetButton("S")) {
-					_Flipper.AddTorque (speed);
+					_Flipper.AddTorque (speed,ForceMode2D.Impulse);
 				}
 			}
 			if (isBumpRightUp) {
 				if (Input.GetButton("Up")) {
-					_Flipper.AddTorque (speed);
+					_Flipper.AddTorque (speed,ForceMode2D.Impulse);
 				}
 			}
 			if (isBumpRightDown) {
 				if (Input.GetButton("Down")) {
-					_Flipper.AddTorque (speed);
+					_Flipper.AddTorque (speed,ForceMode2D.Impulse);
 				}
 			}
 		}
 	}
 	public void ResetPos(){
 		transform.position = new Vector3 (transform.position.x, _thisY, _thisZ);
+	}
+	public void ResetAngle(){
+		transform.eulerAngles = _originalRot;
 	}
 	public bool Move{
 		get{ return _moving; }
