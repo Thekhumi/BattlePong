@@ -69,13 +69,15 @@ public class Bumper : MonoBehaviour {
 	void UpdateFlappy(){
 		if (_moving) {
 			if (isBump1) {
-				_rb.velocity = Vector2.zero;
-				if(Input.GetButtonDown("Vertical"))
-				_rb.AddForce (new Vector2 (0f, speed));
+				if (Input.GetButtonDown ("Vertical")) {
+					_rb.velocity = Vector2.zero;
+					_rb.AddForce (new Vector2 (0f, speed),ForceMode2D.Impulse);
+				}
 			} else {
-				_rb.velocity = Vector2.zero;
-				if(Input.GetButtonDown("Vertical2"))
-				_rb.AddForce (new Vector2 (0f, speed));
+				if (Input.GetButtonDown ("Vertical2")) {
+					_rb.velocity = Vector2.zero;
+					_rb.AddForce (new Vector2 (0f, speed),ForceMode2D.Impulse);
+				}
 			}
 		}
 		BoundsCheck();
