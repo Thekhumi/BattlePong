@@ -1,3 +1,17 @@
 
 BattlePong/Library/
 BattlePong/.vs/
+
+.consulo/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.opendb
