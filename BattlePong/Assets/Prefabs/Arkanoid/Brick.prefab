@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4517755008576120}
   - component: {fileID: 212683336482592686}
-  - component: {fileID: 70828913949618008}
+  - component: {fileID: 61109946646384154}
   m_Layer: 0
   m_Name: Brick
   m_TagString: BreakableWall
@@ -41,8 +41,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -66.00201}
---- !u!70 &70828913949618008
-CapsuleCollider2D:
+--- !u!61 &61109946646384154
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -54,8 +54,18 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 2.5, y: 0.95}
-  m_Direction: 1
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.44, y: 1.29}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.44, y: 1.29}
+  m_EdgeRadius: 0
 --- !u!212 &212683336482592686
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -91,7 +101,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 69aeda253b2889d41ad35f926243e07b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dbec9f7a5ec1e4d4fb0186c27d7be228, type: 3}
   m_Color: {r: 0.03137256, g: 0.89118654, b: 0.99215686, a: 1}
   m_FlipX: 0
   m_FlipY: 0

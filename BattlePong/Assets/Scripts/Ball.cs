@@ -8,12 +8,14 @@ public class Ball : MonoBehaviour {
 	[SerializeField] GameManager _manager;
 	private float _originalSpeed;
 	private bool _scored = false;
+	float sx;
+	float sy;
 
 	Rigidbody2D body;
 	// Use this for initialization
 	void Start () {
-		float sx = Random.Range (0, 2) == 0 ? -1 : 1;
-		float sy = Random.Range (0, 2) == 0 ? -1 : 1;
+		sx = Random.Range (0, 2) == 0 ? -1 : 1;
+		sy = Random.Range (0, 2) == 0 ? -1 : 1;
 		body = GetComponent<Rigidbody2D>();
 		body.velocity = new Vector2 (speed * sx, speed * sy);
 		_originalSpeed = speed;
@@ -58,10 +60,14 @@ public class Ball : MonoBehaviour {
 	}
 	public void Reset(){
 		speed = _originalSpeed;
-		float sx = Random.Range (0, 2) == 0 ? -1 : 1;
-		float sy = Random.Range (0, 2) == 0 ? -1 : 1;
+		sx = Random.Range (0, 2) == 0 ? -1 : 1;
+		sy = Random.Range (0, 2) == 0 ? -1 : 1;
 		body.velocity = new Vector2 (speed * sx, speed * sy);
 		_scored = false;
+	}
+	public void SoftReset(){
+		speed = _originalSpeed;
+		body.velocity = new Vector2 (speed * sx, speed * sy);
 	}
 	public void Stop(){
 		speed = 0;

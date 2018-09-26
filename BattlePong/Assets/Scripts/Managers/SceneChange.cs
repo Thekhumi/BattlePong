@@ -21,4 +21,7 @@ public class SceneChange : MonoBehaviour {
 	public void Flappy(){
 		SceneManager.LoadScene ("Flappy");
 	}
+	public void Warp(){
+		SceneManager.LoadScene ("Warp");
+	}
 }

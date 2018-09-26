@@ -18,6 +18,10 @@ public class CollisionColor : MonoBehaviour {
 	//void OnCollisionExit2D (Collision2D otro){
 	//	_renderer.sprite = _normal;
 	//}
+	void OnTriggerEnter2D (Collider2D otro){
+		_renderer.sprite = _light;
+		Invoke ("ChangeBack", _lightDelay);
+	}
 	private void ChangeBack(){
 		_renderer.sprite = _normal;
 	}

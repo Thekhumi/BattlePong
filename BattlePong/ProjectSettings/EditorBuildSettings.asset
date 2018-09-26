@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Flappy.unity
     guid: abe12f7e3376c4f429c9e353dfb44727
+  - enabled: 1
+    path: Assets/Scenes/Warp.unity
+    guid: ef8a8e14930a0aa41a505541f6f4fe3d
   m_configObjects: {}
