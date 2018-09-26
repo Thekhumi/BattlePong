@@ -20,11 +20,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4242326261216878}
   - component: {fileID: 212296353206540636}
-  - component: {fileID: 60418977222250756}
   - component: {fileID: 50483325589571390}
   - component: {fileID: 114768732055764562}
+  - component: {fileID: 61639649761837224}
+  - component: {fileID: 61247927540697460}
   m_Layer: 11
-  m_Name: Pipe 1
+  m_Name: Pipe Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,8 +38,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1403364486664248}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 2.2, z: 1}
+  m_LocalPosition: {x: -4, y: -5, z: 0}
+  m_LocalScale: {x: 0.5, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -63,8 +64,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &60418977222250756
-PolygonCollider2D:
+--- !u!61 &61247927540697460
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -75,7 +76,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 1.234756}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -85,21 +86,34 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.94, y: 1.01}
-      - {x: 0.94, y: 1.4699999}
-      - {x: 0.9, y: 1.5}
-      - {x: -0.89, y: 1.5}
-      - {x: -0.93, y: 1.4699999}
-      - {x: -0.94, y: 1.4599999}
-      - {x: -0.94, y: 0.88}
-      - {x: -0.51, y: 0.91999996}
-      - {x: -0.47, y: -1.5}
-      - {x: 0.47, y: -1.5}
-      - {x: 0.48, y: -1.49}
-      - {x: 0.53, y: 0.95}
-      - {x: 0.84999996, y: 0.93}
+  serializedVersion: 2
+  m_Size: {x: 1.88, y: 0.530488}
+  m_EdgeRadius: 0
+--- !u!61 &61639649761837224
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1403364486664248}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.010766983, y: -0.26378393}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.88, y: 3}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.9540596, y: 2.4724321}
+  m_EdgeRadius: 0
 --- !u!114 &114768732055764562
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -112,8 +126,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isRising: 0
-  _switchTime: 3
-  speed: 1
+  _switchTime: 2.5
+  speed: 0.5
 --- !u!212 &212296353206540636
 SpriteRenderer:
   m_ObjectHideFlags: 1

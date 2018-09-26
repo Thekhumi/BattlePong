@@ -224,12 +224,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1403364486664248, guid: 5c6c41f888338334b999b2d4fa55c036, type: 2}
       propertyPath: m_Name
-      value: Pipe 1 (1)
+      value: Pipe Blue
       objectReference: {fileID: 0}
     - target: {fileID: 114768732055764562, guid: 5c6c41f888338334b999b2d4fa55c036,
         type: 2}
       propertyPath: _isRising
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c6c41f888338334b999b2d4fa55c036, type: 2}
@@ -275,7 +275,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1403364486664248, guid: 78da088c4ac059f4788a431288e6bd3f, type: 2}
       propertyPath: m_Name
-      value: Pipe (5)
+      value: Pipe Blue
       objectReference: {fileID: 0}
     - target: {fileID: 4242326261216878, guid: 78da088c4ac059f4788a431288e6bd3f, type: 2}
       propertyPath: m_LocalScale.y
@@ -499,7 +499,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1403364486664248, guid: 5c6c41f888338334b999b2d4fa55c036, type: 2}
       propertyPath: m_Name
-      value: Pipe 1 (3)
+      value: Pipe Red
       objectReference: {fileID: 0}
     - target: {fileID: 4242326261216878, guid: 5c6c41f888338334b999b2d4fa55c036, type: 2}
       propertyPath: m_LocalScale.x
@@ -618,7 +618,7 @@ Prefab:
     - target: {fileID: 114768732055764562, guid: 5c6c41f888338334b999b2d4fa55c036,
         type: 2}
       propertyPath: _isRising
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c6c41f888338334b999b2d4fa55c036, type: 2}
@@ -798,7 +798,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1403364486664248, guid: 9b5911f513df8964e91ac1b954c1e012, type: 2}
       propertyPath: m_Name
-      value: Pipe 3 (1)
+      value: Pipe 2 Red
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b5911f513df8964e91ac1b954c1e012, type: 2}
@@ -951,7 +951,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1403364486664248, guid: c8421409d8d1e904b8fbbda5141eeea7, type: 2}
       propertyPath: m_Name
-      value: Pipe 2 (1)
+      value: Pipe 2 Blue
       objectReference: {fileID: 0}
     - target: {fileID: 4242326261216878, guid: c8421409d8d1e904b8fbbda5141eeea7, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -1526,22 +1526,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4242326261216878, guid: 78da088c4ac059f4788a431288e6bd3f, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4242326261216878, guid: 78da088c4ac059f4788a431288e6bd3f, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4242326261216878, guid: 78da088c4ac059f4788a431288e6bd3f, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -180.00002
-      objectReference: {fileID: 0}
     - target: {fileID: 114768732055764562, guid: 78da088c4ac059f4788a431288e6bd3f,
         type: 2}
       propertyPath: _isRising
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78da088c4ac059f4788a431288e6bd3f, type: 2}
@@ -1814,7 +1802,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1403364486664248, guid: 78da088c4ac059f4788a431288e6bd3f, type: 2}
       propertyPath: m_Name
-      value: Pipe (4)
+      value: Pipe Blue
       objectReference: {fileID: 0}
     - target: {fileID: 4242326261216878, guid: 78da088c4ac059f4788a431288e6bd3f, type: 2}
       propertyPath: m_LocalScale.y
@@ -2782,12 +2770,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1403364486664248, guid: 78da088c4ac059f4788a431288e6bd3f, type: 2}
       propertyPath: m_Name
-      value: Pipe (1)
+      value: Pipe Blue
       objectReference: {fileID: 0}
     - target: {fileID: 114768732055764562, guid: 78da088c4ac059f4788a431288e6bd3f,
         type: 2}
       propertyPath: _isRising
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78da088c4ac059f4788a431288e6bd3f, type: 2}
@@ -2860,18 +2848,6 @@ Prefab:
     - target: {fileID: 4242326261216878, guid: 5c6c41f888338334b999b2d4fa55c036, type: 2}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1403364486664248, guid: 5c6c41f888338334b999b2d4fa55c036, type: 2}
-      propertyPath: m_Name
-      value: Pipe 1 (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4242326261216878, guid: 5c6c41f888338334b999b2d4fa55c036, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4242326261216878, guid: 5c6c41f888338334b999b2d4fa55c036, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c6c41f888338334b999b2d4fa55c036, type: 2}

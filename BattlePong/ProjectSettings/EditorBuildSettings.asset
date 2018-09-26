@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Pinball.unity
     guid: 28733af123ec75b469c5206e2cc66079
+  - enabled: 1
+    path: Assets/Scenes/Flappy.unity
+    guid: abe12f7e3376c4f429c9e353dfb44727
   m_configObjects: {}

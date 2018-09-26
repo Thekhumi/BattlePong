@@ -17,4 +17,8 @@ public class SceneChange : MonoBehaviour {
 	public void Pinball(){
 		SceneManager.LoadScene ("Pinball");
 	}
+
+	public void Flappy(){
+		SceneManager.LoadScene ("Flappy");
+	}
 }
