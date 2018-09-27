@@ -50,8 +50,9 @@ public class GameManager : MonoBehaviour {
 		}
 		if (_gameMode != GameMode.Pinball) {
 			_ball = GameObject.FindGameObjectWithTag ("Ball").GetComponent<Ball> ();
+			Physics2D.gravity = new Vector2 (0f, -9.8f);
 		}
-			
+		BallStart ();
 		_cam = Camera.main;
 		_cameraState = _cameraScreens.Length / 2;
 		_bump = GameObject.FindGameObjectsWithTag ("Bumper");
@@ -79,6 +80,7 @@ public class GameManager : MonoBehaviour {
 			}
 		}
 	}
+
 	public void SetWinnerLeft(){
 		_winnerLeft = true;
 		_scoreP2++;
@@ -87,6 +89,7 @@ public class GameManager : MonoBehaviour {
 			_cameraState -= 1;
 		}
 	}
+
 	public void SetWinnerRight(){
 		_winnerRight = true;
 		_scoreP1++;
@@ -95,6 +98,7 @@ public class GameManager : MonoBehaviour {
 			_cameraState += 1;
 		}
 	}
+
 	public void SetResultLeft(){
 		_result = "BLUE";
 		_textResult.text = _result + " WINS!";
@@ -102,6 +106,7 @@ public class GameManager : MonoBehaviour {
 		_textResult.gameObject.SetActive (true);
 		Invoke ("MainMenu", _menuDelay);
 	}
+
 	public void SetResultRight(){
 		_result = "RED";
 		_textResult.text = _result + " WINS!";
@@ -109,10 +114,12 @@ public class GameManager : MonoBehaviour {
 		_textResult.gameObject.SetActive (true);
 		Invoke ("MainMenu", _menuDelay);
 	}
+
 	private void ScoreUpdate(){	
 		_textScoreP1.text = _scoreP1.ToString ();
 		_textScoreP2.text = _scoreP2.ToString ();
 	}
+
 	private void BallReset(){
 		if (_gameMode == GameMode.Pinball) {
 			_pinballBall.Reset ();
@@ -120,17 +127,18 @@ public class GameManager : MonoBehaviour {
 			_ball.Reset ();
 		}
 	}
+
 	private void BallStart(){
 		if (_gameMode == GameMode.Pinball) {
 			_pinballBall.ResetPosition ();
 			_pinballBall.Stop ();
-			Invoke ("BallReset", _ballReset);
 		}else{
 			_ball.Stop ();
 			_ball.ResetPosition ();
-			Invoke ("BallReset", _ballReset);
 		}
+		Invoke ("BallReset", _ballReset);
 	}
+
 	private void CameraMov(){
 		_levelElements.transform.position = _levelScreens [_cameraState].transform.position;
 		foreach (GameObject bumper in _bump) {
@@ -146,6 +154,7 @@ public class GameManager : MonoBehaviour {
 			}
 		}
 	}
+
 	private void MainMenu(){
 		_sceneManager.MainMenu ();
 	}

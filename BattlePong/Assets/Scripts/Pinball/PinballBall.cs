@@ -9,33 +9,19 @@ public class PinballBall : MonoBehaviour {
 
 	Rigidbody2D body;
 
-	void Start () {
+	void Awake(){
 		body = GetComponent<Rigidbody2D>();
-		float sx = Random.Range (0, 2) == 0 ? -1 : 1;
-		body.AddForce ((Vector2.right * sx) * _magnitude);
 	}
 	void OnCollisionEnter2D(Collision2D otro){
-		if (otro.gameObject.tag == "END GAME") {
-			switch (otro.gameObject.layer) {
-			case 9:
-				_manager.SetResultRight ();
-				break;
-			case 10:
-				_manager.SetResultLeft ();
-				break;
-			}
-		}
 		if (otro.gameObject.tag == "BreakableWall") {
 			otro.gameObject.SetActive (false);
 		}
 		else{
 			switch (otro.gameObject.layer) {
 			case 9:
-				_manager.SetWinnerRight ();
 				_scored = true;
 				break;
 			case 10:
-				_manager.SetWinnerLeft ();
 				_scored = true;
 				break;
 			}
@@ -43,10 +29,12 @@ public class PinballBall : MonoBehaviour {
 	}
 	public void Stop(){
 		body.velocity = Vector2.zero;
+		body.gravityScale = 0;
 	}
 	public void Reset(){
 		float sx = Random.Range (0, 2) == 0 ? -1 : 1;
-		body.AddForce ((transform.forward * sx) * _magnitude);
+		body.gravityScale = 1;
+		body.AddForce ((Vector2.right * sx) * _magnitude);
 		_scored = false;
 	}
 	public void ResetPosition(){

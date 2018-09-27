@@ -10,6 +10,7 @@ TagManager:
   - Ball
   - PinballBall
   - Bumper
+  - GAMEMANAGER
   layers:
   - Default
   - TransparentFX

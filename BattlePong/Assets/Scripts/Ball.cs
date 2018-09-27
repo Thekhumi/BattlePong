@@ -25,11 +25,9 @@ public class Ball : MonoBehaviour {
 		if (otro.gameObject.tag == "END GAME") {
 			switch (otro.gameObject.layer) {
 			case 9:
-				_manager.SetResultRight ();
 				Stop ();
 				break;
 			case 10:
-				_manager.SetResultLeft ();
 				Stop ();
 				break;
 			}
@@ -44,11 +42,9 @@ public class Ball : MonoBehaviour {
 				speed += sum;
 				break;
 			case 9:
-				_manager.SetWinnerRight ();
 				_scored = true;
 				break;
 			case 10:
-				_manager.SetWinnerLeft ();
 				_scored = true;
 				break;
 			}

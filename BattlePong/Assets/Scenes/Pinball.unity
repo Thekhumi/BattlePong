@@ -1511,6 +1511,7 @@ GameObject:
   - component: {fileID: 688927111}
   - component: {fileID: 688927113}
   - component: {fileID: 688927112}
+  - component: {fileID: 688927114}
   m_Layer: 9
   m_Name: Right_Wall
   m_TagString: END GAME
@@ -1540,7 +1541,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1602,6 +1603,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &688927114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 688927110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f478ca51fb531448b6aebb80232ef0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isLeft: 0
 --- !u!1001 &689534061
 Prefab:
   m_ObjectHideFlags: 0
@@ -2542,6 +2555,7 @@ GameObject:
   - component: {fileID: 1023824120}
   - component: {fileID: 1023824122}
   - component: {fileID: 1023824121}
+  - component: {fileID: 1023824123}
   m_Layer: 9
   m_Name: Right_Wall
   m_TagString: Untagged
@@ -2571,7 +2585,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -2633,6 +2647,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1023824123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1023824119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f478ca51fb531448b6aebb80232ef0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isLeft: 0
 --- !u!1 &1048132033
 GameObject:
   m_ObjectHideFlags: 0
@@ -2746,6 +2772,11 @@ Prefab:
       propertyPath: m_AngularDrag
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 58642148599378658, guid: b4e5d1a5c22669144bd38fbda7a48ba3,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: e274dfdbcb8a895428e955b918c39ac5, type: 2}
     m_RemovedComponents:
     - {fileID: 114787107356873638, guid: b4e5d1a5c22669144bd38fbda7a48ba3, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: b4e5d1a5c22669144bd38fbda7a48ba3, type: 2}
@@ -2966,7 +2997,7 @@ GameObject:
   - component: {fileID: 1139723221}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GAMEMANAGER
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3429,6 +3460,7 @@ GameObject:
   - component: {fileID: 1420188035}
   - component: {fileID: 1420188037}
   - component: {fileID: 1420188036}
+  - component: {fileID: 1420188038}
   m_Layer: 10
   m_Name: Left_Wall
   m_TagString: Untagged
@@ -3458,7 +3490,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -3520,6 +3552,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1420188038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1420188034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f478ca51fb531448b6aebb80232ef0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isLeft: 1
 --- !u!1 &1435670022
 GameObject:
   m_ObjectHideFlags: 0
@@ -4075,6 +4119,7 @@ GameObject:
   - component: {fileID: 1672270906}
   - component: {fileID: 1672270908}
   - component: {fileID: 1672270907}
+  - component: {fileID: 1672270909}
   m_Layer: 10
   m_Name: Left_Wall
   m_TagString: END GAME
@@ -4104,7 +4149,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -4166,6 +4211,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1672270909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1672270905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f478ca51fb531448b6aebb80232ef0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isLeft: 1
 --- !u!50 &1688325195 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 50647185565423314, guid: 1d61ab16958f79c4189a4955f418465b,
@@ -4234,6 +4291,7 @@ GameObject:
   - component: {fileID: 1764467066}
   - component: {fileID: 1764467068}
   - component: {fileID: 1764467067}
+  - component: {fileID: 1764467069}
   m_Layer: 9
   m_Name: Right_Wall
   m_TagString: Untagged
@@ -4263,7 +4321,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -4325,6 +4383,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1764467069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1764467065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f478ca51fb531448b6aebb80232ef0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isLeft: 0
 --- !u!1001 &1778762661
 Prefab:
   m_ObjectHideFlags: 0
@@ -4437,6 +4507,7 @@ GameObject:
   - component: {fileID: 1819183988}
   - component: {fileID: 1819183990}
   - component: {fileID: 1819183989}
+  - component: {fileID: 1819183991}
   m_Layer: 10
   m_Name: Left_Wall
   m_TagString: Untagged
@@ -4466,7 +4537,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -4528,6 +4599,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1819183991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1819183987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f478ca51fb531448b6aebb80232ef0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isLeft: 1
 --- !u!1 &1833897955
 GameObject:
   m_ObjectHideFlags: 0
