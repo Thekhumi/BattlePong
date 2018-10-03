@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour {
 	private int _cameraState;
 	private Camera _cam;
 	private string _result;
+	private bool _init;
 	void Awake(){
 		if (instance == null){
 			instance = this;
@@ -52,6 +53,7 @@ public class GameManager : MonoBehaviour {
 			_ball = GameObject.FindGameObjectWithTag ("Ball").GetComponent<Ball> ();
 			Physics2D.gravity = new Vector2 (0f, -9.8f);
 		}
+		_init = true;
 		BallStart ();
 		_cam = Camera.main;
 		_cameraState = _cameraScreens.Length / 2;
@@ -136,7 +138,12 @@ public class GameManager : MonoBehaviour {
 			_ball.Stop ();
 			_ball.ResetPosition ();
 		}
-		Invoke ("BallReset", _ballReset);
+		if (_init) {
+			Invoke ("BallReset", _ballReset*2);
+			_init = false;
+		} else {
+			Invoke ("BallReset", _ballReset);
+		}
 	}
 
 	private void CameraMov(){
