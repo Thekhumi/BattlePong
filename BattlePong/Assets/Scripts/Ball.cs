@@ -12,13 +12,15 @@ public class Ball : MonoBehaviour {
 	float sy;
 
 	Rigidbody2D body;
-	// Use this for initialization
-	void Start () {
-		sx = Random.Range (0, 2) == 0 ? -1 : 1;
-		sy = Random.Range (0, 2) == 0 ? -1 : 1;
+
+	void Awake(){
 		body = GetComponent<Rigidbody2D>();
-		body.velocity = new Vector2 (speed * sx, speed * sy);
+	}
+
+	void Start () {
+		Debug.Log ("START");
 		_originalSpeed = speed;
+		Debug.Log ("START" + speed);
 	}
 
 	void OnCollisionEnter2D(Collision2D otro){
@@ -51,22 +53,25 @@ public class Ball : MonoBehaviour {
 		}
 	}
 
-	void FixedUpdate () {
+	/*void FixedUpdate () {
 		body.velocity = speed * (body.velocity.normalized);
 	}
+	*/
 	public void Reset(){
+		Debug.Log (_originalSpeed);
 		speed = _originalSpeed;
 		sx = Random.Range (0, 2) == 0 ? -1 : 1;
 		sy = Random.Range (0, 2) == 0 ? -1 : 1;
 		body.velocity = new Vector2 (speed * sx, speed * sy);
 		_scored = false;
+		Debug.Log (body.velocity);
 	}
 	public void SoftReset(){
 		speed = _originalSpeed;
 		body.velocity = new Vector2 (speed * sx, speed * sy);
 	}
 	public void Stop(){
-		speed = 0;
+		body.velocity = Vector2.zero;
 	}
 	public void ResetPosition(){
 		transform.position = transform.parent.position;

@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour {
 			_pinballBall = GameObject.FindGameObjectWithTag ("PinballBall").GetComponent<PinballBall> ();
 			Physics2D.gravity = new Vector2 (0f, 0f);
 		}
-		if (_gameMode != GameMode.Pinball) {
+		else{
 			_ball = GameObject.FindGameObjectWithTag ("Ball").GetComponent<Ball> ();
 			Physics2D.gravity = new Vector2 (0f, -9.8f);
 		}
@@ -127,6 +127,7 @@ public class GameManager : MonoBehaviour {
 			_pinballBall.Reset ();
 		} else {
 			_ball.Reset ();
+			Debug.Log ("Ball Reset");
 		}
 	}
 
