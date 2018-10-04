@@ -127,7 +127,6 @@ public class GameManager : MonoBehaviour {
 			_pinballBall.Reset ();
 		} else {
 			_ball.Reset ();
-			Debug.Log ("Ball Reset");
 		}
 	}
 

@@ -6,6 +6,7 @@ public class Ball : MonoBehaviour {
 	[SerializeField] float speed = 5f;
 	[SerializeField] float sum = 0f;
 	[SerializeField] GameManager _manager;
+	[SerializeField] float _minSpeedX = 0;
 	private float _originalSpeed;
 	private bool _scored = false;
 	float sx;
@@ -18,9 +19,10 @@ public class Ball : MonoBehaviour {
 	}
 
 	void Start () {
-		Debug.Log ("START");
 		_originalSpeed = speed;
-		Debug.Log ("START" + speed);
+		if (_minSpeedX > speed) {
+			_minSpeedX = speed;
+		}
 	}
 
 	void OnCollisionEnter2D(Collision2D otro){
@@ -36,7 +38,6 @@ public class Ball : MonoBehaviour {
 		}
 		if (otro.gameObject.tag == "BreakableWall") {
 			otro.gameObject.SetActive (false);
-
 		}
 		else{
 			switch (otro.gameObject.layer) {
@@ -53,10 +54,10 @@ public class Ball : MonoBehaviour {
 		}
 	}
 
-	/*void FixedUpdate () {
+	void FixedUpdate () {
+		minSpeedCheck ();
 		body.velocity = speed * (body.velocity.normalized);
 	}
-	*/
 	public void Reset(){
 		Debug.Log (_originalSpeed);
 		speed = _originalSpeed;
@@ -64,7 +65,6 @@ public class Ball : MonoBehaviour {
 		sy = Random.Range (0, 2) == 0 ? -1 : 1;
 		body.velocity = new Vector2 (speed * sx, speed * sy);
 		_scored = false;
-		Debug.Log (body.velocity);
 	}
 	public void SoftReset(){
 		speed = _originalSpeed;
@@ -79,5 +79,12 @@ public class Ball : MonoBehaviour {
 	public bool Scored{
 		get{return _scored;}
 		set{_scored=value;}
+	}
+	public void minSpeedCheck(){
+		if (body.velocity.x > 0 && body.velocity.x < _minSpeedX) {
+			body.velocity = new Vector2 (_minSpeedX, body.velocity.y);
+		} else if (body.velocity.x < 0 && body.velocity.x > -_minSpeedX) {
+			body.velocity = new Vector2 (-_minSpeedX, body.velocity.y);
+		}
 	}
 }
