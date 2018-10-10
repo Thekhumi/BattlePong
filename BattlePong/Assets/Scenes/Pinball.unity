@@ -267,7 +267,7 @@ RectTransform:
   m_Children:
   - {fileID: 419833787}
   m_Father: {fileID: 795395652}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.77500004, y: 0.8846668}
   m_AnchorMax: {x: 1, y: 1}
@@ -2153,9 +2153,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 2145142868}
-  - {fileID: 1406741252}
   - {fileID: 875870844}
   - {fileID: 162087553}
+  - {fileID: 1406741252}
   m_Father: {fileID: 2063722231}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2465,7 +2465,7 @@ RectTransform:
   m_Children:
   - {fileID: 773414624}
   m_Father: {fileID: 795395652}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.8846668}
   m_AnchorMax: {x: 0.20300001, y: 1}
@@ -3356,8 +3356,8 @@ MonoBehaviour:
   _mainCamera: {fileID: 519420030}
   _cameraSpeed: 40
   _ballReset: 2
-  _textScoreP1: {fileID: 0}
-  _textScoreP2: {fileID: 0}
+  _textScoreP1: {fileID: 773414625}
+  _textScoreP2: {fileID: 419833788}
   _textResult: {fileID: 2145142865}
   flash: {fileID: 2145142866}
   _menuDelay: 1.5

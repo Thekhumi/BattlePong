@@ -2353,8 +2353,8 @@ MonoBehaviour:
   _mainCamera: {fileID: 519420030}
   _cameraSpeed: 40
   _ballReset: 1.5
-  _textScoreP1: {fileID: 0}
-  _textScoreP2: {fileID: 0}
+  _textScoreP1: {fileID: 1228896610}
+  _textScoreP2: {fileID: 512346909}
   _textResult: {fileID: 2145142865}
   flash: {fileID: 2145142866}
   _menuDelay: 1.5
