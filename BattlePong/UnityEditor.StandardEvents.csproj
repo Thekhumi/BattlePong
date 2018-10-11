@@ -357,6 +357,8 @@
     <Compile Include="Packages\com.unity.standardevents\Editor\Importer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Art\1001fonts-karmatic-arcade-eula.txt" />
+    <None Include="Assets\Art\pizzadudedotdk.txt" />
     <None Include="Assets\UI assets\Fonts\Jupiter\LICENSE.txt" />
     <None Include="Assets\UI assets\Materials\UI-Default-No-Alpha.shader" />
     <None Include="Assets\UI assets\Textures and Sprites\SF UI\Background\LICENSE.txt" />

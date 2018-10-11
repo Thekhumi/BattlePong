@@ -10,22 +10,16 @@ public class Cartridge : MonoBehaviour
 , IPointerExitHandler{
 
 	[SerializeField] Sprite _base;
-	[SerializeField] Sprite _classic;
-	[SerializeField] Sprite _arkanoid;
-	[SerializeField] Sprite _pinball;
-	[SerializeField] Sprite _flappy;
-	[SerializeField] Sprite _warp;
+	[SerializeField] Sprite _thisCartridge;
+	[SerializeField] GameObject _cartridge;
 	Image _button;
-	[SerializeField] [Range(1,5)] int _buttonNum;
-	//[SerializeField] RectTransform _cartridge;
 	Vector3 _origPos;
-	//[SerializeField] RectTransform _target;
 
 	void Awake () {
 		_button = GetComponent<Image> ();
 	}
 	void Start(){
-		//_origPos = _cartridge.position;
+		_origPos = _cartridge.transform.position;
 	}
 	public void OnPointerClick(PointerEventData eventData)
 	{
@@ -34,21 +28,10 @@ public class Cartridge : MonoBehaviour
 	void Update(){
 		
 	}
-	public void OnPointerEnter(PointerEventData eventData)
+	public bool OnPointerEnter(PointerEventData eventData)
 	{
 		_button.color = Color.yellow;
-		/*switch (_buttonNum) {
-		case 1:
-			break;
-		case 2:
-			break;
-		case 3:
-			break;
-		case 4:
-			break;
-		case 5:
-			break;
-		}*/
+		return true;
 	}
 	public void OnPointerExit(PointerEventData eventData)
 	{
