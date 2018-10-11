@@ -54,6 +54,13 @@ public class Ball : MonoBehaviour {
 		}
 	}
 
+	void OnTriggerEnter2D(Collider2D otro){
+		switch (otro.gameObject.tag) {
+		case "Bumper":
+			otro.transform.position
+			break;
+		}
+	}
 	void FixedUpdate () {
 		minSpeedCheck ();
 		body.velocity = speed * (body.velocity.normalized);
