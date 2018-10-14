@@ -4,24 +4,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour {
+	[SerializeField] private GameObject _loadingScreen;
 
-	public void MainMenu(){
-		SceneManager.LoadScene ("Menu");
-	}
-	public void Classic(){
-		SceneManager.LoadScene ("Classic");
-	}
-	public void Arkanoid(){
-		SceneManager.LoadScene ("Arkanoid");
-	}
-	public void Pinball(){
-		SceneManager.LoadScene ("Pinball");
+	public void LoadScene(int sceneNum){
+		StartCoroutine (LoadAsynchronously (sceneNum));
 	}
 
-	public void Flappy(){
-		SceneManager.LoadScene ("Flappy");
-	}
-	public void Warp(){
-		SceneManager.LoadScene ("Warp");
+	IEnumerator LoadAsynchronously (int sceneNum){
+		AsyncOperation operation = SceneManager.LoadSceneAsync (sceneNum);
+		if (_loadingScreen != null) {
+			_loadingScreen.SetActive (true);
+		}
+		while (!operation.isDone) {
+			yield return null;
+		}
 	}
 }

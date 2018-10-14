@@ -57,7 +57,7 @@ public class Ball : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D otro){
 		switch (otro.gameObject.tag) {
 		case "Bumper":
-			otro.transform.position
+			//otro.transform.position;---------------------------------------------------->> allan add details
 			break;
 		}
 	}

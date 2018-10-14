@@ -163,7 +163,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	private void MainMenu(){
-		_sceneManager.MainMenu ();
+		_sceneManager.LoadScene(0);
 	}
 	public GameMode getGameMode(){
 		return _gameMode;
