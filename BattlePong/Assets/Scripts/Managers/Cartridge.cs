@@ -9,54 +9,27 @@ public class Cartridge : MonoBehaviour
 , IPointerEnterHandler
 , IPointerExitHandler{
 
-	[SerializeField] Sprite _base;
 	[SerializeField] Sprite _cartridgeSprite;
-	[SerializeField] GameObject _cartridge;
-	[SerializeField] Transform _target;
-	[SerializeField] float _speed;
-	int _cont;
+	[SerializeField] MainMenuManager _cManager;
+	[SerializeField] [Range(1,5)] int _buttonNum;
 	Image _button;
-	Vector3 _origPos;
 	private bool _selected;
 
 	void Awake () {
 		_button = GetComponent<Image> ();
-	}
-	void Start(){
-		_origPos = _cartridge.transform.position;
 		_selected = false;
-		_cont = 0;
 	}
 	void Update(){
 		if (_selected) {
-			switch (_cont) {
-			case 0:
-				_cartridge.transform.position = Vector3.MoveTowards (_cartridge.transform.position, _target.position, _speed * Time.deltaTime);
-				if (_cartridge.transform.position==_target.position) {
-					if (_cartridgeSprite != null) {
-						_cartridge.GetComponent<SpriteRenderer> ().sprite = _cartridgeSprite;
-					} else {
-						_cartridge.GetComponent<SpriteRenderer> ().sprite = _base;
-					}
-					_cont++;
-				}
-				break;
-			case 1:
-				_cartridge.transform.position = Vector3.MoveTowards (_cartridge.transform.position, _origPos, _speed * Time.deltaTime);
-				if (_cartridge.transform.position==_origPos) {
-					_selected = false;
-				}
-				break;
-			}
+			_selected=_cManager.MovingCartridge (_cartridgeSprite, _selected,_buttonNum);
 		}
 	}
 	public void OnPointerClick(PointerEventData eventData)
 	{
-		
+		_cManager.Clicked ();
 	}
 	public void OnPointerEnter(PointerEventData eventData)
 	{
-		_cont = 0;
 		_button.color = Color.yellow;
 		_selected = true;
 	}

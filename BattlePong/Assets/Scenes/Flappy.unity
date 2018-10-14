@@ -2464,6 +2464,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _loadingScreen: {fileID: 1314899217}
+  _delayText: 0.1
+  _loadingText: {fileID: 1539635719}
+  _startDelay: 0
 --- !u!1 &1228896608
 GameObject:
   m_ObjectHideFlags: 0
