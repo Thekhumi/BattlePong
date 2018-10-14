@@ -118,6 +118,8 @@ public class GameManager : MonoBehaviour {
 	}
 
 	private void ScoreUpdate(){	
+		_textScoreP1.GetComponent<TextFade> ().ActivateFade=true;
+		_textScoreP2.GetComponent<TextFade> ().ActivateFade=true;
 		_textScoreP1.text = _scoreP1.ToString ();
 		_textScoreP2.text = _scoreP2.ToString ();
 	}
