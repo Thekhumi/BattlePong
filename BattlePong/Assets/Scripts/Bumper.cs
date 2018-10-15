@@ -38,6 +38,9 @@ public class Bumper : MonoBehaviour {
 		case GameManager.GameMode.Normal:
 			currentUpdate = UpdateNormal;
 			break;
+		case GameManager.GameMode.Warp:
+			currentUpdate = UpdateNormal;
+			break;
 		case GameManager.GameMode.Flappy:
 			currentUpdate = UpdateFlappy;
 			break;

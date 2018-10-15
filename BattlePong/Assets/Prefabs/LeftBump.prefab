@@ -93,6 +93,7 @@ MonoBehaviour:
   _normal: {fileID: 21300000, guid: 3c77f32c46e561a47bae532b265fcbab, type: 3}
   _light: {fileID: 21300000, guid: 711dcbf017ac76f44ac41260ba08a805, type: 3}
   _lightDelay: 0.1
+  _isPinball: 0
 --- !u!114 &114296171293956830
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -105,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBump1: 1
-  speed: 10
+  speed: 15
   isBumpLeftUp: 0
   isBumpLeftDown: 0
   isBumpRightUp: 0

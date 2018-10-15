@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
-	public enum GameMode { Normal, Flappy, Pinball,}
+	public enum GameMode { Normal, Flappy, Pinball, Warp,}
 	[SerializeField] private GameManager.GameMode _gameMode = GameManager.GameMode.Normal;
 	public static GameManager instance = null;
 	private bool _winnerLeft = false;
@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour {
 	[SerializeField] float _menuDelay;
 	private Ball _ball;
 	private GameObject[] _bump;
+	private Warp[] _warps;
 	private PinballBall _pinballBall;
 	private SceneChange _sceneManager;
 	private int _cameraState;
@@ -42,8 +43,11 @@ public class GameManager : MonoBehaviour {
 		_scoreP1 = 0;
 		_scoreP2 = 0;
 		ScoreUpdate();
+		if (_gameMode == GameMode.Warp) {
+			_warps = FindObjectsOfType<Warp> ();
+		}
 	}
-
+		
 	void Start(){
 		if (_gameMode==GameMode.Pinball) {
 			_pinballBall = GameObject.FindGameObjectWithTag ("PinballBall").GetComponent<PinballBall> ();
@@ -160,6 +164,11 @@ public class GameManager : MonoBehaviour {
 		}else{
 			foreach (GameObject bumper in _bump) {
 				bumper.GetComponent<Bumper> ().ResetPos ();
+			}
+		}
+		if (_gameMode==GameMode.Warp) {
+			foreach (var warp in _warps) {
+				warp.DeactivateDelay();
 			}
 		}
 	}

@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBump1: 0
-  speed: 10
+  speed: 15
   isBumpLeftUp: 0
   isBumpLeftDown: 0
   isBumpRightUp: 0
@@ -110,6 +110,7 @@ MonoBehaviour:
   _normal: {fileID: 21300000, guid: ab882a498b4a48a4ab4e6e4d319a8043, type: 3}
   _light: {fileID: 21300000, guid: 8d3685b19e4d6c549b00958a588766de, type: 3}
   _lightDelay: 0.1
+  _isPinball: 0
 --- !u!212 &212161620133395886
 SpriteRenderer:
   m_ObjectHideFlags: 1
