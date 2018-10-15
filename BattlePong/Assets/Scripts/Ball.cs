@@ -83,7 +83,6 @@ public class Ball : MonoBehaviour {
 		body.velocity = (speed + _boostTimer) * (body.velocity.normalized);
 	}
 	public void Reset(){
-		Debug.Log (_originalSpeed);
 		speed = _originalSpeed;
 		sx = Random.Range (0, 2) == 0 ? -1 : 1;
 		sy = Random.Range (0, 2) == 0 ? -1 : 1;
