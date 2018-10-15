@@ -7,6 +7,11 @@ public class Ball : MonoBehaviour {
 	[SerializeField] float sum = 0f;
 	[SerializeField] GameManager _manager;
 	[SerializeField] float _minSpeedX = 0;
+	[SerializeField] float _bounceControl = 10f;
+	[SerializeField] float _inmuneTime = 0.3f;
+	[SerializeField] float _boostTime = 3f;
+	float _boostTimer;
+	float _inmuneTimer;
 	private float _originalSpeed;
 	private bool _scored = false;
 	float sx;
@@ -57,13 +62,25 @@ public class Ball : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D otro){
 		switch (otro.gameObject.tag) {
 		case "Bumper":
-			//otro.transform.position;---------------------------------------------------->> allan add details
+			if (_inmuneTimer < 0) {
+				body.velocity = new Vector2 (-body.velocity.x, (transform.position.y - otro.transform.position.y) * _bounceControl);
+				speed += sum;
+				_inmuneTimer = _inmuneTime;
+				_boostTimer = _boostTime;
+			}
 			break;
+		}
+	}
+	void Update(){
+		_inmuneTimer -= Time.deltaTime;
+		_boostTimer -= Time.deltaTime;
+		if(_boostTimer <= 0){
+			_boostTimer = 0;
 		}
 	}
 	void FixedUpdate () {
 		minSpeedCheck ();
-		body.velocity = speed * (body.velocity.normalized);
+		body.velocity = (speed + _boostTimer) * (body.velocity.normalized);
 	}
 	public void Reset(){
 		Debug.Log (_originalSpeed);
