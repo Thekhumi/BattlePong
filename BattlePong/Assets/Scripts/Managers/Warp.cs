@@ -7,6 +7,7 @@ public class Warp : MonoBehaviour {
 	private GameObject[] _portals;
 	private Ball _ball;
 	private int _rand;
+	private Vector2 _origVel;
 	[SerializeField] private bool _onScreen;
 	[SerializeField] private float _ballDelay;
 
@@ -28,6 +29,7 @@ public class Warp : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D otro){
 		if (!_out) {
 			if (otro.tag == "Ball") {
+				_origVel = otro.GetComponent<Rigidbody2D> ().velocity;
 				_ball.Stop ();
 				_rand = Randomizer();
 				while (_portals [_rand] == gameObject || !_portals [_rand].GetComponent<Warp>().OnScreen) {
@@ -35,6 +37,7 @@ public class Warp : MonoBehaviour {
 				}
 				_portals [_rand].GetComponent<Warp> ().Out = true;
 				otro.transform.position = _portals [_rand].transform.position - (new Vector3 (0f, 0f, 2f));
+				otro.GetComponent<Rigidbody2D> ().velocity = _origVel;
 				Invoke ("Reactivate", _ballDelay);
 			}
 		}

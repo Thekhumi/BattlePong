@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: 46707cf118c3895498b25ba19a758fc2
+guid: 3cd437fd59f580d49abc2c62e55713aa
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Bola_0
-    21300002: Bola_1
+    21300000: Redi_0
+    21300002: Redi_1
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -108,7 +108,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bola_0
+      name: Redi_0
       rect:
         serializedVersion: 2
         x: 2
@@ -116,19 +116,19 @@ TextureImporter:
         width: 110
         height: 80
       alignment: 9
-      pivot: {x: 0.5, y: 0.55246925}
+      pivot: {x: 0.5, y: 0.55}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f406aa8807491944a7217653fc6e690
+      spriteID: 82e4067ec7e0e2643bdc1bc99d54de36
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bola_1
+      name: Redi_1
       rect:
         serializedVersion: 2
         x: 2
@@ -136,13 +136,13 @@ TextureImporter:
         width: 110
         height: 80
       alignment: 9
-      pivot: {x: 0.49775532, y: 0.43518513}
+      pivot: {x: 0.5, y: 0.45}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f56fcd60da8d44a459fbcf91e3065d57
+      spriteID: bd0589479f542014db10d313eae656fb
       vertices: []
       indices: 
       edges: []
@@ -150,7 +150,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 87e5ee47ea8cce448bd0c5cfa3ef6b2f
+    spriteID: e0bc2e77f251d714cbaccdb02153cecf
     vertices: []
     indices: 
     edges: []

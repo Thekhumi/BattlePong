@@ -74,6 +74,7 @@ public class Ball : MonoBehaviour {
 	void Update(){
 		_inmuneTimer -= Time.deltaTime;
 		_boostTimer -= Time.deltaTime;
+		Debug.Log (body.velocity);
 		if(_boostTimer <= 0){
 			_boostTimer = 0;
 		}
