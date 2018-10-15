@@ -49,7 +49,6 @@ public class Warp : MonoBehaviour {
 	}
 	private void Reactivate(){
 		_ball.gameObject.transform.position+=(new Vector3 (0f, 0f, 2f));
-		_ball.SoftReset();
 	}
 	private int Randomizer(){
 		int rand = Random.Range (0, _portals.Length);

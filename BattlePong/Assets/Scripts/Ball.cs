@@ -46,9 +46,6 @@ public class Ball : MonoBehaviour {
 		}
 		else{
 			switch (otro.gameObject.layer) {
-			case 8:
-				speed += sum;
-				break;
 			case 9:
 				_scored = true;
 				break;
@@ -67,6 +64,7 @@ public class Ball : MonoBehaviour {
 				speed += sum;
 				_inmuneTimer = _inmuneTime;
 				_boostTimer = _boostTime;
+				Debug.Log ("Bump!");
 			}
 			break;
 		}
@@ -74,7 +72,6 @@ public class Ball : MonoBehaviour {
 	void Update(){
 		_inmuneTimer -= Time.deltaTime;
 		_boostTimer -= Time.deltaTime;
-		Debug.Log (body.velocity);
 		if(_boostTimer <= 0){
 			_boostTimer = 0;
 		}
