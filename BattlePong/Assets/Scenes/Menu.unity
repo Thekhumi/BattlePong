@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c05402a1b817cd64db4366a2748e0b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cartridgeSprite: {fileID: 0}
+  _cartridgeSprite: {fileID: 21300000, guid: 7b71c3e5201f2e349a97eba3281eac72, type: 3}
   _cManager: {fileID: 1839009198}
   _buttonNum: 3
 --- !u!114 &514856123
@@ -830,7 +830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c05402a1b817cd64db4366a2748e0b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cartridgeSprite: {fileID: 0}
+  _cartridgeSprite: {fileID: 21300000, guid: 44123ea073375f241b0e0021958618f4, type: 3}
   _cManager: {fileID: 1839009198}
   _buttonNum: 5
 --- !u!114 &802698138
@@ -1314,7 +1314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c05402a1b817cd64db4366a2748e0b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cartridgeSprite: {fileID: 0}
+  _cartridgeSprite: {fileID: 21300000, guid: 02f8543f0735f2e43adc4911739001ea, type: 3}
   _cManager: {fileID: 1839009198}
   _buttonNum: 4
 --- !u!114 &1797108898
