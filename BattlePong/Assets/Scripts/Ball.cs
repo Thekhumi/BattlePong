@@ -41,9 +41,6 @@ public class Ball : MonoBehaviour {
 				break;
 			}
 		}
-		if (otro.gameObject.tag == "BreakableWall") {
-			otro.gameObject.SetActive (false);
-		}
 		else{
 			switch (otro.gameObject.layer) {
 			case 9:
@@ -100,6 +97,9 @@ public class Ball : MonoBehaviour {
 	public bool Scored{
 		get{return _scored;}
 		set{_scored=value;}
+	}
+	public float inmuneTimer{
+		get{return _inmuneTimer;}
 	}
 	public void minSpeedCheck(){
 		if (body.velocity.x > 0 && body.velocity.x < _minSpeedX) {

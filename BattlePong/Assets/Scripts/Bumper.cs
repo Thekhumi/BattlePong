@@ -15,6 +15,7 @@ public class Bumper : MonoBehaviour {
 	SpriteRenderer sprite;
 	SpriteRenderer WallSprite;
 	Camera cam;
+	AudioSource audioSrc;
 
 	[SerializeField]bool isBumpLeftUp;
 	[SerializeField]bool isBumpLeftDown;
@@ -31,6 +32,7 @@ public class Bumper : MonoBehaviour {
 		_thisZ = transform.position.z;
 		_originalRot = transform.eulerAngles;
 		_moving = false;
+		audioSrc = GetComponent<AudioSource> ();
 	}
 
 	void Start(){
@@ -52,6 +54,11 @@ public class Bumper : MonoBehaviour {
 		Wall = GameObject.FindGameObjectsWithTag ("BoundWall")[0];
 		WallSprite = Wall.GetComponent<SpriteRenderer> ();
 
+	}
+	void OnTriggerEnter2D(Collider2D otro){
+		if (otro.gameObject.tag == "Ball" && otro.GetComponent<Ball>().inmuneTimer > 0) {
+			audioSrc.Play ();
+		}
 	}
 		
 	void Update(){

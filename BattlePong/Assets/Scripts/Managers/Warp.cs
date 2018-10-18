@@ -13,7 +13,11 @@ public class Warp : MonoBehaviour {
 	[SerializeField] private bool _onScreen;
 	[SerializeField] private float _ballDelay;
 	[SerializeField] private float _delay;
+	AudioSource audioSrc;
 
+	void Awake(){
+		audioSrc = GetComponent<AudioSource> ();
+	}
 	void Start () {
 		_portals = GameObject.FindGameObjectsWithTag ("Warp");
 		_ball = GameObject.FindGameObjectWithTag ("Ball").GetComponent<Ball> ();
@@ -37,6 +41,7 @@ public class Warp : MonoBehaviour {
 		if(_startDelay){
 			if (!_out) {
 				if (otro.tag == "Ball") {
+					audioSrc.Play();
 					_origVel = otro.GetComponent<Rigidbody2D> ().velocity;
 					_ball.Stop ();
 					_rand = Randomizer();
