@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour {
 	[SerializeField] float _menuDelay;
 	private Ball _ball;
 	private GameObject[] _bump;
+	private Spring[] _springs;
 	private Warp[] _warps;
 	private PinballBall _pinballBall;
 	private SceneChange _sceneManager;
@@ -45,6 +46,9 @@ public class GameManager : MonoBehaviour {
 		ScoreUpdate();
 		if (_gameMode == GameMode.Warp) {
 			_warps = FindObjectsOfType<Warp> ();
+		}
+		if (_gameMode == GameMode.Pinball) {
+			_springs = FindObjectsOfType<Spring> ();
 		}
 	}
 		
@@ -160,6 +164,9 @@ public class GameManager : MonoBehaviour {
 		if(_gameMode == GameMode.Pinball) {
 			foreach (GameObject bumper in _bump) {
 				bumper.GetComponent<Bumper> ().ResetAngle ();
+			}
+			foreach (var spring in _springs) {
+				spring.Reactivate ();
 			}
 		}else{
 			foreach (GameObject bumper in _bump) {
