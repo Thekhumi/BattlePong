@@ -17,13 +17,15 @@ public class Goal : MonoBehaviour {
 					_manager.SetResultLeft ();
 				}
 				_manager.SetWinnerLeft ();
+				if (_manager.getGameMode() == GameManager.GameMode.Normal)
 				otro.GetComponent<Ball> ().Scored = true;
 				break;
 			case false:
 				if (gameObject.tag == "END GAME") {
-					_manager.SetResultRight();
+					_manager.SetResultRight ();
 				}
 				_manager.SetWinnerRight ();
+				if (_manager.getGameMode() == GameManager.GameMode.Normal)
 				otro.GetComponent<Ball> ().Scored = true;
 				break;
 			}
