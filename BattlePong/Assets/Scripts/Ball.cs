@@ -8,12 +8,11 @@ public class Ball : MonoBehaviour {
 	[SerializeField] GameManager _manager;
 	[SerializeField] float _minSpeedX = 0;
 	[SerializeField] float _bounceControl = 10f;
-	[SerializeField] float _inmuneTime = 0.3f;
+	[SerializeField] bool _inmune = false;
 	[SerializeField] float _boostTime = 3f;
 	[SerializeField] float _permanentBoostMax = 5f;
 	[SerializeField] float _permanentBoostSum = 1f;
 	float _boostTimer;
-	float _inmuneTimer;
 	private float _originalSpeed;
 	private bool _scored = false;
 	private float _permanentBoost = 0f;
@@ -59,17 +58,29 @@ public class Ball : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D otro){
 		switch (otro.gameObject.tag) {
 		case "Bumper":
-			if (_inmuneTimer < 0) {
-				body.velocity = new Vector2 (-body.velocity.x, (transform.position.y - otro.transform.position.y) * _bounceControl);
+			if (!_inmune) {
+				if (otro.GetComponent<Bumper> ().isLeft) {
+					body.velocity = new Vector2 (Mathf.Abs (body.velocity.x), (transform.position.y - otro.transform.position.y) * _bounceControl);
+				} else {
+					body.velocity = new Vector2 (-Mathf.Abs (body.velocity.x), (transform.position.y - otro.transform.position.y) * _bounceControl);
+				}
 				speed += sum;
-				_inmuneTimer = _inmuneTime;
+				_inmune = true;
 				_boostTimer = _boostTime;
 			}
 			break;
 		}
 	}
+	void OnTriggerExit2D(Collider2D otro){
+		switch (otro.gameObject.tag) {
+		case "Bumper":
+			if (_inmune) {
+				_inmune = false;
+			}
+			break;
+		}
+	}
 	void Update(){
-		_inmuneTimer -= Time.deltaTime;
 		_boostTimer -= Time.deltaTime;
 		if(_boostTimer < 0){
 			_boostTimer = 0;
@@ -111,8 +122,8 @@ public class Ball : MonoBehaviour {
 	public float permanentBoostMax{
 		get{return _permanentBoostMax;}
 	}
-	public float inmuneTimer{
-		get{return _inmuneTimer;}
+	public bool inmune{
+		get{return _inmune;}
 	}
 	public void minSpeedCheck(){
 		if (body.velocity.x > 0 && body.velocity.x < _minSpeedX) {

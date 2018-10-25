@@ -56,7 +56,7 @@ public class Bumper : MonoBehaviour {
 
 	}
 	void OnTriggerEnter2D(Collider2D otro){
-		if (otro.gameObject.tag == "Ball" && otro.GetComponent<Ball>().inmuneTimer > 0) {
+		if (otro.gameObject.tag == "Ball" && otro.GetComponent<Ball>().inmune == false) {
 			audioSrc.Play ();
 		}
 	}
@@ -142,6 +142,10 @@ public class Bumper : MonoBehaviour {
 	public bool Move{
 		get{ return _moving; }
 		set{ _moving = value; }
+	}
+	public bool isLeft{
+		get{ return isBump1; }
+		set{ isBump1 = value; }
 	}
 		
 }
