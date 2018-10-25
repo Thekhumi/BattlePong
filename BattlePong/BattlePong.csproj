@@ -313,11 +313,12 @@
     <Compile Include="Assets\EZ Camera Shake\Scripts\CameraShakePresets.cs" />
     <Compile Include="Assets\EZ Camera Shake\Scripts\CameraShaker.cs" />
     <Compile Include="Assets\EZ Camera Shake\Scripts\Utilities\CameraUtilities.cs" />
-    <Compile Include="Assets\Goal.cs" />
     <Compile Include="Assets\Scripts\Ball.cs" />
+    <Compile Include="Assets\Scripts\Brick.cs" />
     <Compile Include="Assets\Scripts\Bumper.cs" />
     <Compile Include="Assets\Scripts\Flappy\FlappyBall.cs" />
     <Compile Include="Assets\Scripts\Flappy\Tube.cs" />
+    <Compile Include="Assets\Scripts\Goal.cs" />
     <Compile Include="Assets\Scripts\Managers\BGSize.cs" />
     <Compile Include="Assets\Scripts\Managers\CameraMov.cs" />
     <Compile Include="Assets\Scripts\Managers\Cartridge.cs" />
@@ -332,9 +333,11 @@
     <Compile Include="Assets\Scripts\Managers\StartFlicker.cs" />
     <Compile Include="Assets\Scripts\Managers\TextFade.cs" />
     <Compile Include="Assets\Scripts\Managers\Warp.cs" />
+    <Compile Include="Assets\Scripts\Obstacle.cs" />
     <Compile Include="Assets\Scripts\Pinball\Gravity.cs" />
     <Compile Include="Assets\Scripts\Pinball\PinballBall.cs" />
     <Compile Include="Assets\Scripts\Pinball\PinballBumper.cs" />
+    <Compile Include="Assets\Scripts\Pinball\Spring.cs" />
     <Compile Include="Assets\UI assets\Scripts\ActiveStateToggler.cs" />
     <Compile Include="Assets\UI assets\Scripts\ApplicationManager.cs" />
     <Compile Include="Assets\UI assets\Scripts\ChangeColor.cs" />

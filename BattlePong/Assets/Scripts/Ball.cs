@@ -10,10 +10,13 @@ public class Ball : MonoBehaviour {
 	[SerializeField] float _bounceControl = 10f;
 	[SerializeField] float _inmuneTime = 0.3f;
 	[SerializeField] float _boostTime = 3f;
+	[SerializeField] float _permanentBoostMax = 5f;
+	[SerializeField] float _permanentBoostSum = 1f;
 	float _boostTimer;
 	float _inmuneTimer;
 	private float _originalSpeed;
 	private bool _scored = false;
+	private float _permanentBoost = 0f;
 	float sx;
 	float sy;
 
@@ -61,7 +64,6 @@ public class Ball : MonoBehaviour {
 				speed += sum;
 				_inmuneTimer = _inmuneTime;
 				_boostTimer = _boostTime;
-				Debug.Log ("Bump!");
 			}
 			break;
 		}
@@ -69,13 +71,13 @@ public class Ball : MonoBehaviour {
 	void Update(){
 		_inmuneTimer -= Time.deltaTime;
 		_boostTimer -= Time.deltaTime;
-		if(_boostTimer <= 0){
+		if(_boostTimer < 0){
 			_boostTimer = 0;
 		}
 	}
 	void FixedUpdate () {
 		minSpeedCheck ();
-		body.velocity = (speed + _boostTimer) * (body.velocity.normalized);
+		body.velocity = (speed + _boostTimer + _permanentBoost) * (body.velocity.normalized);
 	}
 	public void Reset(){
 		speed = _originalSpeed;
@@ -97,6 +99,17 @@ public class Ball : MonoBehaviour {
 	public bool Scored{
 		get{return _scored;}
 		set{_scored=value;}
+	}
+
+	public float permanentBoost{
+		get{return _permanentBoost;}
+		set{_permanentBoost=value;}
+	}
+	public float permanentBoostSum{
+		get{return _permanentBoostSum;}
+	}
+	public float permanentBoostMax{
+		get{return _permanentBoostMax;}
 	}
 	public float inmuneTimer{
 		get{return _inmuneTimer;}

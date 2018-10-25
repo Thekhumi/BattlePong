@@ -92,7 +92,12 @@ MonoBehaviour:
   speed: 8
   sum: 0.5
   _manager: {fileID: 0}
-  _minSpeedX: 3
+  _minSpeedX: 5
+  _bounceControl: 10
+  _inmuneTime: 0.4
+  _boostTime: 3
+  _permanentBoostMax: 3
+  _permanentBoostSum: 0.5
 --- !u!212 &212351005526438876
 SpriteRenderer:
   m_ObjectHideFlags: 1
