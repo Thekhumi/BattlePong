@@ -57,7 +57,6 @@ public class Ball : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D otro){
 		switch (otro.gameObject.tag) {
 		case "Bumper":
-			if (!_inmune) {
 				if (otro.GetComponent<Bumper> ().isLeft) {
 					body.velocity = new Vector2 (Mathf.Abs (body.velocity.x), (transform.position.y - otro.transform.position.y) * _bounceControl);
 				} else {
@@ -65,7 +64,6 @@ public class Ball : MonoBehaviour {
 				}
 				speed += sum;
 				_boostTimer = _boostTime;
-			}
 			break;
 		}
 	}
