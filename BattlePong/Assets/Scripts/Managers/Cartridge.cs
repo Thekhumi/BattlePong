@@ -18,6 +18,7 @@ public class Cartridge : MonoBehaviour {
 	[SerializeField] ParticleSystem[] _particles;
 	[SerializeField] float _vel;
 	[SerializeField] float _waitTime;
+	[SerializeField] GameObject[] _arrows;
 	private SpriteRenderer[] _cartSprite;
 	private int _cont;
 	private int _activated;
@@ -51,6 +52,9 @@ public class Cartridge : MonoBehaviour {
 			} else {_cont = 0;}
 		}
 		if (Input.GetButtonDown ("Submit")) {
+			foreach (var arrow in _arrows) {
+				arrow.SetActive(false);
+			}
 			_press = true;
 		}
 		if (_press) {

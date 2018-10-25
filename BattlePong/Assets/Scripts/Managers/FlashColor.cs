@@ -16,6 +16,7 @@ public class FlashColor : MonoBehaviour {
 	// Update is called once per frame
 	void Awake () {
 		_textResult = GetComponent<Text> ();
+		_flashColor = Color.white;
 		_defaultColor = Color.yellow;
 		_textResult.color = _defaultColor;
 		_state = 0;
