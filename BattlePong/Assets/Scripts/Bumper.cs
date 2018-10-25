@@ -56,7 +56,7 @@ public class Bumper : MonoBehaviour {
 
 	}
 	void OnTriggerEnter2D(Collider2D otro){
-		if (otro.gameObject.tag == "Ball" && otro.GetComponent<Ball>().inmune == false) {
+		if (otro.gameObject.tag == "Ball" && !audioSrc.isPlaying) {
 			audioSrc.Play ();
 		}
 	}
@@ -70,9 +70,9 @@ public class Bumper : MonoBehaviour {
 	void UpdateNormal () {
 		if (_moving) {
 			if (isBump1) {
-				transform.Translate (0.0f, Input.GetAxis ("Vertical") * speed * Time.deltaTime, 0.0f);
+				transform.Translate (0.0f, Input.GetAxisRaw ("Vertical") * speed * Time.deltaTime, 0.0f);
 			} else {
-				transform.Translate (0.0f, Input.GetAxis ("Vertical2") * speed * Time.deltaTime, 0.0f);
+				transform.Translate (0.0f, Input.GetAxisRaw ("Vertical2") * speed * Time.deltaTime, 0.0f);
 			}
 		}
 		BoundsCheck();

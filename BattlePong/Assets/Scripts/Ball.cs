@@ -8,7 +8,6 @@ public class Ball : MonoBehaviour {
 	[SerializeField] GameManager _manager;
 	[SerializeField] float _minSpeedX = 0;
 	[SerializeField] float _bounceControl = 10f;
-	[SerializeField] bool _inmune = false;
 	[SerializeField] float _boostTime = 3f;
 	[SerializeField] float _permanentBoostMax = 5f;
 	[SerializeField] float _permanentBoostSum = 1f;
@@ -65,17 +64,7 @@ public class Ball : MonoBehaviour {
 					body.velocity = new Vector2 (-Mathf.Abs (body.velocity.x), (transform.position.y - otro.transform.position.y) * _bounceControl);
 				}
 				speed += sum;
-				_inmune = true;
 				_boostTimer = _boostTime;
-			}
-			break;
-		}
-	}
-	void OnTriggerExit2D(Collider2D otro){
-		switch (otro.gameObject.tag) {
-		case "Bumper":
-			if (_inmune) {
-				_inmune = false;
 			}
 			break;
 		}
@@ -121,9 +110,6 @@ public class Ball : MonoBehaviour {
 	}
 	public float permanentBoostMax{
 		get{return _permanentBoostMax;}
-	}
-	public bool inmune{
-		get{return _inmune;}
 	}
 	public void minSpeedCheck(){
 		if (body.velocity.x > 0 && body.velocity.x < _minSpeedX) {
