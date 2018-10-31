@@ -15,15 +15,17 @@ public class Goal : MonoBehaviour {
 			case true:
 				if (gameObject.tag == "END GAME") {
 					_manager.SetResultLeft ();
+				} else {
+					_manager.SetWinnerLeft ();
 				}
-				_manager.SetWinnerLeft ();
 				updatePermanentBoost (otro);
 				break;
 			case false:
 				if (gameObject.tag == "END GAME") {
 					_manager.SetResultRight ();
+				} else {
+					_manager.SetWinnerRight ();
 				}
-				_manager.SetWinnerRight ();
 				updatePermanentBoost (otro);
 				break;
 			}

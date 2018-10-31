@@ -22,8 +22,9 @@ public class GameManager : MonoBehaviour {
 	[SerializeField] Text _textScoreP1;
 	[SerializeField] Text _textScoreP2;
 	[SerializeField] Text _textResult;
-	[SerializeField] FlashColor flash;
 	[SerializeField] float _menuDelay;
+	[SerializeField] GameObject _winScreen;
+	FlashColor _flash;
 	private Ball _ball;
 	private GameObject[] _bump;
 	private Spring[] _springs;
@@ -50,6 +51,7 @@ public class GameManager : MonoBehaviour {
 		if (_gameMode == GameMode.Pinball) {
 			_springs = FindObjectsOfType<Spring> ();
 		}
+		_flash = _textResult.GetComponent<FlashColor> ();
 	}
 		
 	void Start(){
@@ -67,12 +69,11 @@ public class GameManager : MonoBehaviour {
 		_cameraState = _cameraScreens.Length / 2;
 		_bump = GameObject.FindGameObjectsWithTag ("Bumper");
 		_sceneManager = gameObject.GetComponent<SceneChange> ();
+		//_winScreen.SetActive (false);
 	}
 
 	void Update(){
-		if (Input.GetButtonDown ("Cancel")) {
-			MainMenu ();
-		}
+		
 		if (_winnerLeft) {
 			CameraMov ();
 			BallStart ();
@@ -112,17 +113,16 @@ public class GameManager : MonoBehaviour {
 	public void SetResultLeft(){
 		_result = "BLUE";
 		_textResult.text = _result + " WINS!";
-		flash.SetColorBlue ();
-		_textResult.gameObject.SetActive (true);
-		Invoke ("MainMenu", _menuDelay);
+		_flash.SetColorBlue ();
+		BallEnd ();
+		_winScreen.SetActive (true);
 	}
 
 	public void SetResultRight(){
 		_result = "RED";
 		_textResult.text = _result + " WINS!";
-		flash.SetColorRed ();
-		_textResult.gameObject.SetActive (true);
-		Invoke ("MainMenu", _menuDelay);
+		_flash.SetColorRed ();
+		_winScreen.SetActive (true);
 	}
 
 	private void ScoreUpdate(){	
@@ -139,21 +139,31 @@ public class GameManager : MonoBehaviour {
 			_ball.Reset ();
 		}
 	}
-
-	private void BallStart(){
+	private void BallEnd(){
 		if (_gameMode == GameMode.Pinball) {
 			_pinballBall.ResetPosition ();
 			_pinballBall.Stop ();
-		}else{
+		}
+		else{
 			_ball.Stop ();
 			_ball.ResetPosition ();
 		}
-		if (_init) {
-			Invoke ("BallReset", _ballReset*2);
-			_init = false;
-		} else {
-			Invoke ("BallReset", _ballReset);
-		}
+	}
+
+	private void BallStart(){
+			if (_gameMode == GameMode.Pinball) {
+				_pinballBall.ResetPosition ();
+				_pinballBall.Stop ();
+			} else {
+				_ball.Stop ();
+				_ball.ResetPosition ();
+			}
+			if (_init) {
+				Invoke ("BallReset", _ballReset * 2);
+				_init = false;
+			} else {
+				Invoke ("BallReset", _ballReset);
+			}
 	}
 
 	private void CameraMov(){

@@ -14,5 +14,8 @@ public class MainMenuManager : MonoBehaviour {
 		if (Input.GetButtonDown ("Submit")) {
 			_scene.LoadScene (1);
 		}
+		if (Input.GetButtonDown ("Cancel")) {
+			Application.Quit ();
+		}
 	}
 }

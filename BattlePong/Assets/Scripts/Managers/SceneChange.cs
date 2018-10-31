@@ -15,8 +15,17 @@ public class SceneChange : MonoBehaviour {
 	void Start(){
 		_change = 0;
 	}
+	void Update(){
+		if (Input.GetButtonDown ("Cancel")&& SceneManager.GetActiveScene ().buildIndex!=0) {
+			LoadScene (0);
+		}
+	}
 	public void LoadScene(int sceneNum){
 		_sceneNum = sceneNum;
+		Invoke ("StartCR", _startDelay);
+	}
+	public void RestartScene(){
+		_sceneNum = SceneManager.GetActiveScene ().buildIndex;
 		Invoke ("StartCR", _startDelay);
 	}
 
