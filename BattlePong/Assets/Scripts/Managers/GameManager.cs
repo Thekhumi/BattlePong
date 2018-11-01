@@ -119,10 +119,10 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void SetResultRight(){
+		_winScreen.SetActive (true);
 		_result = "RED";
 		_textResult.text = _result + " WINS!";
 		_flash.SetColorRed ();
-		_winScreen.SetActive (true);
 	}
 
 	private void ScoreUpdate(){	
