@@ -6,16 +6,23 @@ using UnityEngine.UI;
 public class FlashColor : MonoBehaviour {
 	// Use this for initialization
 	[SerializeField] float _flashSpeed;
+	[SerializeField] private bool _isSprite;
 	private Text _textResult;
+	private SpriteRenderer _sprite;
 	Color _defaultColor;
 	Color _flashColor;
 	private int _state;
 
 	void Awake () {
-		_textResult = GetComponent<Text> ();
 		_flashColor = Color.white;
 		_defaultColor = Color.yellow;
-		_textResult.color = _defaultColor;
+		if (_isSprite) {
+			_sprite = GetComponent<SpriteRenderer> ();
+			_sprite.color = _defaultColor;
+		} else {
+			_textResult = GetComponent<Text> ();
+			_textResult.color = _defaultColor;
+		}
 		_state = 0;
 		StartCoroutine ("Flash");
 	}
@@ -24,12 +31,20 @@ public class FlashColor : MonoBehaviour {
 		while (true) {
 			switch (_state) {
 			case 0:
-				_textResult.color = _defaultColor;
+				if (_isSprite) {
+					_sprite.color = _defaultColor;
+				} else {
+					_textResult.color = _defaultColor;
+				}
 				_state = 1;
 				yield return new WaitForSeconds (_flashSpeed);
 				break;
 			case 1:
-				_textResult.color = _flashColor;
+				if (_isSprite) {
+					_sprite.color = _flashColor;
+				} else {
+					_textResult.color = _flashColor;
+				}
 				_state = 0;
 				yield return new WaitForSeconds (_flashSpeed);
 				break;

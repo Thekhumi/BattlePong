@@ -22,7 +22,6 @@ public class WinScreen : MonoBehaviour {
 	}
 
 	void Update(){
-		Debug.Log (_selection);
 		if (Input.GetButtonDown ("Left")) {
 			_selection = 0;
 			_yesText.color = _selectedColor;
