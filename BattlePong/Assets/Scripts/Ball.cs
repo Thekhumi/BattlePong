@@ -109,6 +109,9 @@ public class Ball : MonoBehaviour {
 	public float permanentBoostMax{
 		get{return _permanentBoostMax;}
 	}
+	public Vector2 Velocity{
+		get{return body.velocity;}
+	}
 	public void minSpeedCheck(){
 		if (body.velocity.x > 0 && body.velocity.x < _minSpeedX) {
 			body.velocity = new Vector2 (_minSpeedX, body.velocity.y);

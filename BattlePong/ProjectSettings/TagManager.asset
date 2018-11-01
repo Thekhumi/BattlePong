@@ -11,6 +11,7 @@ TagManager:
   - PinballBall
   - Bumper
   - GAMEMANAGER
+  - PowerUp
   layers:
   - Default
   - TransparentFX
