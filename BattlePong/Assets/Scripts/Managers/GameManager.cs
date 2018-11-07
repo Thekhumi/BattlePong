@@ -19,11 +19,11 @@ public class GameManager : MonoBehaviour {
 	[SerializeField] CameraMov _mainCamera;
 	[SerializeField] private float _cameraSpeed;
 	[SerializeField] private float _ballReset;
-	[SerializeField] Text _textScoreP1;
-	[SerializeField] Text _textScoreP2;
+	[SerializeField] Text _textScore;
 	[SerializeField] Text _textResult;
 	[SerializeField] float _menuDelay;
 	[SerializeField] GameObject _winScreen;
+	[SerializeField] private bool _3ScreensGame;
 	FlashColor _flash;
 	private Ball _ball;
 	private GameObject[] _bump;
@@ -69,11 +69,15 @@ public class GameManager : MonoBehaviour {
 		_cameraState = _cameraScreens.Length / 2;
 		_bump = GameObject.FindGameObjectsWithTag ("Bumper");
 		_sceneManager = gameObject.GetComponent<SceneChange> ();
-		//_winScreen.SetActive (false);
+		if (!_3ScreensGame) {
+			_textScore.text = "- - O - -";
+		} else {
+			_textScore.text = "-  O  -";
+		}
 	}
 
 	void Update(){
-		
+		Debug.Log (_cameraState);
 		if (_winnerLeft) {
 			CameraMov ();
 			BallStart ();
@@ -95,41 +99,69 @@ public class GameManager : MonoBehaviour {
 	public void SetWinnerLeft(){
 		_winnerLeft = true;
 		_scoreP2++;
-		ScoreUpdate ();
 		if (_cameraState != 0) {
 			_cameraState -= 1;
 		}
+		ScoreUpdate ();
 	}
 
 	public void SetWinnerRight(){
 		_winnerRight = true;
 		_scoreP1++;
-		ScoreUpdate ();
 		if (_cameraState != (_cameraScreens.Length - 1)) {
 			_cameraState += 1;
 		}
+		ScoreUpdate ();
 	}
 
 	public void SetResultLeft(){
+		_winScreen.SetActive (true);
 		_result = "BLUE";
 		_textResult.text = _result + " WINS!";
-		_flash.SetColorBlue ();
 		BallEnd ();
-		_winScreen.SetActive (true);
+		_flash.SetColorBlue ();
 	}
 
 	public void SetResultRight(){
 		_winScreen.SetActive (true);
 		_result = "RED";
 		_textResult.text = _result + " WINS!";
+		BallEnd ();
 		_flash.SetColorRed ();
 	}
 
 	private void ScoreUpdate(){	
-		_textScoreP1.GetComponent<TextFade> ().ActivateFade=true;
-		_textScoreP2.GetComponent<TextFade> ().ActivateFade=true;
-		_textScoreP1.text = _scoreP1.ToString ();
-		_textScoreP2.text = _scoreP2.ToString ();
+		_textScore.GetComponent<TextFade> ().ActivateFade=true;
+		switch (_cameraState) {
+		case 0:
+			if (!_3ScreensGame) {
+				_textScore.text = "O  -  -  -  -";
+			}else{
+				_textScore.text = "O    -    -";
+			}
+			break;
+		case 1:
+			Debug.Log ("this happens");
+			if (!_3ScreensGame) {
+				_textScore.text = "-  O  -  -  -";
+			}else{
+				_textScore.text = "-    O    -";
+			}
+			break;
+		case 2:
+			if (!_3ScreensGame) {
+				_textScore.text = "-  -  O  -  -";
+			}else{
+				_textScore.text = "-    -    O";
+			}
+			break;
+		case 3:
+			_textScore.text = "-  -  -  O  -";
+			break;
+		case 4:
+			_textScore.text = "-  -  -  -  O";
+			break;
+		}
 	}
 
 	private void BallReset(){

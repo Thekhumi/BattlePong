@@ -26,4 +26,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Warp.unity
     guid: ef8a8e14930a0aa41a505541f6f4fe3d
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 0dee2a518b3029447a037d1b91ffc418
+  - enabled: 1
+    path: Assets/Scenes/Select 1P.unity
+    guid: 6842d791209ca33498cef15c25eeb6de
+  - enabled: 1
+    path: Assets/Scenes/Classic 1P.unity
+    guid: 4826b0b31d635134f8bbb882e2f74b00
+  - enabled: 1
+    path: Assets/Scenes/Warp 1P.unity
+    guid: 34c6105eacbfb98479187e6d8a650bad
   m_configObjects: {}

@@ -9,6 +9,7 @@ public class SceneChange : MonoBehaviour {
 	[SerializeField] private float _delayText;
 	[SerializeField] private Text _loadingText;
 	[SerializeField] private float _startDelay;
+	[SerializeField] private bool _justBack;
 	private int _change;
 	private int _sceneNum;
 
@@ -18,6 +19,11 @@ public class SceneChange : MonoBehaviour {
 	void Update(){
 		if (Input.GetButtonDown ("Cancel")&& SceneManager.GetActiveScene ().buildIndex!=0) {
 			LoadScene (0);
+		}
+		if (_justBack) {
+			if (Input.GetButtonDown ("Submit")) {
+				LoadScene (0);
+			}
 		}
 	}
 	public void LoadScene(int sceneNum){

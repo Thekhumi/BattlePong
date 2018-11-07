@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class Orbit : MonoBehaviour {
 	[SerializeField]private float _speed;
+	[SerializeField]private bool _yAxis;
 	void Update () {
-		transform.Rotate (0,0,_speed*Time.deltaTime);
+		if (!_yAxis) {
+			transform.Rotate (0, 0, _speed * Time.deltaTime);
+		}
+		if(_yAxis){
+			transform.Rotate (0,_speed * Time.deltaTime,0 );
+		}
 	}
 }
