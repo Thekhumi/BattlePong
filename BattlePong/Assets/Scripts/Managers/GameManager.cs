@@ -77,7 +77,6 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void Update(){
-		Debug.Log (_cameraState);
 		if (_winnerLeft) {
 			CameraMov ();
 			BallStart ();

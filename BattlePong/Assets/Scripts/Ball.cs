@@ -17,6 +17,7 @@ public class Ball : MonoBehaviour {
 	private float _permanentBoost = 0f;
 	float sx;
 	float sy;
+	bool stop;
 
 	Rigidbody2D body;
 
@@ -83,13 +84,16 @@ public class Ball : MonoBehaviour {
 		sy = Random.Range (0, 2) == 0 ? -1 : 1;
 		body.velocity = new Vector2 (speed * sx, speed * sy);
 		_scored = false;
+		stop = false;
 	}
 	public void SoftReset(){
 		speed = _originalSpeed;
 		body.velocity = new Vector2 (speed * sx, speed * sy);
+		stop = false;
 	}
 	public void Stop(){
 		body.velocity = Vector2.zero;
+		stop = true;
 	}
 	public void ResetPosition(){
 		transform.position = transform.parent.position;
@@ -113,10 +117,21 @@ public class Ball : MonoBehaviour {
 		get{return body.velocity;}
 	}
 	public void minSpeedCheck(){
-		if (body.velocity.x > 0 && body.velocity.x < _minSpeedX) {
-			body.velocity = new Vector2 (_minSpeedX, body.velocity.y);
-		} else if (body.velocity.x < 0 && body.velocity.x > -_minSpeedX) {
-			body.velocity = new Vector2 (-_minSpeedX, body.velocity.y);
+		Debug.Log (Mathf.Abs (body.velocity.x) + " " +  _minSpeedX);
+		if (!stop && Mathf.Abs(body.velocity.x) < _minSpeedX) {
+			if (body.velocity.x > 0) {
+				body.velocity = new Vector2 (_minSpeedX, body.velocity.y);
+				Debug.Log ("MIN SPEED CHECK" + Mathf.Abs(body.velocity.x));
+			} else if (body.velocity.x < 0) {
+				body.velocity = new Vector2 (-_minSpeedX, body.velocity.y);
+				Debug.Log ("MIN SPEED CHECK"+ Mathf.Abs(body.velocity.x));
+			}
+			else{
+				sx = Random.Range (0, 2) == 0 ? -1 : 1;
+				body.velocity = new Vector2 (_minSpeedX * sx, body.velocity.y);
+				Debug.Log ("ZERO SPEED");
+			}
 		}
+
 	}
 }

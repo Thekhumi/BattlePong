@@ -4582,6 +4582,16 @@ Prefab:
       propertyPath: _inmuneTime
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 114787107356873638, guid: 82979e2e497b72b469814efac6245dc7,
+        type: 2}
+      propertyPath: _minSpeedX
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 50811267314583066, guid: 82979e2e497b72b469814efac6245dc7,
+        type: 2}
+      propertyPath: m_Mass
+      value: 0.0001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82979e2e497b72b469814efac6245dc7, type: 2}
   m_IsPrefabAsset: 0
