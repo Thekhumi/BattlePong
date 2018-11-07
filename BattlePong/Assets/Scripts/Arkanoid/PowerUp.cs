@@ -32,6 +32,23 @@ public class PowerUp : MonoBehaviour {
 		transform.Translate(_speed * Time.deltaTime, 0.0f, 0.0f);
 	}
 
+	void OnTriggerEnter2D(Collider2D otro){
+		if (otro.gameObject.tag == "Bumper") {
+			switch (_power) {
+			case PowerUpBox.Laser:
+				//addLaser
+				break;
+			case PowerUpBox.Expand:
+				//addExpand
+				break;
+			case PowerUpBox.Charge:
+				//addCharge
+				break;
+			}
+			Destroy (gameObject);
+		}
+	}
+
 	protected void UpdateColor(){
 		GetComponent<SpriteRenderer> ().color = _color;
 	}

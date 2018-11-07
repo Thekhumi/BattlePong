@@ -6509,6 +6509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _flashSpeed: 0.2
+  _isSprite: 0
 --- !u!222 &2145142867
 CanvasRenderer:
   m_ObjectHideFlags: 0
