@@ -519,6 +519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: -15
+  _yAxis: 0
 --- !u!114 &181417294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -531,6 +532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
+  _yAxis: 0
 --- !u!212 &181417295
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -747,6 +749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: -15
+  _yAxis: 0
 --- !u!114 &254077563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -759,6 +762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
+  _yAxis: 0
 --- !u!212 &254077564
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -838,7 +842,7 @@ Transform:
   - {fileID: 664294569}
   - {fileID: 912228164}
   m_Father: {fileID: 795395652}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &289344022
 Prefab:
@@ -1318,6 +1322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: -15
+  _yAxis: 0
 --- !u!114 &401323885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1330,6 +1335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
+  _yAxis: 0
 --- !u!212 &401323886
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1381,98 +1387,6 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 50647185565423314, guid: 1d61ab16958f79c4189a4955f418465b,
     type: 2}
   m_PrefabInternal: {fileID: 962188118}
---- !u!1 &419833786
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1109806951045328, guid: fa692ca6a8a10044bb48cdb7c9c9a62d,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 419833787}
-  - component: {fileID: 419833789}
-  - component: {fileID: 419833788}
-  - component: {fileID: 419833790}
-  m_Layer: 0
-  m_Name: Text P2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &419833787
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 224132973297207224, guid: fa692ca6a8a10044bb48cdb7c9c9a62d,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 419833786}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 795395652}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -130, y: 0}
-  m_SizeDelta: {x: 500, y: 205}
-  m_Pivot: {x: 1, y: 0.5}
---- !u!114 &419833788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114283494126334566, guid: fa692ca6a8a10044bb48cdb7c9c9a62d,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 419833786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.15686275}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: acb7e28ea07f2ee4e8f67ed661ca05bd, type: 3}
-    m_FontSize: 110
-    m_FontStyle: 1
-    m_BestFit: 1
-    m_MinSize: 1
-    m_MaxSize: 110
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Score
---- !u!222 &419833789
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 222132218350951108, guid: fa692ca6a8a10044bb48cdb7c9c9a62d,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 419833786}
-  m_CullTransparentMesh: 0
---- !u!114 &419833790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 419833786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec4a23793409f864cb951dbed5cb4eee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _activeFade: 0
 --- !u!1001 &421711848
 Prefab:
   m_ObjectHideFlags: 0
@@ -3007,6 +2921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
+  _yAxis: 0
 --- !u!212 &731862533
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3512,7 +3427,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &773414624
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3527,11 +3442,11 @@ RectTransform:
   m_Father: {fileID: 795395652}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 130, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 500, y: 205}
-  m_Pivot: {x: 0, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &773414625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3618,7 +3533,6 @@ RectTransform:
   m_Children:
   - {fileID: 2145142868}
   - {fileID: 773414624}
-  - {fileID: 419833787}
   - {fileID: 267581427}
   - {fileID: 1406741252}
   - {fileID: 1525367438}
@@ -3733,6 +3647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: -15
+  _yAxis: 0
 --- !u!114 &797819778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3745,6 +3660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
+  _yAxis: 0
 --- !u!212 &797819779
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3941,6 +3857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 15
+  _yAxis: 0
 --- !u!1 &856913506
 GameObject:
   m_ObjectHideFlags: 0
@@ -4386,6 +4303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
+  _yAxis: 0
 --- !u!212 &969893687
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4449,6 +4367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 15
+  _yAxis: 0
 --- !u!1 &978419211
 GameObject:
   m_ObjectHideFlags: 0
@@ -5158,6 +5077,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
+  _yAxis: 0
 --- !u!212 &1078625183
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5382,11 +5302,11 @@ MonoBehaviour:
   _mainCamera: {fileID: 519420030}
   _cameraSpeed: 40
   _ballReset: 2
-  _textScoreP1: {fileID: 773414625}
-  _textScoreP2: {fileID: 419833788}
+  _textScore: {fileID: 773414625}
   _textResult: {fileID: 2128524113}
   _menuDelay: 1.5
   _winScreen: {fileID: 1525367437}
+  _3ScreensGame: 1
 --- !u!4 &1139723220
 Transform:
   m_ObjectHideFlags: 0
@@ -5426,6 +5346,7 @@ MonoBehaviour:
   _delayText: 0.1
   _loadingText: {fileID: 912228165}
   _startDelay: 0
+  _justBack: 0
 --- !u!1 &1165010836
 GameObject:
   m_ObjectHideFlags: 0
@@ -5468,6 +5389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: -5
+  _yAxis: 0
 --- !u!212 &1165010839
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5556,6 +5478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
+  _yAxis: 0
 --- !u!212 &1168565190
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6213,6 +6136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
+  _yAxis: 0
 --- !u!212 &1438592576
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6452,6 +6376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
+  _yAxis: 0
 --- !u!212 &1509592413
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7146,6 +7071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
+  _yAxis: 0
 --- !u!212 &1762871091
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7348,6 +7274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: -5
+  _yAxis: 0
 --- !u!212 &1776592138
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8462,6 +8389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: -15
+  _yAxis: 0
 --- !u!114 &2103475398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8474,6 +8402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
+  _yAxis: 0
 --- !u!212 &2103475399
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8748,6 +8677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _flashSpeed: 0.2
+  _isSprite: 0
 --- !u!222 &2145142867
 CanvasRenderer:
   m_ObjectHideFlags: 0
