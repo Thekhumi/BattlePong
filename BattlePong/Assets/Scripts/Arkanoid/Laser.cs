@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
+	[SerializeField] float _speed;
+	[SerializeField] int _dirMultiplier;
 	void Update () {
-		
+		transform.Translate (_speed * _dirMultiplier * Time.deltaTime,0f,0f);
 	}
+	public int dirMultiplier{
+		get{ return _dirMultiplier; }
+		set{ _dirMultiplier = value; }
+	}
+
 }

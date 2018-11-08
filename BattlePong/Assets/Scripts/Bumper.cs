@@ -17,6 +17,11 @@ public class Bumper : MonoBehaviour {
 	Camera cam;
 	AudioSource audioSrc;
 
+	//POWERUPS
+	private bool _laserActive;
+	private bool _expandActive;
+	private bool _chargeActive;
+
 	[SerializeField]bool isBumpLeftUp;
 	[SerializeField]bool isBumpLeftDown;
 	[SerializeField]bool isBumpRightUp;
@@ -139,6 +144,9 @@ public class Bumper : MonoBehaviour {
 	public void ResetAngle(){
 		transform.eulerAngles = _originalRot;
 	}
+	public void updatePowerups(){
+		GetComponent<LaserPower> ().Active = _laserActive;
+	}
 	public bool Move{
 		get{ return _moving; }
 		set{ _moving = value; }
@@ -146,6 +154,19 @@ public class Bumper : MonoBehaviour {
 	public bool isLeft{
 		get{ return isBump1; }
 		set{ isBump1 = value; }
+	}
+
+	public bool laserActive{
+		get{ return _laserActive; }
+		set{ _laserActive = value; }
+	}
+	public bool expandActive{
+		get{ return _expandActive; }
+		set{ _expandActive = value; }
+	}
+	public bool chargeActive{
+		get{ return _chargeActive; }
+		set{ _chargeActive = value; }
 	}
 		
 }

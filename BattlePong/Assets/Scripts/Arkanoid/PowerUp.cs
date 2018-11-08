@@ -34,17 +34,25 @@ public class PowerUp : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D otro){
 		if (otro.gameObject.tag == "Bumper") {
+			Bumper bumper = otro.gameObject.GetComponent<Bumper> ();
 			switch (_power) {
 			case PowerUpBox.Laser:
-				//addLaser
+				bumper.laserActive = true;
+				bumper.expandActive = false;
+				bumper.chargeActive = false;
 				break;
 			case PowerUpBox.Expand:
-				//addExpand
+				bumper.laserActive = false;
+				bumper.expandActive = true;
+				bumper.chargeActive = false;
 				break;
 			case PowerUpBox.Charge:
-				//addCharge
+				bumper.laserActive = false;
+				bumper.expandActive = false;
+				bumper.chargeActive = true;
 				break;
 			}
+			bumper.updatePowerups ();
 			Destroy (gameObject);
 		}
 	}
