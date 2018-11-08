@@ -494,11 +494,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114826177175720562, guid: d5ab94c78826a824da14e048debc7525,
         type: 2}
-      propertyPath: _active
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114826177175720562, guid: d5ab94c78826a824da14e048debc7525,
-        type: 2}
       propertyPath: _prefab
       value: 
       objectReference: {fileID: 1701772802311142, guid: be3ad6b4a48e1054aa46bf4bd3bd3e3f,
@@ -3371,7 +3366,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1130166450
 Transform:
   m_ObjectHideFlags: 0
@@ -3864,11 +3859,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4028107136280708, guid: 2df0b14979a2bef4db464bc58b1e2290, type: 2}
       propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114763745896042066, guid: 2df0b14979a2bef4db464bc58b1e2290,
-        type: 2}
-      propertyPath: _active
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114763745896042066, guid: 2df0b14979a2bef4db464bc58b1e2290,
@@ -4608,11 +4598,6 @@ Prefab:
         type: 2}
       propertyPath: _minSpeedX
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 50811267314583066, guid: 82979e2e497b72b469814efac6245dc7,
-        type: 2}
-      propertyPath: m_Mass
-      value: 0.0001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82979e2e497b72b469814efac6245dc7, type: 2}

@@ -140,7 +140,6 @@ public class GameManager : MonoBehaviour {
 			}
 			break;
 		case 1:
-			Debug.Log ("this happens");
 			if (!_3ScreensGame) {
 				_textScore.text = "-  O  -  -  -";
 			}else{

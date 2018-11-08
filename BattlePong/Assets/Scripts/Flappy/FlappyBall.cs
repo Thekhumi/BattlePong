@@ -44,7 +44,6 @@ public class FlappyBall : MonoBehaviour {
 		if (gameObject.transform.position.x < -12) {
 			_screen = ScreenSwitch.LEFT;
 		}
-		Debug.Log (_screen);
 	}
 	private void Flap(){
 		switch (_screen) {

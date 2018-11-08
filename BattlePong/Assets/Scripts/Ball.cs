@@ -5,7 +5,6 @@ using UnityEngine;
 public class Ball : MonoBehaviour {
 	[SerializeField] float speed = 5f;
 	[SerializeField] float sum = 0f;
-	[SerializeField] GameManager _manager;
 	[SerializeField] float _minSpeedX = 0;
 	[SerializeField] float _bounceControl = 10f;
 	[SerializeField] float _boostTime = 3f;
@@ -66,6 +65,9 @@ public class Ball : MonoBehaviour {
 				speed += sum;
 				_boostTimer = _boostTime;
 			break;
+		case "BreakableWall":
+
+			break;
 		}
 	}
 	void Update(){
@@ -117,7 +119,7 @@ public class Ball : MonoBehaviour {
 		get{return body.velocity;}
 	}
 	public void minSpeedCheck(){
-		Debug.Log (Mathf.Abs (body.velocity.x) + " " +  _minSpeedX);
+		//Debug.Log (Mathf.Abs (body.velocity.x) + " " +  _minSpeedX);
 		if (!stop && Mathf.Abs(body.velocity.x) < _minSpeedX) {
 			if (body.velocity.x > 0) {
 				body.velocity = new Vector2 (_minSpeedX, body.velocity.y);

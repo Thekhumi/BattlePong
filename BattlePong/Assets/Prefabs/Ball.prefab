@@ -23,8 +23,7 @@ GameObject:
   - component: {fileID: 50811267314583066}
   - component: {fileID: 58642148599378658}
   - component: {fileID: 114787107356873638}
-  - component: {fileID: 96193609221172524}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Ball
   m_TagString: Ball
   m_Icon: {fileID: 0}
@@ -193,7 +192,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   sum: 0.5
-  _manager: {fileID: 0}
   _minSpeedX: 5
   _bounceControl: 10
   _boostTime: 3

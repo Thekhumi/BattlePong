@@ -12,6 +12,7 @@ TagManager:
   - Bumper
   - GAMEMANAGER
   - PowerUp
+  - Laser
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - Obstacles
   - PowerUps
   - Walls
-  - 
+  - Ball
   - 
   - 
   - 

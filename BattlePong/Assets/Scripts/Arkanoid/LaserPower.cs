@@ -18,24 +18,27 @@ public class LaserPower : MonoBehaviour {
 		_shootTimer -= Time.deltaTime;
 		if(_shootTimer <= 0){
 			_shootTimer = 0;
-			if (_isLeft && _active) {
-				if (Input.GetButton ("Fire1")) {
-					_laser = Instantiate(_prefab);
+			if (_active) {
+				if (Input.GetButton ("Fire1") && _isLeft) {
+					_laser = Instantiate (_prefab);
 					_laser.GetComponent<Laser> ().dirMultiplier = 1;
+					float spawnSide = 2;
 					_laser.transform.position = transform.position;
+					_laser.transform.Translate (spawnSide, 0, 0);
 					_shootTimer = _rateOfFire;
-				}
-			} else {
-				if (Input.GetButton ("Fire2")) {
+				}  
+				if (Input.GetButton ("Fire2") && !_isLeft) {
 					_laser = Instantiate (_prefab);
 					_laser.GetComponent<Laser> ().dirMultiplier = -1;
+					float spawnSide = -2; 
 					_laser.transform.position = transform.position;
+					_laser.transform.Translate (spawnSide, 0, 0);
 					_shootTimer = _rateOfFire;
 				}
 			}
 		}
-
 	}
+		
 	public bool Active{
 		get{ return _active; }
 		set{ _active = value; }
