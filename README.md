@@ -2,10 +2,9 @@ BattlePong
 
 -------------------------------------------------------
 -Controls:
-W A S D : Movement
-Mouse: Camera
-Left Click: Place Tower / Shoot
-Right Click: Remove Tower / Reload
-Space: Start Wave
-Shift: Switch Tower
+Player 1 Movement: W + S
+         Shoot: F
+Player 2 Movement: UP + DOWN
+         Shoot: Rctrl
+Space: Confirm
 Esc: Menu
