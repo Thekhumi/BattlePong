@@ -1,6 +1,7 @@
 
 BattlePong/Library/
 BattlePong/.vs/
+BattlePong/obj/
 
 .consulo/
 *.csproj
