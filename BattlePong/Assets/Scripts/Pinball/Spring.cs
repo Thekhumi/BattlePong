@@ -6,6 +6,7 @@ public class Spring : MonoBehaviour {
 	[SerializeField] private float _delay;
 	[SerializeField] Sprite _green;
 	[SerializeField] Sprite _red;
+	[SerializeField] float _impulse;
 	private bool _active;
 	private Rigidbody2D _body;
 
@@ -16,7 +17,7 @@ public class Spring : MonoBehaviour {
 		if (_active) {
 			if (otro.gameObject.tag == "PinballBall") {
 				_body=otro.gameObject.GetComponent<Rigidbody2D> ();
-				_body.AddForce (-_body.velocity * Time.deltaTime);
+				_body.AddForce (transform.up*_impulse,ForceMode2D.Impulse);
 				Invoke ("Deactivate",_delay);
 			}
 		}
@@ -30,6 +31,7 @@ public class Spring : MonoBehaviour {
 	public void Reactivate(){
 		_active = true;
 		gameObject.GetComponent<SpriteRenderer> ().sprite = _green;
+		gameObject.GetComponent<SpriteRenderer> ().color += new Color (0.0f, 0.0f, 0.0f, 0.7f);
 		gameObject.GetComponent<BoxCollider2D> ().enabled = true;
 	}
 }
