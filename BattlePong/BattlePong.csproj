@@ -309,6 +309,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Arkanoid\Laser.cs" />
+    <Compile Include="Assets\Scripts\Arkanoid\LaserPower.cs" />
+    <Compile Include="Assets\Scripts\Arkanoid\PowerUp.cs" />
     <Compile Include="Assets\Scripts\Ball.cs" />
     <Compile Include="Assets\Scripts\Brick.cs" />
     <Compile Include="Assets\Scripts\Bumper.cs" />
@@ -318,6 +321,7 @@
     <Compile Include="Assets\Scripts\Managers\BGSize.cs" />
     <Compile Include="Assets\Scripts\Managers\CameraMov.cs" />
     <Compile Include="Assets\Scripts\Managers\Cartridge.cs" />
+    <Compile Include="Assets\Scripts\Managers\Cartridge1P.cs" />
     <Compile Include="Assets\Scripts\Managers\CollisionColor.cs" />
     <Compile Include="Assets\Scripts\Managers\FlashColor.cs" />
     <Compile Include="Assets\Scripts\Managers\FlickerImg.cs" />
@@ -325,6 +329,7 @@
     <Compile Include="Assets\Scripts\Managers\MainMenuManager.cs" />
     <Compile Include="Assets\Scripts\Managers\Orbit.cs" />
     <Compile Include="Assets\Scripts\Managers\ReactivateBricks.cs" />
+    <Compile Include="Assets\Scripts\Managers\RivalIA.cs" />
     <Compile Include="Assets\Scripts\Managers\SceneChange.cs" />
     <Compile Include="Assets\Scripts\Managers\StartFlicker.cs" />
     <Compile Include="Assets\Scripts\Managers\TextFade.cs" />
