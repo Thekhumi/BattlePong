@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61951623562787942}
   - component: {fileID: 50643087716654712}
   - component: {fileID: 114163214524711096}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: BorderWall
   m_TagString: BoundWall
   m_Icon: {fileID: 0}
@@ -102,6 +102,7 @@ MonoBehaviour:
   _normal: {fileID: 21300000, guid: a9ea6b8c0bcd1d14d91058771d4c24a9, type: 3}
   _light: {fileID: 21300000, guid: a7af59539c892ea47a319b1a96025bc8, type: 3}
   _lightDelay: 0.1
+  _isPinball: 0
 --- !u!212 &212573454758252154
 SpriteRenderer:
   m_ObjectHideFlags: 1
