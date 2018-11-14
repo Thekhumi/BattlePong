@@ -13,6 +13,7 @@ public class PowerUp : MonoBehaviour {
 	protected Color _color; 
 	protected PowerUpBox _power;
 	void Start () {
+		GetComponent<Rigidbody2D> ().useFullKinematicContacts = true;
 		_power = (PowerUpBox)Random.Range(0,3);
 		switch (_power) {
 		case PowerUpBox.Laser:
@@ -54,6 +55,10 @@ public class PowerUp : MonoBehaviour {
 			}
 			bumper.updatePowerups ();
 			Destroy (gameObject);
+		}
+		if (otro.gameObject.layer == 9 || otro.gameObject.layer == 10) {
+			Destroy(gameObject);
+			Debug.Log ("DESTROY");
 		}
 	}
 

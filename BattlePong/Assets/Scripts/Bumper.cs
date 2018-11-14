@@ -147,6 +147,7 @@ public class Bumper : MonoBehaviour {
 	public void updatePowerups(){
 		GetComponent<LaserPower> ().Active = _laserActive;
 		GetComponent<Expand> ().Active = _expandActive;
+		GetComponent<Expand> ().ExpandBumper ();
 	}
 	public bool Move{
 		get{ return _moving; }

@@ -18,7 +18,7 @@ public class Expand : MonoBehaviour {
 		ExpandBumper ();
 	}
 
-	void ExpandBumper(){
+	public void ExpandBumper(){
 		// MULTIPLICA, NO NUMERO FIJO
 		if (_active) {
 			transform.localScale = new Vector3 (_originalScaleX * _scaleX,
