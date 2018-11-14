@@ -58,4 +58,8 @@ public class FlashColor : MonoBehaviour {
 	public void SetColorBlue(){
 		_flashColor = Color.blue;
 	}
+	public void SetColorBlack(){
+		_flashColor = Color.black;
+		_flashSpeed = 0.1f;
+	}
 }

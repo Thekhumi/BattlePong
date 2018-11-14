@@ -44,10 +44,10 @@ public class Cartridge1P : MonoBehaviour {
 		if (Input.GetButtonDown ("Left")||Input.GetButtonDown ("Down")) {
 			if (_cont != 0) {
 				_cont--;
-			} else {_cont = 4;}
+			} else {_cont = 1;}
 		}
 		if (Input.GetButtonDown ("Right")||Input.GetButtonDown ("Up")) {
-			if (_cont != 4) {
+			if (_cont != 1) {
 				_cont++;
 			} else {_cont = 0;}
 		}

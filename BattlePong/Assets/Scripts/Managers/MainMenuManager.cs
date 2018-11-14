@@ -14,12 +14,14 @@ public class MainMenuManager : MonoBehaviour {
 	[SerializeField] Text _credits;
 	private bool _startPress;
 	private int _menuSelect;
+	private bool _active;
 
 	void Start(){
 		Cursor.visible = false;
 		_version.text = "V " + Application.version;
 		_startPress = false;
 		_menuSelect = 0;
+		_active = false;
 	}
 	void Update(){
 		if (Input.GetButtonDown ("Submit")) {
@@ -31,8 +33,8 @@ public class MainMenuManager : MonoBehaviour {
 			Application.Quit ();
 		}
 		if (_startPress) {
-			_pressStart.SetActive (false);
-			_menuButtons.SetActive (true);
+			_pressStart.GetComponent<FlashColor> ().SetColorBlack();
+			Invoke ("StartMenu", 1.5f);
 			if (Input.GetButtonDown ("Up")) {
 				if (_menuSelect == 1||_menuSelect == 0) {
 					_menuSelect = 3;
@@ -74,6 +76,14 @@ public class MainMenuManager : MonoBehaviour {
 				}
 				break;
 			}
+		}
+	}
+	private void StartMenu(){
+		if (!_active) {
+			_pressStart.SetActive (false);
+			_menuButtons.SetActive (true);
+			_menuSelect = 1;
+			_active = true;
 		}
 	}
 }

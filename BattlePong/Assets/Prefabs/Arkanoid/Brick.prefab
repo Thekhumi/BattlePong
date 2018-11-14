@@ -171,11 +171,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1920606542087970}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94e2aa0f6684ce641a8f1613d871a801, type: 3}
+  m_Script: {fileID: 11500000, guid: ef828dbb3dfd60043814e25920ce5427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _prefab: {fileID: 1522954304285970, guid: 2bf1cfedafa3017438ca24d437b2cb94, type: 2}
-  _dropChance: 0
+  _dropChance: 50
 --- !u!212 &212683336482592686
 SpriteRenderer:
   m_ObjectHideFlags: 1

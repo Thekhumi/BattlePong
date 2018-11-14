@@ -1,12 +1,9 @@
 fileFormatVersion: 2
-guid: 34653c1d3707fc041b5b484a9d44e876
+guid: 12320a8df43bda648b4f71d1e8fa8ed4
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Buttons_0
-    21300002: Buttons_1
-    21300004: Buttons_2
-    21300006: Buttons_3
-    21300008: Buttons_4
+    21300000: PowerUp_0
+    21300002: PowerUp_1
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -51,11 +48,11 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 20, y: 20, z: 29, w: 12}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: 0
+  spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -111,13 +108,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Buttons_0
+      name: PowerUp_0
       rect:
         serializedVersion: 2
-        x: 78
-        y: 701
-        width: 849
-        height: 97
+        x: 14
+        y: 20
+        width: 125
+        height: 272
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,19 +122,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e39811289b2d87d47a6640576cf2297e
+      spriteID: 07647a757014a61418d56835d3117034
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buttons_1
+      name: PowerUp_1
       rect:
         serializedVersion: 2
-        x: 78
-        y: 551
-        width: 772
-        height: 97
+        x: 166
+        y: 36
+        width: 61
+        height: 239
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,95 +142,15 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21ef61582d6b02e4e9629caec6d93c19
+      spriteID: 6bb765ad657558c4bab423d940fa9cba
       vertices: []
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Buttons_2
-      rect:
-        serializedVersion: 2
-        x: 78
-        y: 401
-        width: 861
-        height: 97
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2260bb38f83289545b3f865ba9efe175
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buttons_3
-      rect:
-        serializedVersion: 2
-        x: 78
-        y: 251
-        width: 772
-        height: 97
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 21cb072d2686713409742eeae0bab8a3
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buttons_4
-      rect:
-        serializedVersion: 2
-        x: 78
-        y: 101
-        width: 593
-        height: 97
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e5d26d6df52b5f14dace28657b281b5b
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    outline:
-    - - {x: -445, y: 258}
-      - {x: -445, y: 391}
-      - {x: 449, y: 391}
-      - {x: 449, y: 258}
-    - - {x: -444, y: 104}
-      - {x: -444, y: 232}
-      - {x: 371, y: 232}
-      - {x: 371, y: 104}
-    - - {x: -444, y: -51}
-      - {x: -444, y: 81}
-      - {x: 454, y: 81}
-      - {x: 454, y: -51}
-    - - {x: -438, y: -205}
-      - {x: -438, y: -72}
-      - {x: 385, y: -72}
-      - {x: 385, y: -205}
-    - - {x: -438, y: -355}
-      - {x: -438, y: -222}
-      - {x: 218, y: -222}
-      - {x: 218, y: -355}
+    outline: []
     physicsShape: []
     bones: []
-    spriteID: 07bd0645d8c711a41a4ed90eff3a4741
+    spriteID: 70f842f53a156394a8bbd295a3c4bd0d
     vertices: []
     indices: 
     edges: []
