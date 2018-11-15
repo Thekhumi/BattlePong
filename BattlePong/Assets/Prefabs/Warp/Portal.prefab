@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114152975563412982}
   - component: {fileID: 114157547994241490}
   - component: {fileID: 82001199603455708}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Portal
   m_TagString: Warp
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 4704480459330768}
   - component: {fileID: 198426302364357738}
   - component: {fileID: 199301167514949188}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,6 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 30
+  _yAxis: 0
 --- !u!114 &114623625340965098
 MonoBehaviour:
   m_ObjectHideFlags: 1
