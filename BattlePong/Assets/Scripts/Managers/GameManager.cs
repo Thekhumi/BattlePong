@@ -74,11 +74,11 @@ public class GameManager : MonoBehaviour {
 		}
 		if (_gameMode == GameMode.Arkanoid) {
 			_bricks = GameObject.FindGameObjectsWithTag ("BreakableWall");
+			ResetMultiBalls ();
 		}
 		_ballCount = 0;
 		_init = true;
 		BallStart ();
-		ResetMultiBalls ();
 		_cam = Camera.main;
 		_cameraState = _cameraScreens.Length / 2;
 		_bump = GameObject.FindGameObjectsWithTag ("Bumper");
