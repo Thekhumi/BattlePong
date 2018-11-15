@@ -45,6 +45,9 @@ public class Bumper : MonoBehaviour {
 		case GameManager.GameMode.Normal:
 			currentUpdate = UpdateNormal;
 			break;
+		case GameManager.GameMode.Arkanoid:
+			currentUpdate = UpdateNormal;
+			break;
 		case GameManager.GameMode.Warp:
 			currentUpdate = UpdateNormal;
 			break;

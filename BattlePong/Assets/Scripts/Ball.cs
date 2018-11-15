@@ -123,17 +123,31 @@ public class Ball : MonoBehaviour {
 		if (!stop && Mathf.Abs(body.velocity.x) < _minSpeedX) {
 			if (body.velocity.x > 0) {
 				body.velocity = new Vector2 (_minSpeedX, body.velocity.y);
-				Debug.Log ("MIN SPEED CHECK" + Mathf.Abs(body.velocity.x));
+		//		Debug.Log ("MIN SPEED CHECK" + Mathf.Abs(body.velocity.x));
 			} else if (body.velocity.x < 0) {
 				body.velocity = new Vector2 (-_minSpeedX, body.velocity.y);
-				Debug.Log ("MIN SPEED CHECK"+ Mathf.Abs(body.velocity.x));
+		//		Debug.Log ("MIN SPEED CHECK"+ Mathf.Abs(body.velocity.x));
 			}
 			else{
 				sx = Random.Range (0, 2) == 0 ? -1 : 1;
 				body.velocity = new Vector2 (_minSpeedX * sx, body.velocity.y);
-				Debug.Log ("ZERO SPEED");
+		//		Debug.Log ("ZERO SPEED");
 			}
 		}
-
+	}
+	public void MultiActive(GameObject mainBall){
+		transform.position = mainBall.transform.position;
+		gameObject.SetActive (true);
+		if (mainBall.GetComponent<Rigidbody2D> ().velocity.x > 0) { sx = 1; }
+		if (mainBall.GetComponent<Rigidbody2D> ().velocity.x < 0) { sx = -1; }
+		sy = Random.Range (0, 2) == 0 ? -1 : 1;
+		body.velocity = new Vector2 (speed * sx, speed * sy);
+		_scored = false;
+		stop = false;
+	}
+	public void MultiStop(){
+		Stop ();
+		ResetPosition ();
+		gameObject.SetActive (false);
 	}
 }

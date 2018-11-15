@@ -10,7 +10,7 @@ public class Goal : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D otro){
-		if (otro.gameObject.tag=="Ball"||otro.gameObject.tag=="PinballBall") {
+		if (otro.gameObject.tag=="Ball"||otro.gameObject.tag=="PinballBall"||otro.gameObject.tag=="MultiBall") {
 			switch (_isLeft) {
 			case true:
 				if (gameObject.tag == "END GAME") {

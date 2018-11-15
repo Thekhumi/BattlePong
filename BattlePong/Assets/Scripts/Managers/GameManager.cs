@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
-	public enum GameMode { Normal, Flappy, Pinball, Warp,}
+	public enum GameMode { Normal, Flappy, Pinball, Warp, Arkanoid}
 	[SerializeField] private GameManager.GameMode _gameMode = GameManager.GameMode.Normal;
 	public static GameManager instance = null;
 	private bool _winnerLeft = false;
@@ -25,16 +25,25 @@ public class GameManager : MonoBehaviour {
 	[SerializeField] GameObject _winScreen;
 	[SerializeField] private bool _3ScreensGame;
 	FlashColor _flash;
+
 	private Ball _ball;
+	private PinballBall _pinballBall;
+	[SerializeField]private Ball _multiBall1;
+	[SerializeField]private Ball _multiBall2;
+
 	private GameObject[] _bump;
 	private Spring[] _springs;
 	private Warp[] _warps;
-	private PinballBall _pinballBall;
+	private GameObject[] _bricks;
+
+
+	private int _ballCount;
 	private SceneChange _sceneManager;
 	private int _cameraState;
 	private Camera _cam;
 	private string _result;
 	private bool _init;
+
 	void Awake(){
 		if (instance == null){
 			instance = this;
@@ -63,8 +72,13 @@ public class GameManager : MonoBehaviour {
 			_ball = GameObject.FindGameObjectWithTag ("Ball").GetComponent<Ball> ();
 			Physics2D.gravity = new Vector2 (0f, -9.8f);
 		}
+		if (_gameMode == GameMode.Arkanoid) {
+			_bricks = GameObject.FindGameObjectsWithTag ("BreakableWall");
+		}
+		_ballCount = 0;
 		_init = true;
 		BallStart ();
+		ResetMultiBalls ();
 		_cam = Camera.main;
 		_cameraState = _cameraScreens.Length / 2;
 		_bump = GameObject.FindGameObjectsWithTag ("Bumper");
@@ -101,6 +115,11 @@ public class GameManager : MonoBehaviour {
 		if (_cameraState != 0) {
 			_cameraState -= 1;
 		}
+		if (_gameMode == GameMode.Arkanoid) {
+			ResetMultiBalls ();
+			_ballCount = 0;
+			ResetBricks ();
+		}
 		ScoreUpdate ();
 	}
 
@@ -110,6 +129,11 @@ public class GameManager : MonoBehaviour {
 		if (_cameraState != (_cameraScreens.Length - 1)) {
 			_cameraState += 1;
 		}
+		if (_gameMode == GameMode.Arkanoid) {
+			ResetMultiBalls ();
+			_ballCount = 0;
+			ResetBricks ();
+		}
 		ScoreUpdate ();
 	}
 
@@ -118,6 +142,11 @@ public class GameManager : MonoBehaviour {
 		_result = "BLUE";
 		_textResult.text = _result + " WINS!";
 		BallEnd ();
+		if (_gameMode == GameMode.Arkanoid) {
+			ResetMultiBalls ();
+			_ballCount = 0;
+			ResetBricks ();
+		}
 		_flash.SetColorBlue ();
 	}
 
@@ -126,6 +155,11 @@ public class GameManager : MonoBehaviour {
 		_result = "RED";
 		_textResult.text = _result + " WINS!";
 		BallEnd ();
+		if (_gameMode == GameMode.Arkanoid) {
+			ResetMultiBalls ();
+			_ballCount = 0;
+			ResetBricks ();
+		}
 		_flash.SetColorRed ();
 	}
 
@@ -194,6 +228,30 @@ public class GameManager : MonoBehaviour {
 			} else {
 				Invoke ("BallReset", _ballReset);
 			}
+	}
+
+	private void ResetMultiBalls(){
+		_multiBall1.MultiStop ();
+		_multiBall2.MultiStop ();
+	}
+	public void ActivateMulti(){
+		switch (_ballCount) {
+		case 0:
+			_multiBall1.MultiActive (_ball.gameObject);
+			_ballCount++;
+			break;
+		case 1:
+			_multiBall2.MultiActive (_ball.gameObject);
+			_ballCount++;
+			break;
+		case 2:
+			break;
+		}
+	}
+	private void ResetBricks(){
+		foreach (var brick in _bricks) {
+			brick.gameObject.SetActive (true);
+		}
 	}
 
 	private void CameraMov(){

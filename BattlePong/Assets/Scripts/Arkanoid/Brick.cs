@@ -20,7 +20,7 @@ public class Brick : MonoBehaviour {
 	}	
 
 	void OnCollisionEnter2D(Collision2D otro){
-		if (otro.gameObject.tag == "Ball") {
+		if (otro.gameObject.tag == "Ball"||otro.gameObject.tag=="MultiBall") {
 			AudioSource.PlayClipAtPoint (clip, transform.position);
 			spawnPowerUp (otro.collider.GetComponent<Ball> ().Velocity.x > 0 ? 1 : -1);
 			gameObject.SetActive (false);

@@ -13,6 +13,7 @@ TagManager:
   - GAMEMANAGER
   - PowerUp
   - Laser
+  - MultiBall
   layers:
   - Default
   - TransparentFX

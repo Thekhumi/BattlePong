@@ -5,13 +5,18 @@ using UnityEngine;
 public class PowerUp : MonoBehaviour {
 
 	[SerializeField] float _speed;
+	private GameManager _gamemanager;
+
 	protected enum PowerUpBox{
 		Laser = 0,
 		Expand = 1,
-		Charge = 2
+		Multi = 2
 	}
 	protected Color _color; 
 	protected PowerUpBox _power;
+	void Awake(){
+		_gamemanager = FindObjectOfType<GameManager> ();
+	}
 	void Start () {
 		GetComponent<Rigidbody2D> ().useFullKinematicContacts = true;
 		_power = (PowerUpBox)Random.Range(0,3);
@@ -22,7 +27,7 @@ public class PowerUp : MonoBehaviour {
 		case PowerUpBox.Expand:
 			_color = Color.green;
 			break;
-		case PowerUpBox.Charge:
+		case PowerUpBox.Multi:
 			_color = Color.yellow;
 			break;
 		}
@@ -40,17 +45,13 @@ public class PowerUp : MonoBehaviour {
 			case PowerUpBox.Laser:
 				bumper.laserActive = true;
 				bumper.expandActive = false;
-				bumper.chargeActive = false;
 				break;
 			case PowerUpBox.Expand:
 				bumper.laserActive = false;
 				bumper.expandActive = true;
-				bumper.chargeActive = false;
 				break;
-			case PowerUpBox.Charge:
-				bumper.laserActive = false;
-				bumper.expandActive = false;
-				bumper.chargeActive = true;
+			case PowerUpBox.Multi:
+				_gamemanager.ActivateMulti ();
 				break;
 			}
 			bumper.updatePowerups ();
