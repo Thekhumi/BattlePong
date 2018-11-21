@@ -95,8 +95,12 @@ public class Ball : MonoBehaviour {
 		stop = false;
 	}
 	public void Stop(){
+		gameObject.GetComponent<TrailRenderer> ().enabled = false;
 		body.velocity = Vector2.zero;
 		stop = true;
+	}
+	public void Trail(){
+		gameObject.GetComponent<TrailRenderer> ().enabled = true;
 	}
 	public void ResetPosition(){
 		gameObject.GetComponent<TrailRenderer> ().enabled = false;
