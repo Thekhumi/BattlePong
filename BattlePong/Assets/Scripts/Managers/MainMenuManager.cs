@@ -38,11 +38,7 @@ public class MainMenuManager : MonoBehaviour {
 		}
 
 		if (_quitActive) {
-			if (Input.GetButtonDown ("Submit")) {
-				if (!_startPress) {
-					_startPress = true;
-				}
-			}
+			
 			switch (_quitSelect) {
 			case false:
 				_noQuit.color = Color.yellow;
@@ -69,6 +65,11 @@ public class MainMenuManager : MonoBehaviour {
 			}
 		}
 		if (!_quitActive) {
+			if (Input.GetButtonDown ("Submit")) {
+				if (!_startPress) {
+					_startPress = true;
+				}
+			}
 			if (_startPress) {
 				_pressStart.GetComponent<FlashColor> ().SetColorBlack ();
 				Invoke ("StartMenu", 1.5f);
