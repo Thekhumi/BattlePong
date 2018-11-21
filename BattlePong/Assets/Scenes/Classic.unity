@@ -2925,6 +2925,8 @@ MonoBehaviour:
   _menuDelay: 1.5
   _winScreen: {fileID: 199009286}
   _3ScreensGame: 0
+  _multiBall1: {fileID: 0}
+  _multiBall2: {fileID: 0}
 --- !u!4 &1139723220
 Transform:
   m_ObjectHideFlags: 0
@@ -3744,20 +3746,6 @@ Prefab:
     - target: {fileID: 4631994174772756, guid: 82979e2e497b72b469814efac6245dc7, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114787107356873638, guid: 82979e2e497b72b469814efac6245dc7,
-        type: 2}
-      propertyPath: _manager
-      value: 
-      objectReference: {fileID: 1139723219}
-    - target: {fileID: 1996775494458206, guid: 82979e2e497b72b469814efac6245dc7, type: 2}
-      propertyPath: m_TagString
-      value: Ball
-      objectReference: {fileID: 0}
-    - target: {fileID: 114787107356873638, guid: 82979e2e497b72b469814efac6245dc7,
-        type: 2}
-      propertyPath: speed
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82979e2e497b72b469814efac6245dc7, type: 2}

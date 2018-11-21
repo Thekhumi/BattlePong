@@ -81,6 +81,7 @@ public class Ball : MonoBehaviour {
 		body.velocity = (speed + _boostTimer + _permanentBoost) * (body.velocity.normalized);
 	}
 	public void Reset(){
+		gameObject.GetComponent<TrailRenderer> ().enabled = true;
 		speed = _originalSpeed;
 		sx = Random.Range (0, 2) == 0 ? -1 : 1;
 		sy = Random.Range (0, 2) == 0 ? -1 : 1;
@@ -98,6 +99,7 @@ public class Ball : MonoBehaviour {
 		stop = true;
 	}
 	public void ResetPosition(){
+		gameObject.GetComponent<TrailRenderer> ().enabled = false;
 		transform.position = transform.parent.position;
 	}
 	public bool Scored{

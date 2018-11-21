@@ -4200,7 +4200,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 56842f57d5ef64c42a3f11640448931a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.28627452}
+  m_Color: {r: 0.58431375, g: 0.58431375, b: 0.58431375, a: 0.28627452}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5039,7 +5039,7 @@ SpriteRenderer:
   m_SortingLayerID: 474840601
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 32d42fb1031796f4eb7d1bb6f88d0624, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2ad993383dab4e54ea0324963bef1a84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5353,6 +5353,8 @@ MonoBehaviour:
   _menuDelay: 1.5
   _winScreen: {fileID: 1525367437}
   _3ScreensGame: 1
+  _multiBall1: {fileID: 0}
+  _multiBall2: {fileID: 0}
 --- !u!4 &1139723220
 Transform:
   m_ObjectHideFlags: 0
