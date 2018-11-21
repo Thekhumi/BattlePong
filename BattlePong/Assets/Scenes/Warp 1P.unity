@@ -517,7 +517,7 @@ Prefab:
     - target: {fileID: 70260532321488992, guid: 317833a25ac388846a6c94c919afa2b6,
         type: 2}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 70260532321488992, guid: 317833a25ac388846a6c94c919afa2b6,
         type: 2}
@@ -650,7 +650,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 4612abfbce414ec4895a881930b4549f,
+      objectReference: {fileID: 21300000, guid: 43413789b9208b14fbc37fb8a445ca4e,
         type: 3}
     - target: {fileID: 114918574540029796, guid: 7c780983a5c38654988dbf8d155ccb71,
         type: 2}
@@ -3728,7 +3728,7 @@ Prefab:
     - target: {fileID: 70877940688947840, guid: 43760139ea51ea24a91c29210bf08066,
         type: 2}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 70877940688947840, guid: 43760139ea51ea24a91c29210bf08066,
         type: 2}
@@ -3752,6 +3752,11 @@ Prefab:
     - target: {fileID: 4625441704130988, guid: 43760139ea51ea24a91c29210bf08066, type: 2}
       propertyPath: m_LocalScale.y
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 70877940688947840, guid: 43760139ea51ea24a91c29210bf08066,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43760139ea51ea24a91c29210bf08066, type: 2}
@@ -3947,7 +3952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ball: {fileID: 1952324}
-  _velocity: 4
+  _velocity: 5
 --- !u!1 &1393242819
 GameObject:
   m_ObjectHideFlags: 0
@@ -4389,11 +4394,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114787107356873638, guid: 82979e2e497b72b469814efac6245dc7,
-        type: 2}
-      propertyPath: _manager
-      value: 
-      objectReference: {fileID: 1139723219}
     - target: {fileID: 1996775494458206, guid: 82979e2e497b72b469814efac6245dc7, type: 2}
       propertyPath: m_TagString
       value: Ball

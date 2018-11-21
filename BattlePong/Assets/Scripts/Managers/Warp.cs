@@ -43,6 +43,7 @@ public class Warp : MonoBehaviour {
 				if (otro.tag == "Ball") {
 					audioSrc.Play();
 					_origVel = otro.GetComponent<Rigidbody2D> ().velocity;
+					_ball.gameObject.GetComponent<TrailRenderer> ().enabled = false;
 					_ball.Stop ();
 					_rand = Randomizer();
 					while (_portals [_rand] == gameObject || !_portals [_rand].GetComponent<Warp>().OnScreen) {
@@ -72,6 +73,7 @@ public class Warp : MonoBehaviour {
 	}
 	private void Reactivate(){
 		_ball.gameObject.transform.position+=(new Vector3 (0f, 0f, 2f));
+		_ball.Trail ();
 	}
 	private int Randomizer(){
 		int rand = Random.Range (0, _portals.Length);

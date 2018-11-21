@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _onScreen: 0
-  _ballDelay: 1
+  _ballDelay: 0.5
   _delay: 3
 --- !u!114 &114157547994241490
 MonoBehaviour:
