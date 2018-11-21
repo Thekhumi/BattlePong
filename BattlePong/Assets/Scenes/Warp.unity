@@ -417,7 +417,7 @@ Prefab:
     - target: {fileID: 70260532321488992, guid: 317833a25ac388846a6c94c919afa2b6,
         type: 2}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 70260532321488992, guid: 317833a25ac388846a6c94c919afa2b6,
         type: 2}
@@ -3786,7 +3786,7 @@ Prefab:
     - target: {fileID: 70877940688947840, guid: 43760139ea51ea24a91c29210bf08066,
         type: 2}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 70877940688947840, guid: 43760139ea51ea24a91c29210bf08066,
         type: 2}

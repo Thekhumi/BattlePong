@@ -147,11 +147,13 @@ public class Ball : MonoBehaviour {
 		if (mainBall.GetComponent<Rigidbody2D> ().velocity.x > 0) { sx = 1; }
 		if (mainBall.GetComponent<Rigidbody2D> ().velocity.x < 0) { sx = -1; }
 		sy = Random.Range (0, 2) == 0 ? -1 : 1;
+		Trail ();
 		body.velocity = new Vector2 (speed * sx, speed * sy);
 		_scored = false;
 		stop = false;
 	}
 	public void MultiStop(){
+		gameObject.GetComponent<TrailRenderer> ().enabled = false;
 		Stop ();
 		ResetPosition ();
 		gameObject.SetActive (false);
