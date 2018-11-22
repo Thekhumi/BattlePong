@@ -236,7 +236,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ball: {fileID: 0}
-  _velocity: 0
+  _multiball1: {fileID: 0}
+  _multiball2: {fileID: 0}
+  _velocity: 15
 --- !u!114 &114252682436751866
 MonoBehaviour:
   m_ObjectHideFlags: 1

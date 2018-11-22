@@ -45,6 +45,7 @@ public class PowerUp : MonoBehaviour {
 			case PowerUpBox.Laser:
 				bumper.laserActive = true;
 				bumper.expandActive = false;
+				bumper.GetComponent<LaserPower> ().Reload ();
 				break;
 			case PowerUpBox.Expand:
 				bumper.laserActive = false;
@@ -59,7 +60,6 @@ public class PowerUp : MonoBehaviour {
 		}
 		if (otro.gameObject.layer == 9 || otro.gameObject.layer == 10) {
 			Destroy(gameObject);
-			Debug.Log ("DESTROY");
 		}
 	}
 
