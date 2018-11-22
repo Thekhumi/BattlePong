@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 15c84bc3fb1567741afacab6584c7410
+guid: b352e1e92bcc82e4d8099f9c160d808b
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Bumpers Arkanoid_0
-    21300002: Bumpers Arkanoid_1
-    21300004: Bumpers Arkanoid_2
-    21300006: Bumpers Arkanoid_3
+    21300000: Bricks_0
+    21300002: Bricks_1
+    21300004: Bricks_2
+    21300006: Bricks_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -132,13 +132,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bumpers Arkanoid_0
+      name: Bricks_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 9
-        width: 97
-        height: 359
+        x: 11
+        y: 393
+        width: 102
+        height: 272
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,19 +146,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3684faf7e3803964c8e2ad32c89b2762
+      spriteID: 1a0c58e036c9efb4796f6fade3a0805f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bumpers Arkanoid_1
+      name: Bricks_1
       rect:
         serializedVersion: 2
-        x: 157
-        y: 9
-        width: 97
-        height: 359
+        x: 130
+        y: 393
+        width: 102
+        height: 272
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,19 +166,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80c2bddb907f69146b4125daf1dac83b
+      spriteID: 9b4e3187c90423740a8bdd8fad8b9006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bumpers Arkanoid_2
+      name: Bricks_2
       rect:
         serializedVersion: 2
-        x: 298
-        y: 9
-        width: 96
-        height: 359
+        x: 11
+        y: 40
+        width: 102
+        height: 272
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,19 +186,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e0c9a322fc0dbd4f8d96b23f478e063
+      spriteID: 3e81a88a64d299e4b8a587ebc7683ca0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bumpers Arkanoid_3
+      name: Bricks_3
       rect:
         serializedVersion: 2
-        x: 438
-        y: 9
-        width: 96
-        height: 359
+        x: 130
+        y: 40
+        width: 102
+        height: 272
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,7 +206,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 751dfbd80560a764fa9cb336f6edf3c7
+      spriteID: 56ab85c2d9117964b94b3aa5bf867b72
       vertices: []
       indices: 
       edges: []
@@ -214,7 +214,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 84e72617c1d753e498e749c52d017519
+    spriteID: d752dffdddfbda245976511ddc67827a
     vertices: []
     indices: 
     edges: []

@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 15c84bc3fb1567741afacab6584c7410
+guid: f17e21a57a0f61245943a165f9306eee
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Bumpers Arkanoid_0
-    21300002: Bumpers Arkanoid_1
-    21300004: Bumpers Arkanoid_2
-    21300006: Bumpers Arkanoid_3
+    21300000: Text Start Arkanoid_0
+    21300002: Text Start Arkanoid_1
+    21300004: Text Start Arkanoid_2
+    21300006: Text Start Arkanoid_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -132,13 +132,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bumpers Arkanoid_0
+      name: Text Start Arkanoid_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 9
-        width: 97
-        height: 359
+        x: 3
+        y: 18
+        width: 122
+        height: 159
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,19 +146,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3684faf7e3803964c8e2ad32c89b2762
+      spriteID: a363906706c13b344a2cbf24bcc92f40
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bumpers Arkanoid_1
+      name: Text Start Arkanoid_1
       rect:
         serializedVersion: 2
-        x: 157
-        y: 9
-        width: 97
-        height: 359
+        x: 159
+        y: 18
+        width: 125
+        height: 159
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,19 +166,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80c2bddb907f69146b4125daf1dac83b
+      spriteID: dc16d31c26e718747830f4c6003c06ab
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bumpers Arkanoid_2
+      name: Text Start Arkanoid_2
       rect:
         serializedVersion: 2
-        x: 298
-        y: 9
-        width: 96
-        height: 359
+        x: 333
+        y: 18
+        width: 101
+        height: 159
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,19 +186,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e0c9a322fc0dbd4f8d96b23f478e063
+      spriteID: 7b1a5381ae25ff34a9bd244a42268e75
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bumpers Arkanoid_3
+      name: Text Start Arkanoid_3
       rect:
         serializedVersion: 2
-        x: 438
-        y: 9
-        width: 96
-        height: 359
+        x: 523
+        y: 18
+        width: 672
+        height: 159
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,7 +206,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 751dfbd80560a764fa9cb336f6edf3c7
+      spriteID: 649b2516fec81e44885f166e677a7ad7
       vertices: []
       indices: 
       edges: []
@@ -214,7 +214,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 84e72617c1d753e498e749c52d017519
+    spriteID: 5b6b5d3210ce5ee4381bdd69aee229e7
     vertices: []
     indices: 
     edges: []
