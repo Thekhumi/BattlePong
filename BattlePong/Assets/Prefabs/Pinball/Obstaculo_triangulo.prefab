@@ -36,13 +36,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1873617607335930}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6, y: 1.6, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
+  m_LocalPosition: {x: 8.15, y: 3.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 180, y: 180, z: 0}
 --- !u!50 &50647185565423314
 Rigidbody2D:
   serializedVersion: 4
@@ -79,7 +79,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.6, y: 1.6}
+    oldSize: {x: 3.2, y: 3.2}
     newSize: {x: 1.6, y: 1.6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -87,22 +87,16 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.7782507, y: 0.7933258}
-      - {x: -0.78999996, y: -0.72999996}
-      - {x: -0.632866, y: -0.8105394}
-      - {x: 0.71999997, y: -0.79999995}
-      - {x: 0.79999995, y: -0.72999996}
-      - {x: 0.8051163, y: -0.4903534}
-      - {x: -0.4602325, y: 0.78999996}
-    - - {x: -0.56, y: -0.68}
-      - {x: 0.55, y: -0.71}
-      - {x: -0.59999996, y: -0.7}
-    - - {x: -0.7, y: -0.53999996}
-      - {x: -0.7, y: -0.59999996}
-      - {x: -0.69, y: -0.59999996}
-    - - {x: -0.45999998, y: 0.61}
-      - {x: -0.49976766, y: -0.2082248}
-      - {x: 0.58998466, y: -0.5508566}
+    - - {x: 1.4248629, y: -1.1369305}
+      - {x: 1.330236, y: -0.7515235}
+      - {x: -0.73938847, y: 1.301492}
+      - {x: -1.1998568, y: 1.2421165}
+      - {x: -1.38, y: 0.96999997}
+      - {x: -1.38, y: -1.09}
+      - {x: -1.3199999, y: -1.1899999}
+      - {x: -1.22, y: -1.3}
+      - {x: -1.12, y: -1.3399999}
+      - {x: 1.3206778, y: -1.3348861}
 --- !u!114 &114959168809146836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -114,9 +108,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4fdd82e86b60484fb7135b3df088e4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _normal: {fileID: 21300000, guid: 74600a0d12b65504c88d132080d6f8cf, type: 3}
-  _light: {fileID: 21300000, guid: 3823bf09b21522b48a5e1b297276210d, type: 3}
+  _normal: {fileID: 21300000, guid: cbb23701a3a303f44a986c535a4bf9ff, type: 3}
+  _light: {fileID: 21300000, guid: a8dbeaec8b9076640952c9b39cfa4f34, type: 3}
   _lightDelay: 0.1
+  _isPinball: 0
 --- !u!212 &212601857750828542
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -152,7 +147,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 74600a0d12b65504c88d132080d6f8cf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cbb23701a3a303f44a986c535a4bf9ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
