@@ -12,6 +12,7 @@ public class MainMenuManager : MonoBehaviour {
 	[SerializeField] Text _1p;
 	[SerializeField] Text _2p;
 	[SerializeField] Text _credits;
+	[SerializeField] Text _exit;
 	[SerializeField] GameObject _quit;
 	[SerializeField] Text _yesQuit;
 	[SerializeField] Text _noQuit;
@@ -75,13 +76,13 @@ public class MainMenuManager : MonoBehaviour {
 				Invoke ("StartMenu", 1.5f);
 				if (Input.GetButtonDown ("Up")) {
 					if (_menuSelect == 1 || _menuSelect == 0) {
-						_menuSelect = 3;
+						_menuSelect = 4;
 					} else {
 						_menuSelect--;
 					}
 				}
 				if (Input.GetButtonDown ("Down")) {
-					if (_menuSelect == 3) {
+					if (_menuSelect == 4) {
 						_menuSelect = 1;
 					} else {
 						_menuSelect++;
@@ -93,6 +94,7 @@ public class MainMenuManager : MonoBehaviour {
 					_1p.color = Color.yellow;
 					_2p.color = Color.white;
 					_credits.color = Color.white;
+					_exit.color = Color.white;
 					if (Input.GetButtonDown ("Submit")) {
 						_scene.LoadScene (8);
 					}
@@ -101,6 +103,7 @@ public class MainMenuManager : MonoBehaviour {
 					_1p.color = Color.white;
 					_2p.color = Color.yellow;
 					_credits.color = Color.white;
+					_exit.color = Color.white;
 					if (Input.GetButtonDown ("Submit")) {
 						_scene.LoadScene (1);
 					}
@@ -109,8 +112,19 @@ public class MainMenuManager : MonoBehaviour {
 					_1p.color = Color.white;
 					_2p.color = Color.white;
 					_credits.color = Color.yellow;
+					_exit.color = Color.white;
 					if (Input.GetButtonDown ("Submit")) {
 						_scene.LoadScene (7);
+					}
+					break;
+				case 4:
+					_1p.color = Color.white;
+					_2p.color = Color.white;
+					_credits.color = Color.white;
+					_exit.color = Color.yellow;
+					if (Input.GetButtonDown ("Submit")) {
+						_quitActive = true;
+						_quit.SetActive(true);
 					}
 					break;
 				}

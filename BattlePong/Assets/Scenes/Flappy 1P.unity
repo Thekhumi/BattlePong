@@ -2696,8 +2696,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1467687cfe7e86e49bbc71f4d9a0df89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _normal: {fileID: 21300000, guid: 2f5b9e549e3f46046aea2d603220b243, type: 3}
-  _pressed: {fileID: 21300000, guid: fce4692008864b04f925fa5f8ec9fcc7, type: 3}
+  _normal: {fileID: 21300004, guid: 0fef724226a964e48a221b2fb0ee8520, type: 3}
+  _pressed: {fileID: 21300012, guid: 0fef724226a964e48a221b2fb0ee8520, type: 3}
   _delay: 0.2
   _firstFlicker: 0
 --- !u!114 &1127112587
@@ -2720,7 +2720,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 2f5b9e549e3f46046aea2d603220b243, type: 3}
+  m_Sprite: {fileID: 21300004, guid: 0fef724226a964e48a221b2fb0ee8520, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5238,7 +5238,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2041595260
 MonoBehaviour:
@@ -5252,10 +5252,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e3a8dc75dc99a5419db809df26ad500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tres: {fileID: 21300000, guid: 48106d86933c28646b6c6bc5ae40f2c4, type: 3}
-  _dos: {fileID: 21300000, guid: 8b0f4dbef9d9df74fa100a092a4576bf, type: 3}
-  _uno: {fileID: 21300000, guid: ea6bd232a8259714ca7fede4e82ebd61, type: 3}
-  _start: {fileID: 21300000, guid: d68788029c059be46b484ecfb959c2a9, type: 3}
+  _tres: {fileID: 21300000, guid: 50001b87b5499d54ea2fb8713be33eaf, type: 3}
+  _dos: {fileID: 21300002, guid: 50001b87b5499d54ea2fb8713be33eaf, type: 3}
+  _uno: {fileID: 21300004, guid: 50001b87b5499d54ea2fb8713be33eaf, type: 3}
+  _start: {fileID: 21300006, guid: 50001b87b5499d54ea2fb8713be33eaf, type: 3}
   _delay: 0.7
   _canvas: {fileID: 430655022}
 --- !u!114 &2041595261
@@ -5278,9 +5278,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 48106d86933c28646b6c6bc5ae40f2c4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 50001b87b5499d54ea2fb8713be33eaf, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
