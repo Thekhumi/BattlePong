@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Flappy 1P.unity
     guid: e7e56e54fdcab984790d54c8bbc339e8
+  - enabled: 1
+    path: Assets/Scenes/Arkanoid 1P.unity
+    guid: 5d7bb73c9ca70e24c94e763690572e82
   m_configObjects: {}
