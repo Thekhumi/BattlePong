@@ -2633,7 +2633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ball: {fileID: 865323029}
-  _velocity: 5
+  _velocity: 8
 --- !u!4 &1016665170 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4925212743480510, guid: c1cebf128290db544a431a00928d3828,
@@ -2969,6 +2969,8 @@ MonoBehaviour:
   _menuDelay: 1.5
   _winScreen: {fileID: 199009286}
   _3ScreensGame: 0
+  _multiBall1: {fileID: 0}
+  _multiBall2: {fileID: 0}
 --- !u!4 &1139723220
 Transform:
   m_ObjectHideFlags: 0
