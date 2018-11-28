@@ -8,8 +8,10 @@ public class RivalAIArkanoid : MonoBehaviour {
 	[SerializeField] GameObject _multiball2;
 	[SerializeField] private float _velocity;
 	[SerializeField] float _minDistance = 9f;
+	[SerializeField] float _stunTime = 2f;
 	private float _dif;
 	private float _direction;
+	float _stunTimer;
 	private SpriteRenderer _this;
 	private SpriteRenderer _wallBound;
 	private GameObject _target;
@@ -23,14 +25,12 @@ public class RivalAIArkanoid : MonoBehaviour {
 	}
 
 	void Update () {
-		if (_target != null && _target.activeSelf && _target.GetComponent<Rigidbody2D> ().velocity.x < 0 && transform.position.x - _target.transform.position.x < _minDistance) {
+		if (_stunTimer <= 0 &&_target != null && _target.activeSelf && _target.GetComponent<Rigidbody2D> ().velocity.x < 0 && transform.position.x - _target.transform.position.x < _minDistance) {
 			GoToTarget ();
-			Debug.Log (_target.name);
 		} else {
 			_target = searchClosest("PowerUp");
 			if (_target != null && transform.position.x - _target.transform.position.x < _minDistance) {
 				GoToTarget ();
-				Debug.Log (_target.name);
 
 			} else {
 				if (GetComponent<LaserPower> ().Ready) {
@@ -38,6 +38,7 @@ public class RivalAIArkanoid : MonoBehaviour {
 				}
 			}
 		}
+		_stunTimer -= Time.deltaTime;
 		BoundsCheck ();
 		searchBall ();
 	}
@@ -60,6 +61,9 @@ public class RivalAIArkanoid : MonoBehaviour {
 		}
 	}
 
+	public void stun(){
+		_stunTimer = _stunTime;
+	}
 	private void searchBall(){
 		float ballPosition = _ball.transform.position.x;
 		float multiBall1Position = _multiball1.transform.position.x;

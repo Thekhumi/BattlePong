@@ -7,6 +7,7 @@ public class Bumper : MonoBehaviour {
 	private UpdateDelegate currentUpdate;
 	[SerializeField] bool isBump1;
 	[SerializeField] float speed = 5f;
+	[SerializeField] float _stunTime = 2f;
 	Rigidbody2D _rb;
 	float _thisY;
 	float _thisZ;
@@ -16,6 +17,7 @@ public class Bumper : MonoBehaviour {
 	SpriteRenderer WallSprite;
 	Camera cam;
 	AudioSource audioSrc;
+	float _stunTimer;
 
 	//POWERUPS
 	private bool _laserActive;
@@ -76,13 +78,14 @@ public class Bumper : MonoBehaviour {
 	}
 	//NORMAL GAMEPLAY
 	void UpdateNormal () {
-		if (_moving) {
+		if (_moving && ! (_stunTimer >= 0)) {
 			if (isBump1) {
 				transform.Translate (0.0f, Input.GetAxisRaw ("Vertical") * speed * Time.deltaTime, 0.0f);
 			} else {
 				transform.Translate (0.0f, Input.GetAxisRaw ("Vertical2") * speed * Time.deltaTime, 0.0f);
 			}
 		}
+		_stunTimer -= Time.deltaTime;
 		BoundsCheck();
 	}
 	//FLAPPY GAMEPLAY
@@ -146,6 +149,10 @@ public class Bumper : MonoBehaviour {
 	}
 	public void ResetAngle(){
 		transform.eulerAngles = _originalRot;
+	}
+
+	public void stun(){
+		_stunTimer = _stunTime;
 	}
 	public void updatePowerups(){
 		GetComponent<LaserPower> ().Active = _laserActive;

@@ -11,8 +11,14 @@ public class Laser : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D otro){
-		if (otro.gameObject.tag == "Bumper" || otro.gameObject.layer == 9 || otro.gameObject.layer == 10 || otro.gameObject.tag == "BreakableWall" || otro.gameObject.tag == "Ball") {
-			Destroy(gameObject);
+		if (otro.gameObject.layer == 9 || otro.gameObject.layer == 10 || otro.gameObject.tag == "BreakableWall" || otro.gameObject.tag == "Ball") {
+			Destroy (gameObject);
+		} else if (otro.gameObject.tag == "Bumper") {
+			otro.GetComponent<Bumper> ().stun ();
+			if (otro.GetComponent<RivalAIArkanoid> () != null) {
+				otro.GetComponent<RivalAIArkanoid> ().stun();
+			}
+			Destroy (gameObject);
 		}
 	}
 	public int dirMultiplier{
