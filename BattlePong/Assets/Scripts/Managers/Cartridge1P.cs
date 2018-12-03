@@ -44,10 +44,10 @@ public class Cartridge1P : MonoBehaviour {
 		if (Input.GetButtonDown ("Left")||Input.GetButtonDown ("Down")) {
 			if (_cont != 0) {
 				_cont--;
-			} else {_cont = 3;}
+			} else {_cont = 4;}
 		}
 		if (Input.GetButtonDown ("Right")||Input.GetButtonDown ("Up")) {
-			if (_cont != 3) {
+			if (_cont != 4) {
 				_cont++;
 			} else {_cont = 0;}
 		}
@@ -115,5 +115,8 @@ public class Cartridge1P : MonoBehaviour {
 	}
 	private void Scene(){
 			_scene.LoadScene (_cont+9);
+	}
+	public int Cont{
+		get{return _cont;}
 	}
 }

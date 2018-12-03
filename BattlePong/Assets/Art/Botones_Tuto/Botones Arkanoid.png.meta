@@ -10,6 +10,10 @@ TextureImporter:
     21300010: Botones Arkanoid_5
     21300012: Botones Arkanoid_6
     21300014: Botones Arkanoid_7
+    21300016: Botones Arkanoid_8
+    21300018: Botones Arkanoid_9
+    21300020: Botones Arkanoid_10
+    21300022: Botones Arkanoid_11
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -140,17 +144,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 6
-        y: 103
+        y: 295
         width: 98
         height: 85
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1626f472c6540440b9fc9f57aff7946
+      spriteID: f89c9ca2161984f4fb20d21f16eb84dd
       vertices: []
       indices: 
       edges: []
@@ -160,17 +164,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 116
-        y: 103
+        y: 295
         width: 98
         height: 84
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 741ccabeab130c247924186e83961970
+      spriteID: aac4b86995a62f846ac789257bc2236a
       vertices: []
       indices: 
       edges: []
@@ -180,17 +184,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 233
-        y: 103
+        y: 295
         width: 98
         height: 84
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b5bd43e0c4c2534097614484bf8130b
+      spriteID: 65d536f3b5d39e44abb79f89f1b4ae55
       vertices: []
       indices: 
       edges: []
@@ -200,17 +204,57 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 342
-        y: 103
+        y: 295
         width: 98
         height: 85
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29da0b256031a8240ba9dada920e4189
+      spriteID: c84ac59534f0e344ca17f8c613dcb77e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Botones Arkanoid_6
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 4
+        width: 208
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fb11381ac61c684380b07a7c93015d4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Botones Arkanoid_7
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 7
+        width: 208
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 600c94fa41e4a9846b9de0053258e1a6
       vertices: []
       indices: 
       edges: []
@@ -220,29 +264,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 2
-        width: 110
-        height: 98
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 853433d8e373ee64cb46b50a8f94a5dd
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Botones Arkanoid_6
-      rect:
-        serializedVersion: 2
-        x: 110
-        y: 2
+        y: 195
         width: 111
-        height: 98
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,7 +274,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2f116f7a6662aa4994af1ae3521e860
+      spriteID: 0945c1f52878e704696d41ee97f9ff18
       vertices: []
       indices: 
       edges: []
@@ -259,10 +283,10 @@ TextureImporter:
       name: Botones Arkanoid_5
       rect:
         serializedVersion: 2
-        x: 226
-        y: 2
-        width: 111
-        height: 98
+        x: 111
+        y: 195
+        width: 110
+        height: 97
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,18 +294,58 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8916af3331ea6b40bd34b5af6562b4a
+      spriteID: cc68dbcb49cd52246bff7cd26b5798e3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Botones Arkanoid_7
+      name: Botones Arkanoid_8
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 195
+        width: 110
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d92d6956c8965248b399252c7690a78
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Botones Arkanoid_9
       rect:
         serializedVersion: 2
         x: 337
-        y: 2
+        y: 195
         width: 110
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b27276dec611005439aca61c3b958031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Botones Arkanoid_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 97
+        width: 221
         height: 98
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -290,7 +354,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e56d26f1c97eb1d45a6fb7e135b03f08
+      spriteID: c5c973f38a09988448a7c7b0b2501e57
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Botones Arkanoid_11
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 96
+        width: 221
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48e46c616d9eafb49b779aa34c5931c6
       vertices: []
       indices: 
       edges: []

@@ -116,4 +116,7 @@ public class Cartridge : MonoBehaviour {
 	private void Scene(){
 			_scene.LoadScene (_cont+2);
 	}
+	public int Cont{
+		get{return _cont;}
+	}
 }
