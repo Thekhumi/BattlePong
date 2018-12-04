@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: fc04e5d79ac60844bb1e517e930df98c
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Jewel Bold Grunge
+  fontNames:
+  - Jewel Bold Grunge
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 21899a28e9cf92d45b08b74363818992, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
