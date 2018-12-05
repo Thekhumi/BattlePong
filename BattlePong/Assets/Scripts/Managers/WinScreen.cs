@@ -7,7 +7,7 @@ public class WinScreen : MonoBehaviour {
 
 	[SerializeField] Text _yesText;
 	[SerializeField] Text _selectText;
-	[SerializeField] private bool _1P;
+//	[SerializeField] private bool _1P;
 	SceneChange _scene;
 	private int _selection;
 	private Color _defaultColor;
@@ -39,11 +39,7 @@ public class WinScreen : MonoBehaviour {
 				_scene.RestartScene ();
 				break;
 			case 1:
-				if (_1P) {
-					_scene.LoadScene (8);
-				} else {
-					_scene.LoadScene (1);
-				}
+				_scene.LoadScene (1);
 				break;
 			}
 		}

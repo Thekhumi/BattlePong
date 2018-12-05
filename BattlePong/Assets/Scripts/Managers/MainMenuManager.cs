@@ -23,6 +23,7 @@ public class MainMenuManager : MonoBehaviour {
 	private bool _active;
 	private bool _quitSelect;
 	private bool _quitActive;
+	private bool _selected;
 
 	void Start(){
 		Cursor.visible = false;
@@ -33,6 +34,7 @@ public class MainMenuManager : MonoBehaviour {
 		_quitSelect = false;
 		_quitActive = false;
 		MusicManager.Instance.music = _music;
+		_selected = false;
 	}
 	void Update(){
 		
@@ -77,59 +79,66 @@ public class MainMenuManager : MonoBehaviour {
 			if (_startPress) {
 				_pressStart.GetComponent<FlashColor> ().SetColorBlack ();
 				Invoke ("StartMenu", 1.5f);
-				if (Input.GetButtonDown ("Up")) {
-					if (_menuSelect == 1 || _menuSelect == 0) {
-						_menuSelect = 4;
-					} else {
-						_menuSelect--;
+				if (!_selected) {
+					if (Input.GetButtonDown ("Up")) {
+						if (_menuSelect == 1 || _menuSelect == 0) {
+							_menuSelect = 4;
+						} else {
+							_menuSelect--;
+						}
 					}
-				}
-				if (Input.GetButtonDown ("Down")) {
-					if (_menuSelect == 4) {
-						_menuSelect = 1;
-					} else {
-						_menuSelect++;
+					if (Input.GetButtonDown ("Down")) {
+						if (_menuSelect == 4) {
+							_menuSelect = 1;
+						} else {
+							_menuSelect++;
+						}
 					}
-				}
 
-				switch (_menuSelect) {
-				case 1:
-					_1p.color = Color.yellow;
-					_2p.color = Color.white;
-					_credits.color = Color.white;
-					_exit.color = Color.white;
-					if (Input.GetButtonDown ("Submit")) {
-						_scene.LoadScene (8);
+					switch (_menuSelect) {
+					case 1:
+						_1p.color = Color.yellow;
+						_2p.color = Color.white;
+						_credits.color = Color.white;
+						_exit.color = Color.white;
+						if (Input.GetButtonDown ("Submit")) {
+							PlayerManager.Instance.OnePlayer ();
+							_selected = true;
+							_scene.LoadScene (1);
+						}
+						break;
+					case 2:
+						_1p.color = Color.white;
+						_2p.color = Color.yellow;
+						_credits.color = Color.white;
+						_exit.color = Color.white;
+						if (Input.GetButtonDown ("Submit")) {
+							PlayerManager.Instance.TwoPlayers ();
+							_selected = true;
+							_scene.LoadScene (1);
+						}
+						break;
+					case 3:
+						_1p.color = Color.white;
+						_2p.color = Color.white;
+						_credits.color = Color.yellow;
+						_exit.color = Color.white;
+						if (Input.GetButtonDown ("Submit")) {
+							_selected = true;
+							_scene.LoadScene (7);
+						}
+						break;
+					case 4:
+						_1p.color = Color.white;
+						_2p.color = Color.white;
+						_credits.color = Color.white;
+						_exit.color = Color.yellow;
+						if (Input.GetButtonDown ("Submit")) {
+							_quitActive = true;
+							_quit.SetActive (true);
+						}
+						break;
 					}
-					break;
-				case 2:
-					_1p.color = Color.white;
-					_2p.color = Color.yellow;
-					_credits.color = Color.white;
-					_exit.color = Color.white;
-					if (Input.GetButtonDown ("Submit")) {
-						_scene.LoadScene (1);
-					}
-					break;
-				case 3:
-					_1p.color = Color.white;
-					_2p.color = Color.white;
-					_credits.color = Color.yellow;
-					_exit.color = Color.white;
-					if (Input.GetButtonDown ("Submit")) {
-						_scene.LoadScene (7);
-					}
-					break;
-				case 4:
-					_1p.color = Color.white;
-					_2p.color = Color.white;
-					_credits.color = Color.white;
-					_exit.color = Color.yellow;
-					if (Input.GetButtonDown ("Submit")) {
-						_quitActive = true;
-						_quit.SetActive(true);
-					}
-					break;
 				}
 			}
 		}

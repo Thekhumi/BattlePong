@@ -25,12 +25,17 @@ public class GameManager : MonoBehaviour {
 	[SerializeField] GameObject _winScreen;
 	[SerializeField] private bool _3ScreensGame;
 	[SerializeField] MusicManager.Music _music;
+	[SerializeField] GameObject _1pCanvas;
+	[SerializeField] GameObject _2pCanvas;
 	FlashColor _flash;
 
 	private Ball _ball;
 	private PinballBall _pinballBall;
 	[SerializeField]private Ball _multiBall1;
 	[SerializeField]private Ball _multiBall2;
+
+	[SerializeField]GameObject _secondPlayer1;
+	[SerializeField]GameObject _secondPlayer2;
 
 	private GameObject[] _bump;
 	private Spring[] _springs;
@@ -90,6 +95,100 @@ public class GameManager : MonoBehaviour {
 			_textScore.text = "- - O - -";
 		} else {
 			_textScore.text = "-  O  -";
+		}
+
+		switch (_gameMode) {
+
+		case GameMode.Normal:
+			switch (PlayerManager.Instance.Players) {
+			case PlayerManager.Player.ONEPLAYER:
+				_secondPlayer1.GetComponent<Bumper> ().enabled = false;
+				_secondPlayer1.GetComponent<RivalIA> ().enabled = true;
+				_1pCanvas.SetActive (true);
+				_2pCanvas.SetActive (false);
+				break;
+			case PlayerManager.Player.TWOPLAYERS:
+				_secondPlayer1.GetComponent<Bumper> ().enabled = true;
+				_secondPlayer1.GetComponent<RivalIA> ().enabled = false;
+				_1pCanvas.SetActive (false);
+				_2pCanvas.SetActive (true);
+				break;
+			}
+			break;
+
+		case GameMode.Warp:
+			switch (PlayerManager.Instance.Players) {
+			case PlayerManager.Player.ONEPLAYER:
+				_secondPlayer1.GetComponent<Bumper> ().enabled = false;
+				_secondPlayer1.GetComponent<RivalIA> ().enabled = true;
+				_1pCanvas.SetActive (true);
+				_2pCanvas.SetActive (false);
+				break;
+			case PlayerManager.Player.TWOPLAYERS:
+				_secondPlayer1.GetComponent<Bumper> ().enabled = true;
+				_secondPlayer1.GetComponent<RivalIA> ().enabled = false;
+				_1pCanvas.SetActive (false);
+				_2pCanvas.SetActive (true);
+				break;
+			}
+			break;
+
+		case GameMode.Arkanoid:
+			switch (PlayerManager.Instance.Players) {
+			case PlayerManager.Player.ONEPLAYER:
+				_secondPlayer1.GetComponent<Bumper> ().enabled = false;
+				_secondPlayer1.GetComponent<RivalAIArkanoid> ().enabled = true;
+				_1pCanvas.SetActive (true);
+				_2pCanvas.SetActive (false);
+				break;
+			case PlayerManager.Player.TWOPLAYERS:
+				_secondPlayer1.GetComponent<Bumper> ().enabled = true;
+				_secondPlayer1.GetComponent<RivalAIArkanoid> ().enabled = false;
+				_1pCanvas.SetActive (false);
+				_2pCanvas.SetActive (true);
+				break;
+			}
+			break;
+
+		case GameMode.Flappy:
+			switch (PlayerManager.Instance.Players) {
+			case PlayerManager.Player.ONEPLAYER:
+				_secondPlayer1.GetComponent<Bumper> ().enabled = false;
+				_secondPlayer1.GetComponent<RivalAIFlappy> ().enabled = true;
+				_1pCanvas.SetActive (true);
+				_2pCanvas.SetActive (false);
+				break;
+			case PlayerManager.Player.TWOPLAYERS:
+				_secondPlayer1.GetComponent<Bumper> ().enabled = true;
+				_secondPlayer1.GetComponent<RivalAIFlappy> ().enabled = false;
+				_1pCanvas.SetActive (false);
+				_2pCanvas.SetActive (true);
+				break;
+			}
+			break;
+
+		case GameMode.Pinball:
+			switch (PlayerManager.Instance.Players) {
+			case PlayerManager.Player.ONEPLAYER:
+				_secondPlayer1.GetComponent<Bumper> ().enabled = false;
+				_secondPlayer1.GetComponent<RivalAIPinball> ().enabled = true;
+				_secondPlayer2.GetComponent<Bumper> ().enabled = false;
+				_secondPlayer2.GetComponent<RivalAIPinball> ().enabled = true;
+				_1pCanvas.SetActive (true);
+				_2pCanvas.SetActive (false);
+				break;
+			case PlayerManager.Player.TWOPLAYERS:
+				_secondPlayer1.GetComponent<Bumper> ().enabled = true;
+				_secondPlayer1.GetComponent<RivalAIPinball> ().enabled = false;
+				_secondPlayer1.GetComponent<BoxCollider2D> ().enabled = false;
+				_secondPlayer2.GetComponent<Bumper> ().enabled = true;
+				_secondPlayer2.GetComponent<RivalAIPinball> ().enabled = false;
+				_secondPlayer2.GetComponent<BoxCollider2D> ().enabled = false;
+				_1pCanvas.SetActive (false);
+				_2pCanvas.SetActive (true);
+				break;
+			}
+			break;
 		}
 	}
 
