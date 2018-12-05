@@ -1134,6 +1134,48 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4242326261216878, guid: c8421409d8d1e904b8fbbda5141eeea7,
     type: 2}
   m_PrefabInternal: {fileID: 1991035530}
+--- !u!1001 &409304737
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4669562273179556, guid: 4b05ab59af9d91d4cb8648a2007f01b5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669562273179556, guid: 4b05ab59af9d91d4cb8648a2007f01b5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669562273179556, guid: 4b05ab59af9d91d4cb8648a2007f01b5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669562273179556, guid: 4b05ab59af9d91d4cb8648a2007f01b5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669562273179556, guid: 4b05ab59af9d91d4cb8648a2007f01b5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669562273179556, guid: 4b05ab59af9d91d4cb8648a2007f01b5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669562273179556, guid: 4b05ab59af9d91d4cb8648a2007f01b5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669562273179556, guid: 4b05ab59af9d91d4cb8648a2007f01b5, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4b05ab59af9d91d4cb8648a2007f01b5, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!4 &411695628 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4242326261216878, guid: c8421409d8d1e904b8fbbda5141eeea7,

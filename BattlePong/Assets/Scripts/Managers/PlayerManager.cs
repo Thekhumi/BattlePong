@@ -9,7 +9,7 @@ public class PlayerManager : MonoBehaviour {
 	public static PlayerManager Instance {get { return _instance;}}
 
 	public enum Player { ONEPLAYER, TWOPLAYERS}
-	private Player _player;
+	[SerializeField] private Player _player;
 
 	void Awake(){
 		if (_instance != null && _instance != this) {
