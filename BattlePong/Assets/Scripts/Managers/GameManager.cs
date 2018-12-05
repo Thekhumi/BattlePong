@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour {
 	[SerializeField] float _menuDelay;
 	[SerializeField] GameObject _winScreen;
 	[SerializeField] private bool _3ScreensGame;
+	[SerializeField] MusicManager.Music _music;
 	FlashColor _flash;
 
 	private Ball _ball;
@@ -61,9 +62,11 @@ public class GameManager : MonoBehaviour {
 			_springs = FindObjectsOfType<Spring> ();
 		}
 		_flash = _textResult.GetComponent<FlashColor> ();
+
 	}
 		
 	void Start(){
+		MusicManager.Instance.music = _music;
 		if (_gameMode==GameMode.Pinball) {
 			_pinballBall = GameObject.FindGameObjectWithTag ("PinballBall").GetComponent<PinballBall> ();
 			Physics2D.gravity = new Vector2 (0f, 0f);

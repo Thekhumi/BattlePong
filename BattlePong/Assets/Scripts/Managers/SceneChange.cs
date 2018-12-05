@@ -14,7 +14,7 @@ public class SceneChange : MonoBehaviour {
 	private int _sceneNum;
 
 	void Start(){
-		_change = 0;
+		_change = 0;	
 	}
 	void Update(){
 		if (Input.GetButtonDown ("Cancel")&& SceneManager.GetActiveScene ().buildIndex!=0) {

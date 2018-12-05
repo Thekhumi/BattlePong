@@ -16,7 +16,8 @@ public class MainMenuManager : MonoBehaviour {
 	[SerializeField] GameObject _quit;
 	[SerializeField] Text _yesQuit;
 	[SerializeField] Text _noQuit;
-	[SerializeField] MusicManager _musicManager;
+	[SerializeField] MusicManager.Music _music;
+
 	private bool _startPress;
 	private int _menuSelect;
 	private bool _active;
@@ -31,7 +32,7 @@ public class MainMenuManager : MonoBehaviour {
 		_active = false;
 		_quitSelect = false;
 		_quitActive = false;
-		_musicManager.music = MusicManager.Music.intro;
+		MusicManager.Instance.music = _music;
 	}
 	void Update(){
 		

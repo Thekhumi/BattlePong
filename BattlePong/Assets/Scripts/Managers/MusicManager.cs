@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MusicManager : MonoBehaviour {
+	private static MusicManager _instance;
+
+	public static MusicManager Instance { get { return _instance; } }
+
+
 	public enum Music { intro, selectStage, classic, bricks, flappy,warp}
 	private Music _music;
 	private AudioSource _audio;
@@ -13,10 +18,14 @@ public class MusicManager : MonoBehaviour {
 	[SerializeField] AudioClip flappy;
 	[SerializeField] AudioClip warp;
 
-	void Start() {
+	private void Awake(){
+		if (_instance != null && _instance != this){
+			Destroy(this.gameObject);
+		} else {
+			_instance = this;
+			DontDestroyOnLoad(this.gameObject);
+		}
 		_audio = GetComponent<AudioSource> ();
-		_music = Music.intro;
-		updateAudio ();
 	}
 
 	void updateAudio(){
@@ -44,8 +53,12 @@ public class MusicManager : MonoBehaviour {
 
 	public Music music{
 		get{ return _music; }
-		set{ _music = value; 
-			updateAudio ();}
+		set{if(_music != value){
+			_music = value;
+			updateAudio ();
+			_audio.Play ();
+			}
+		}
 	}
 
 	
