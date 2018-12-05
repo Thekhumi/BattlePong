@@ -150,6 +150,7 @@ MonoBehaviour:
   intro: {fileID: 8300000, guid: 79e50727d23351a4b80a9750efc7b909, type: 3}
   selectStage: {fileID: 8300000, guid: 34717d604da62934fa2dc963e359f733, type: 3}
   classic: {fileID: 8300000, guid: 1b8646e8dc0e1c048a488ffb6b1b8586, type: 3}
-  bricks: {fileID: 8300000, guid: 8487ed963d29cb54e8b1b86215bf1304, type: 3}
+  bricks: {fileID: 8300000, guid: 5d6c98896514f5342ab87ed6452b929c, type: 3}
   flappy: {fileID: 8300000, guid: 0ff5f359556b91446adf71657a945ab4, type: 3}
-  warp: {fileID: 8300000, guid: 0aead7f27919f1e4cb45e34797502a4e, type: 3}
+  warp: {fileID: 8300000, guid: cfe2257b2822df6408ce39c882d99252, type: 3}
+  pinball: {fileID: 8300000, guid: c0a4343bf613bc04e93a435717fff9bd, type: 3}

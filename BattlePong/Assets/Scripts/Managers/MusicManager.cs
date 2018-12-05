@@ -8,7 +8,7 @@ public class MusicManager : MonoBehaviour {
 	public static MusicManager Instance { get { return _instance; } }
 
 
-	public enum Music { intro, selectStage, classic, bricks, flappy,warp}
+	public enum Music { intro, selectStage, classic, bricks, flappy,warp, pinball}
 	private Music _music;
 	private AudioSource _audio;
 	[SerializeField] AudioClip intro;
@@ -17,6 +17,7 @@ public class MusicManager : MonoBehaviour {
 	[SerializeField] AudioClip bricks;
 	[SerializeField] AudioClip flappy;
 	[SerializeField] AudioClip warp;
+	[SerializeField] AudioClip pinball;
 
 	private void Awake(){
 		if (_instance != null && _instance != this){
@@ -48,6 +49,9 @@ public class MusicManager : MonoBehaviour {
 		case Music.warp:
 			_audio.clip = warp;
 			break;
+		case Music.pinball:
+			_audio.clip = pinball;
+			break;	
 		}
 	}
 

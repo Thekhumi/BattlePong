@@ -7,7 +7,7 @@ public class Bumper : MonoBehaviour {
 	private UpdateDelegate currentUpdate;
 	[SerializeField] bool isBump1;
 	[SerializeField] float speed = 5f;
-	[SerializeField] float _stunTime = 2f;
+	[SerializeField] GameObject _particleObject;
 	Rigidbody2D _rb;
 	float _thisY;
 	float _thisZ;
@@ -17,8 +17,12 @@ public class Bumper : MonoBehaviour {
 	SpriteRenderer WallSprite;
 	Camera cam;
 	AudioSource audioSrc;
-	float _stunTimer;
 
+	//ARKANOID STATS
+	[SerializeField] int _expandMaxLives = 6;
+	[SerializeField] float _stunTime = 2f;
+	int _expandLives = 0;
+	float _stunTimer = 0.0f;
 	//POWERUPS
 	private bool _laserActive;
 	private bool _expandActive;
@@ -66,8 +70,21 @@ public class Bumper : MonoBehaviour {
 
 	}
 	void OnTriggerEnter2D(Collider2D otro){
-		if (otro.gameObject.tag == "Ball" && !audioSrc.isPlaying) {
-			audioSrc.Play ();
+		if (otro.gameObject.tag == "Ball") {
+			if (_expandActive) {
+				_expandLives--;
+				if (_expandLives <= 0) {
+					_expandActive = false;
+					updatePowerups ();
+				}
+			}
+			if (!audioSrc.isPlaying) {
+				audioSrc.Play ();
+			}
+			if (_particleObject && _particleObject.GetComponent<ParticleSystem> ()) {
+				_particleObject.transform.position = otro.transform.position;
+				_particleObject.GetComponent<ParticleSystem> ().Play();
+			}
 		}
 	}
 		
@@ -143,6 +160,9 @@ public class Bumper : MonoBehaviour {
 				}
 			}
 		}
+	}
+	public void rechargeExpand(){
+		_expandLives = _expandMaxLives;
 	}
 	public void ResetPos(){
 		transform.position = new Vector3 (transform.position.x, _thisY, _thisZ);

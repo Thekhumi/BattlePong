@@ -423,7 +423,7 @@ Transform:
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 180, y: -90, z: 90}
 --- !u!199 &454188753
 ParticleSystemRenderer:
@@ -5895,6 +5895,7 @@ MonoBehaviour:
   _quit: {fileID: 1105328406}
   _yesQuit: {fileID: 1128574440}
   _noQuit: {fileID: 1460167045}
+  _music: 0
 --- !u!4 &1839009199
 Transform:
   m_ObjectHideFlags: 0
@@ -6014,7 +6015,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4177019699880034, guid: d07e8a1c01a36be468adff9780a8b0b2, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d07e8a1c01a36be468adff9780a8b0b2, type: 2}

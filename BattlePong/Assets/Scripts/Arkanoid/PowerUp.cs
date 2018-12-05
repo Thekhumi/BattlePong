@@ -50,6 +50,7 @@ public class PowerUp : MonoBehaviour {
 			case PowerUpBox.Expand:
 				bumper.laserActive = false;
 				bumper.expandActive = true;
+				bumper.rechargeExpand ();
 				break;
 			case PowerUpBox.Multi:
 				_gamemanager.ActivateMulti ();
