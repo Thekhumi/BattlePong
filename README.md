@@ -4,7 +4,7 @@
 
 # BattlePong
 
-A pong tribute fused with many other retro games to create a full new pong experience.
+A pong tribute game fused with many other retro games to create a full new pong experience.
 Challenging game modes for 1 and 2 players.
 
 This is a game (demo/protoype/vertical slice) developed by students from <a href="https://www.imagecampus.edu.ar/">Image Campus</a>
