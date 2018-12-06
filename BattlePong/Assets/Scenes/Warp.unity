@@ -450,7 +450,8 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 0.4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114793997078045326, guid: 317833a25ac388846a6c94c919afa2b6, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 317833a25ac388846a6c94c919afa2b6, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &94496129 stripped
@@ -3616,6 +3617,7 @@ MonoBehaviour:
   _multiBall2: {fileID: 0}
   _secondPlayer1: {fileID: 94496129}
   _secondPlayer2: {fileID: 0}
+  _ghost: {fileID: 0}
 --- !u!4 &1139723220
 Transform:
   m_ObjectHideFlags: 0
