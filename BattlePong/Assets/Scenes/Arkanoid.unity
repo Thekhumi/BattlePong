@@ -2957,6 +2957,7 @@ MonoBehaviour:
   _multiBall2: {fileID: 512734845}
   _secondPlayer1: {fileID: 1984577528}
   _secondPlayer2: {fileID: 0}
+  _ghost: {fileID: 0}
 --- !u!4 &1139723220
 Transform:
   m_ObjectHideFlags: 0
@@ -4946,7 +4947,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2063722231
 Transform:
   m_ObjectHideFlags: 0
