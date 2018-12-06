@@ -32,6 +32,9 @@ public class Ball : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D otro){
+		if (otro.gameObject.tag == "BreakableWall") {
+			otro.gameObject.GetComponent<Brick> ().breakBrick (gameObject);
+		}
 		if (otro.gameObject.tag == "END GAME") {
 			switch (otro.gameObject.layer) {
 			case 9:
@@ -64,9 +67,6 @@ public class Ball : MonoBehaviour {
 				}
 				speed += sum;
 				_boostTimer = _boostTime;
-			break;
-		case "BreakableWall":
-
 			break;
 		}
 	}

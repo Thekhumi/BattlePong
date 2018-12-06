@@ -73,7 +73,7 @@ public class Bumper : MonoBehaviour {
 
 	}
 	void OnTriggerEnter2D(Collider2D otro){
-		if (otro.gameObject.tag == "Ball") {
+		if (otro.gameObject.tag == "Ball" || otro.gameObject.tag == "MultiBall") {
 			if (_expandActive) {
 				_expandLives--;
 				if (_expandLives <= 0) {

@@ -19,14 +19,18 @@ public class Brick : MonoBehaviour {
 		}
 	}	
 
-	void OnCollisionEnter2D(Collision2D otro){
+	/*void OnCollisionEnter2D(Collision2D otro){
 		if (otro.gameObject.tag == "Ball"||otro.gameObject.tag=="MultiBall") {
-			AudioSource.PlayClipAtPoint (clip, transform.position);
-			spawnPowerUp (otro.collider.GetComponent<Ball> ().Velocity.x > 0 ? 1 : -1);
-			gameObject.SetActive (false);
+			
 		}
 	}
+	*/
 
+	public void breakBrick(GameObject otro){
+		AudioSource.PlayClipAtPoint (clip, transform.position);
+		spawnPowerUp (otro.GetComponent<Ball> ().Velocity.x > 0 ? 1 : -1);
+		gameObject.SetActive (false);
+	}
 	void spawnPowerUp(int multiplier){
 		float chance = Random.value;
 		if (_dropChance / 100 > chance) {
