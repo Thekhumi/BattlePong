@@ -64,6 +64,9 @@ public class Bumper : MonoBehaviour {
 			_Flipper = gameObject.GetComponent<Rigidbody2D> ();
 			currentUpdate = UpdatePinball;
 			break;
+		case GameManager.GameMode.Bubble:
+			currentUpdate = UpdateNormal;
+			break;
 		}
 		Wall = GameObject.FindGameObjectsWithTag ("BoundWall")[0];
 		WallSprite = Wall.GetComponent<SpriteRenderer> ();

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
-	public enum GameMode { Normal, Flappy, Pinball, Warp, Arkanoid}
+	public enum GameMode { Normal, Flappy, Pinball, Warp, Arkanoid, Bubble}
 	[SerializeField] private GameManager.GameMode _gameMode = GameManager.GameMode.Normal;
 	public static GameManager instance = null;
 	private bool _winnerLeft = false;
@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour {
 	[SerializeField]GameObject _secondPlayer1;
 	[SerializeField]GameObject _secondPlayer2;
 
+	[SerializeField]Ghost _ghost;
+
 	private GameObject[] _bump;
 	private Spring[] _springs;
 	private Warp[] _warps;
@@ -49,6 +51,7 @@ public class GameManager : MonoBehaviour {
 	private Camera _cam;
 	private string _result;
 	private bool _init;
+	private float _timer;
 
 	void Awake(){
 		if (instance == null){
@@ -67,6 +70,7 @@ public class GameManager : MonoBehaviour {
 			_springs = FindObjectsOfType<Spring> ();
 		}
 		_flash = _textResult.GetComponent<FlashColor> ();
+		_timer = 0;
 
 	}
 		
@@ -193,6 +197,14 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void Update(){
+		if (_gameMode == GameMode.Bubble) {
+			_timer += Time.deltaTime;
+			if (_timer >= 15) {
+				if (!_ghost.Active) {
+					_ghost.Active= true;
+				}
+			}
+		}
 		if (_winnerLeft) {
 			CameraMov ();
 			BallStart ();
@@ -222,6 +234,10 @@ public class GameManager : MonoBehaviour {
 			_ballCount = 0;
 			ResetBricks ();
 		}
+		if (_gameMode == GameMode.Bubble) {
+			_ghost.Reset ();
+			_timer = -5;
+		}
 		ScoreUpdate ();
 	}
 
@@ -236,6 +252,10 @@ public class GameManager : MonoBehaviour {
 			_ballCount = 0;
 			ResetBricks ();
 		}
+		if (_gameMode == GameMode.Bubble) {
+			_ghost.Reset ();
+			_timer = -5;
+		}
 		ScoreUpdate ();
 	}
 
@@ -249,6 +269,10 @@ public class GameManager : MonoBehaviour {
 			_ballCount = 0;
 			ResetBricks ();
 		}
+		if (_gameMode == GameMode.Bubble) {
+			_ghost.Reset ();
+			_timer = -1000;
+		}
 		_flash.SetColorBlue ();
 	}
 
@@ -261,6 +285,10 @@ public class GameManager : MonoBehaviour {
 			ResetMultiBalls ();
 			_ballCount = 0;
 			ResetBricks ();
+		}
+		if (_gameMode == GameMode.Bubble) {
+			_ghost.Reset ();
+			_timer = -1000;
 		}
 		_flash.SetColorRed ();
 	}

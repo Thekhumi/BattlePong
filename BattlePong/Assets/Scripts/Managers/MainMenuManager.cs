@@ -26,6 +26,7 @@ public class MainMenuManager : MonoBehaviour {
 	private bool _quitSelect;
 	private bool _quitActive;
 	private bool _selected;
+	private float _timer;
 
 	void Start(){
 		Cursor.visible = false;
