@@ -8,6 +8,14 @@ public class RivalAIFlappy : MonoBehaviour {
 	[SerializeField] private float _velocity;
 	[SerializeField] private float _waitSpeed = 0f;
 	[SerializeField] private float _minDistance = 10f;
+	[Header("Difficulty Variables")]
+	[SerializeField] private float _easyVelocity;
+	[SerializeField] private float _easyWaitSpeed;
+	[SerializeField] private float _normalVelocity;
+	[SerializeField] private float _normalWaitSpeed;
+	[SerializeField] private float _hardVelocity;
+	[SerializeField] private float _hardWaitSpeed;
+
 	private float _dif;
 	private float _direction;
 	private SpriteRenderer _this;
@@ -20,6 +28,10 @@ public class RivalAIFlappy : MonoBehaviour {
 		_cam = Camera.main;
 		_this = GetComponent<SpriteRenderer> ();
 		_wallBound=GameObject.FindGameObjectsWithTag ("BoundWall")[0].GetComponent<SpriteRenderer> ();
+	}
+
+	void Start(){
+		updateDifficulty ();
 	}
 
 	void Update () {
@@ -41,6 +53,24 @@ public class RivalAIFlappy : MonoBehaviour {
 			transform.position = new Vector3(transform.position.x,
 				_cam.ViewportToWorldPoint (Vector3.zero).y + _this.bounds.extents.y + _wallBound.bounds.extents.y*2,
 				transform.position.z);
+		}
+	}
+
+	private void updateDifficulty(){
+		PlayerManager.Diff _diff = PlayerManager.Instance.Difficulty;
+		switch (_diff) {
+		case PlayerManager.Diff.EASY:
+			_velocity = _easyVelocity;
+			_waitSpeed = _easyWaitSpeed;
+			break;
+		case PlayerManager.Diff.NORMAL:
+			_velocity = _normalVelocity;
+			_waitSpeed = _normalWaitSpeed;
+			break;
+		case PlayerManager.Diff.HARD:
+			_velocity = _hardVelocity;
+			_waitSpeed = _hardWaitSpeed;
+			break;
 		}
 	}
 }

@@ -1333,6 +1333,18 @@ Prefab:
       propertyPath: m_Name
       value: Start Base 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1029875397298600, guid: 7d50445f625fff44181a9586f0b0507a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1951285280221552, guid: 7d50445f625fff44181a9586f0b0507a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1414365431341602, guid: 7d50445f625fff44181a9586f0b0507a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d50445f625fff44181a9586f0b0507a, type: 2}
   m_IsPrefabAsset: 0
@@ -4711,6 +4723,23 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1156376043498888, guid: a78e6729a68524d4cb2671c439903c67, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1896847897267806, guid: a78e6729a68524d4cb2671c439903c67, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971088861893884, guid: a78e6729a68524d4cb2671c439903c67, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224149714507679934, guid: a78e6729a68524d4cb2671c439903c67,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a78e6729a68524d4cb2671c439903c67, type: 2}
   m_IsPrefabAsset: 0
@@ -4895,9 +4924,14 @@ MonoBehaviour:
   _ball: {fileID: 681142992}
   _multiball1: {fileID: 573139131}
   _multiball2: {fileID: 769985373}
-  _velocity: 9
-  _minDistance: 9
+  _hitVariance: 2
   _stunTime: 2
+  _easyVelocity: 7
+  _minDistanceEasy: 6
+  _normalVelocity: 8
+  _minDistanceNormal: 8
+  _hardVelocity: 9
+  _minDistanceHard: 10
 --- !u!1 &2063722230
 GameObject:
   m_ObjectHideFlags: 0
@@ -4912,7 +4946,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2063722231
 Transform:
   m_ObjectHideFlags: 0

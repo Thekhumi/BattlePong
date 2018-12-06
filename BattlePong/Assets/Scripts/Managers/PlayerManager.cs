@@ -9,7 +9,9 @@ public class PlayerManager : MonoBehaviour {
 	public static PlayerManager Instance {get { return _instance;}}
 
 	public enum Player { ONEPLAYER, TWOPLAYERS}
+	public enum Diff {EASY,NORMAL,HARD}
 	[SerializeField] private Player _player;
+	[SerializeField] private Diff _difficulty;
 
 	void Awake(){
 		if (_instance != null && _instance != this) {
@@ -18,7 +20,6 @@ public class PlayerManager : MonoBehaviour {
 			_instance = this;
 			DontDestroyOnLoad (this.gameObject);
 		}
-		_player = Player.ONEPLAYER;
 	}
 
 	public void OnePlayer(){
@@ -27,7 +28,15 @@ public class PlayerManager : MonoBehaviour {
 	public void TwoPlayers(){
 		_player = Player.TWOPLAYERS;
 	}
+
+	public void setDifficulty(Diff difficulty){
+		_difficulty = difficulty;
+	}
 	public Player Players{
 		get{return _player;}
+	}
+
+	public Diff Difficulty{
+		get{return _difficulty;}
 	}
 }

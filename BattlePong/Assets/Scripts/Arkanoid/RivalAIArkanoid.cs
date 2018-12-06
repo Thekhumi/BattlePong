@@ -6,9 +6,20 @@ public class RivalAIArkanoid : MonoBehaviour {
 	[SerializeField] GameObject _ball;
 	[SerializeField] GameObject _multiball1;
 	[SerializeField] GameObject _multiball2;
-	[SerializeField] private float _velocity;
-	[SerializeField] float _minDistance = 9f;
+	private float _velocity;
+	[SerializeField] private float _hitVariance;
+	float _minDistance;
 	[SerializeField] float _stunTime = 2f;
+
+	[Header("Difficulty Variables")]
+	[SerializeField] private float _easyVelocity;
+	[SerializeField] private float _minDistanceEasy;
+	[SerializeField] private float _normalVelocity;
+	[SerializeField] private float _minDistanceNormal;
+	[SerializeField] private float _hardVelocity;
+	[SerializeField] private float _minDistanceHard;
+
+	private float  _targetVariance;
 	private float _dif;
 	private float _direction;
 	float _stunTimer;
@@ -22,6 +33,11 @@ public class RivalAIArkanoid : MonoBehaviour {
 		_this = GetComponent<SpriteRenderer> ();
 		_wallBound=GameObject.FindGameObjectsWithTag ("BoundWall")[0].GetComponent<SpriteRenderer> ();
 		_target = _ball;
+	}
+
+	void Start(){
+		updateDifficulty ();
+		refreshVariance ();
 	}
 
 	void Update () {
@@ -44,7 +60,7 @@ public class RivalAIArkanoid : MonoBehaviour {
 	}
 		
 	private void GoToTarget(){
-		Vector3 targetPosition = new Vector3 (transform.position.x, _target.transform.position.y, transform.position.z);
+		Vector3 targetPosition = new Vector3 (transform.position.x, _target.transform.position.y + _targetVariance, transform.position.z);
 		transform.position = Vector3.MoveTowards (transform.position, targetPosition, _velocity * Time.deltaTime);
 	}
 	protected void BoundsCheck(){
@@ -96,6 +112,27 @@ public class RivalAIArkanoid : MonoBehaviour {
 			}
 		}
 		return closest;
+	}
+
+	private void refreshVariance(){
+		_targetVariance = Random.Range (-_hitVariance / 2, _hitVariance / 2);
+	}
+	private void updateDifficulty(){
+		PlayerManager.Diff _diff = PlayerManager.Instance.Difficulty;
+		switch (_diff) {
+		case PlayerManager.Diff.EASY:
+			_velocity = _easyVelocity;
+			_minDistance = _minDistanceEasy;
+			break;
+		case PlayerManager.Diff.NORMAL:
+			_velocity = _normalVelocity;
+			_minDistance = _minDistanceNormal;
+			break;
+		case PlayerManager.Diff.HARD:
+			_velocity = _hardVelocity;
+			_minDistance = _minDistanceHard;
+			break;
+		}
 	}
 }
 
