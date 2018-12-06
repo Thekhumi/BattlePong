@@ -8,6 +8,7 @@ public class Bumper : MonoBehaviour {
 	[SerializeField] bool isBump1;
 	[SerializeField] float speed = 5f;
 	[SerializeField] GameObject _particleObject;
+	[SerializeField] ParticleSystem _spark;
 	Rigidbody2D _rb;
 	float _thisY;
 	float _thisZ;
@@ -101,8 +102,14 @@ public class Bumper : MonoBehaviour {
 		if (_moving && ! (_stunTimer >= 0)) {
 			if (isBump1) {
 				transform.Translate (0.0f, Input.GetAxisRaw ("Vertical") * speed * Time.deltaTime, 0.0f);
+				if (_spark != null) {
+					_spark.Stop ();
+				}
 			} else {
 				transform.Translate (0.0f, Input.GetAxisRaw ("Vertical2") * speed * Time.deltaTime, 0.0f);
+				if (_spark != null) {
+					_spark.Stop ();
+				}
 			}
 		}
 		_stunTimer -= Time.deltaTime;
@@ -175,6 +182,7 @@ public class Bumper : MonoBehaviour {
 	}
 
 	public void stun(){
+		_spark.Play ();
 		_stunTimer = _stunTime;
 	}
 	public void updatePowerups(){
