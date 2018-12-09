@@ -31,6 +31,7 @@ This game was also possible thanks to the support of these professors:
 - **Jorge Cuéllar**
 - **Fernando Puig**
 - **Eugenio Taboada**
+- **Juan Pablo Bettini**
 
 
 ## Acknowledgements
