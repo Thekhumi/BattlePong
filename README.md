@@ -19,8 +19,8 @@ This is a game (demo/protoype/vertical slice) developed by students from <a href
 ## Credits
 
 - **Gaspar Nuñez** - *Programming* - <a href="gaspacho09@hotmail.com"><img height="16" width="16" src="https://unpkg.com/simple-icons@latest/icons/gmail.svg" /></a> <a href="https://steamcommunity.com/id/Thekhumi"><img height="16" width="16" src="https://unpkg.com/simple-icons@latest/icons/steam.svg" /></a>  <a href="Thekhumi#5001"><img height="16" width="16" src="https://unpkg.com/simple-icons@latest/icons/discord.svg" /></a> 
-- **Facundo Cedolini** - *Testing* - <a href="cedo3432@hotmail.com"><img height="16" width="16" src="https://unpkg.com/simple-icons@latest/icons/gmail.svg" /></a>
 - **Leonardo Perugini** - *Art and Programming* - <a href="xweetyk@gmail.com"><img height="16" width="16" src="https://unpkg.com/simple-icons@latest/icons/gmail.svg" /></a> <a href="https://www.instagram.com/xweetyk/m"><img height="16" width="16" src="https://unpkg.com/simple-icons@latest/icons/instagram.svg" /></a> 
+- **Facundo Cedolini** - *Testing* - <a href="cedo3432@hotmail.com"><img height="16" width="16" src="https://unpkg.com/simple-icons@latest/icons/gmail.svg" /></a>
 - **Maximiliano Abel Duarte** - *Audio* - <a href="maximiliano.abel.duarte@gmail.com"><img height="16" width="16" src="https://unpkg.com/simple-icons@latest/icons/gmail.svg" /></a>
 - **Ramiro Salto** - *First Concept Art* - 
 
