@@ -36,7 +36,8 @@ public class RivalAIFlappy : MonoBehaviour {
 
 	void Update () {
 		if (_ball.transform.position.x - transform.position.x < _minDistance &&_ball.GetComponent<Rigidbody2D>().velocity.x < 0 &&
-			_ball.transform.position.y > transform.position.y && _rb.velocity.y < _waitSpeed){
+			_ball.transform.position.y > transform.position.y  + _this.bounds.max.y && _rb.velocity.y < _waitSpeed
+			){
 			_rb.velocity = Vector2.zero;
 			_rb.AddForce (new Vector2 (0f, _velocity),ForceMode2D.Impulse);
 		}

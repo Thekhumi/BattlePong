@@ -278,8 +278,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBump1: 0
-  speed: 13
+  speed: 15
   _particleObject: {fileID: 1094316579769892}
+  _spark: {fileID: 0}
   _expandMaxLives: 6
   _stunTime: 2
   isBumpLeftUp: 0

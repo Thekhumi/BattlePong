@@ -86,9 +86,13 @@ public class Bumper : MonoBehaviour {
 				audioSrc.Play ();
 			}
 			if (_particleObject && _particleObject.GetComponent<ParticleSystem> ()) {
+				Debug.Log (otro.transform.position);
 				_particleObject.transform.position = otro.transform.position;
+				Debug.Log (_particleObject.transform.position);
 				_particleObject.GetComponent<ParticleSystem> ().Play();
 			}
+			int multiplier = isLeft ? 1 : -1; 
+			otro.transform.position += new Vector3(0.2f * multiplier,0,0);
 		}
 	}
 		

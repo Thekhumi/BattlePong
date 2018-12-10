@@ -58,7 +58,6 @@ GameObject:
   - component: {fileID: 114839798970663712}
   - component: {fileID: 70417767430934234}
   - component: {fileID: 82230195209767286}
-  - component: {fileID: 114560792805723028}
   - component: {fileID: 114453424778209266}
   m_Layer: 8
   m_Name: LeftBump
@@ -75,7 +74,7 @@ Transform:
   m_GameObject: {fileID: 1232512807117242}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.9200001, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 1.4285712, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4788076552457284}
   m_RootOrder: 0
@@ -267,32 +266,13 @@ MonoBehaviour:
   _ball: {fileID: 0}
   _velocity: 13
   _waitSpeed: 0
-  _minDistance: 10
-  _easyVelocity: 15
+  _minDistance: 8
+  _easyVelocity: 17
   _easyWaitSpeed: 2
-  _normalVelocity: 13
-  _normalWaitSpeed: 0
+  _normalVelocity: 15
+  _normalWaitSpeed: -1
   _hardVelocity: 13
-  _hardWaitSpeed: -1
---- !u!114 &114560792805723028
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1848069373131752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24bf6ed543237064da17f07b4a53ab7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ball: {fileID: 0}
-  _hitVariance: 2
-  _easyVelocity: 7
-  _minDistanceEasy: 6
-  _normalVelocity: 8
-  _minDistanceNormal: 8
-  _hardVelocity: 9
-  _minDistanceHard: 10
+  _hardWaitSpeed: 0
 --- !u!114 &114839798970663712
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -320,8 +300,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBump1: 1
-  speed: 13
+  speed: 15
   _particleObject: {fileID: 1232512807117242}
+  _spark: {fileID: 0}
   _expandMaxLives: 6
   _stunTime: 2
   isBumpLeftUp: 0

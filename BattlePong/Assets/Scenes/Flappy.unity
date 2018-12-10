@@ -448,18 +448,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114560792805723028, guid: ffbdafc8d833eaa4d8285573263d01d2,
-        type: 2}
-      propertyPath: _ball
-      value: 
-      objectReference: {fileID: 931686432}
     - target: {fileID: 114453424778209266, guid: ffbdafc8d833eaa4d8285573263d01d2,
         type: 2}
       propertyPath: _ball
       value: 
       objectReference: {fileID: 931686432}
-    m_RemovedComponents:
-    - {fileID: 114560792805723028, guid: ffbdafc8d833eaa4d8285573263d01d2, type: 2}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffbdafc8d833eaa4d8285573263d01d2, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &94496129 stripped
@@ -1077,6 +1071,16 @@ Prefab:
     - target: {fileID: 4669562273179556, guid: 4b05ab59af9d91d4cb8648a2007f01b5, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114837713455725708, guid: 4b05ab59af9d91d4cb8648a2007f01b5,
+        type: 2}
+      propertyPath: _difficulty
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114837713455725708, guid: 4b05ab59af9d91d4cb8648a2007f01b5,
+        type: 2}
+      propertyPath: _player
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b05ab59af9d91d4cb8648a2007f01b5, type: 2}
@@ -3185,6 +3189,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4315107202320156, guid: 0451060bd46c325438bd493f2727b86f, type: 2}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210837544630550, guid: 0451060bd46c325438bd493f2727b86f, type: 2}
+      propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
