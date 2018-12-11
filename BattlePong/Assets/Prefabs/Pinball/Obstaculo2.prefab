@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 212391025777409454}
   - component: {fileID: 114797965073985414}
   - component: {fileID: 58004326983737250}
+  - component: {fileID: 114315644655212014}
   m_Layer: 11
   m_Name: Obstaculo2
   m_TagString: Untagged
@@ -52,8 +53,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1238978737228926}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4983105769370572}
@@ -88,6 +89,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.6
+--- !u!114 &114315644655212014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1238978737228926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 510cee2fb22bd0b489a42c1c0fc0ce0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clipCollide: {fileID: 8300000, guid: 5338f60d26141a245b4ee8d8a40c24f2, type: 3}
 --- !u!114 &114797965073985414
 MonoBehaviour:
   m_ObjectHideFlags: 1

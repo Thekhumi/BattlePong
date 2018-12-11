@@ -1955,6 +1955,8 @@ MonoBehaviour:
   _arrows:
   - {fileID: 1108704820}
   - {fileID: 1237027827}
+  _clipMove: {fileID: 8300000, guid: ce42de230c0b7574fa66e141e9a7681d, type: 3}
+  _clipSelect: {fileID: 8300000, guid: 132be204f76024f42aeafdfdccef171f, type: 3}
 --- !u!212 &1802769261
 SpriteRenderer:
   m_ObjectHideFlags: 0

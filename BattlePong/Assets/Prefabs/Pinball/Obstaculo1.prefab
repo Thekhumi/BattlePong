@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212386700249349496}
   - component: {fileID: 114020228107633554}
   - component: {fileID: 58974468338989378}
+  - component: {fileID: 114760657505198086}
   m_Layer: 11
   m_Name: Obstaculo1
   m_TagString: Untagged
@@ -53,8 +54,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1429202191194524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 3, y: 4.45, z: 0}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 4669393319769572}
   m_Father: {fileID: 0}
@@ -103,6 +104,18 @@ MonoBehaviour:
   _light: {fileID: 21300000, guid: 9add1fd8d80a71c49abf4babec48cdd8, type: 3}
   _lightDelay: 0.1
   _isPinball: 1
+--- !u!114 &114760657505198086
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1429202191194524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 510cee2fb22bd0b489a42c1c0fc0ce0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clipCollide: {fileID: 8300000, guid: 1b99ad1cbac78a44fbb674384d0be2a5, type: 3}
 --- !u!198 &198261420235507952
 ParticleSystem:
   m_ObjectHideFlags: 1

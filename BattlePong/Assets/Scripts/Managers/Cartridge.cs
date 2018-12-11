@@ -19,6 +19,8 @@ public class Cartridge : MonoBehaviour {
 	[SerializeField] float _vel;
 	[SerializeField] float _waitTime;
 	[SerializeField] GameObject[] _arrows;
+	[SerializeField] AudioClip _clipMove;
+	[SerializeField] AudioClip _clipSelect;
 	private SpriteRenderer[] _cartSprite;
 	private int _cont;
 	private int _activated;
@@ -45,17 +47,20 @@ public class Cartridge : MonoBehaviour {
 			if (_cont != 0) {
 				_cont--;
 			} else {_cont = 4;}
+			MusicManager.Instance.playSound (_clipMove);
 		}
 		if (Input.GetButtonDown ("Right")||Input.GetButtonDown ("Up")) {
 			if (_cont != 4) {
 				_cont++;
 			} else {_cont = 0;}
+			MusicManager.Instance.playSound (_clipMove);
 		}
 		if (Input.GetButtonDown ("Submit")) {
 			foreach (var arrow in _arrows) {
 				arrow.SetActive(false);
 			}
 			_press = true;
+			MusicManager.Instance.playSound (_clipSelect);
 		}
 		if (_press) {
 			switch (_activated) {

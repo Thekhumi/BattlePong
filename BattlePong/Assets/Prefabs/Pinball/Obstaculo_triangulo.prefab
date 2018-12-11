@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 60075016141012326}
   - component: {fileID: 114959168809146836}
   - component: {fileID: 50647185565423314}
+  - component: {fileID: 114163163465579424}
   m_Layer: 11
   m_Name: Obstaculo_triangulo
   m_TagString: Untagged
@@ -36,13 +37,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1873617607335930}
-  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
-  m_LocalPosition: {x: 8.15, y: 3.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.92387867, w: 0.38268548}
+  m_LocalPosition: {x: 0, y: -4.5, z: 0}
+  m_LocalScale: {x: 0.9599999, y: 0.9599999, z: 0.6}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 180, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 180, y: 180, z: -135}
 --- !u!50 &50647185565423314
 Rigidbody2D:
   serializedVersion: 4
@@ -87,8 +88,8 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.4248629, y: -1.1369305}
-      - {x: 1.330236, y: -0.7515235}
+    - - {x: 1.2596925, y: -1.0084492}
+      - {x: 1.2568232, y: -0.67811}
       - {x: -0.73938847, y: 1.301492}
       - {x: -1.1998568, y: 1.2421165}
       - {x: -1.38, y: 0.96999997}
@@ -96,7 +97,19 @@ PolygonCollider2D:
       - {x: -1.3199999, y: -1.1899999}
       - {x: -1.22, y: -1.3}
       - {x: -1.12, y: -1.3399999}
-      - {x: 1.3206778, y: -1.3348861}
+      - {x: 1.0270967, y: -1.3715204}
+--- !u!114 &114163163465579424
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1873617607335930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 510cee2fb22bd0b489a42c1c0fc0ce0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clipCollide: {fileID: 8300000, guid: e4b3bd8367a0f68448ef8113fe116017, type: 3}
 --- !u!114 &114959168809146836
 MonoBehaviour:
   m_ObjectHideFlags: 1

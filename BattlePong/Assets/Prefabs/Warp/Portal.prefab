@@ -69,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1076741839989208}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: -1.5, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4704480459330768}
@@ -200,6 +200,7 @@ MonoBehaviour:
   _onScreen: 0
   _ballDelay: 0.5
   _delay: 3
+  _clipWarp: {fileID: 8300000, guid: 99a4915a07a551b42b2d660f42ab3f4c, type: 3}
 --- !u!114 &114157547994241490
 MonoBehaviour:
   m_ObjectHideFlags: 1

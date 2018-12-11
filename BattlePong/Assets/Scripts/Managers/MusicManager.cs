@@ -8,9 +8,13 @@ public class MusicManager : MonoBehaviour {
 	public static MusicManager Instance { get { return _instance; } }
 
 
-	public enum Music { intro, selectStage, classic, bricks, flappy,warp, pinball}
+	public enum Music { intro, selectStage, classic, bricks, flappy,warp, pinball,bubble}
 	private Music _music;
-	private AudioSource _audio;
+	[SerializeField] AudioSource _audio;
+	[SerializeField] AudioSource _sfx1;
+	[SerializeField] AudioSource _sfx2;
+	[SerializeField] AudioSource _sfx3;
+	[Header("Music clips")]
 	[SerializeField] AudioClip intro;
 	[SerializeField] AudioClip selectStage;
 	[SerializeField] AudioClip classic;
@@ -18,6 +22,9 @@ public class MusicManager : MonoBehaviour {
 	[SerializeField] AudioClip flappy;
 	[SerializeField] AudioClip warp;
 	[SerializeField] AudioClip pinball;
+	[SerializeField] AudioClip bubble;
+	private float _sfxVolume = 1.0f;
+	private float _musicVolume = 1.0f;
 
 	private void Awake(){
 		if (_instance != null && _instance != this){
@@ -27,6 +34,22 @@ public class MusicManager : MonoBehaviour {
 			DontDestroyOnLoad(this.gameObject);
 		}
 		_audio = GetComponent<AudioSource> ();
+		updateVolume ();
+	}
+	public void playSound(AudioClip clip){
+		if (!_sfx1.isPlaying) {
+			_sfx1.clip = clip;
+			_sfx1.Play ();
+		} else if (!_sfx2.isPlaying) {
+			_sfx2.clip = clip;
+			_sfx2.Play ();
+		} else if (!_sfx3.isPlaying) {
+			_sfx3.clip = clip;
+			_sfx3.Play ();
+		} else {
+			_sfx1.clip = clip;
+			_sfx1.Play ();
+		}
 	}
 
 	void updateAudio(){
@@ -52,7 +75,16 @@ public class MusicManager : MonoBehaviour {
 		case Music.pinball:
 			_audio.clip = pinball;
 			break;	
+		case Music.bubble:
+			_audio.clip = bubble;
+			break;
 		}
+	}
+	public void updateVolume(){
+		_sfx1.volume = _sfxVolume;
+		_sfx2.volume = _sfxVolume;
+		_sfx3.volume = _sfxVolume;
+		_audio.volume = _musicVolume;
 	}
 
 	public Music music{
@@ -64,6 +96,13 @@ public class MusicManager : MonoBehaviour {
 			}
 		}
 	}
+	public float sfxVolume{
+		get{ return _sfxVolume; }
+		set{ _sfxVolume = value; }
+	}
 
-	
+	public float musicVolume{
+		get{ return _musicVolume; }
+		set{ _musicVolume = value; }
+	}
 }

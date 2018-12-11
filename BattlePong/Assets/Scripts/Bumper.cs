@@ -9,15 +9,18 @@ public class Bumper : MonoBehaviour {
 	[SerializeField] float speed = 5f;
 	[SerializeField] GameObject _particleObject;
 	[SerializeField] ParticleSystem _spark;
+	[SerializeField] AudioClip _clipBumperHit;
+	[SerializeField] AudioClip _clipStunned;
+	private AudioSource _audio;
 	Rigidbody2D _rb;
 	float _thisY;
 	float _thisZ;
 	bool _moving;
+	bool _flipped;
 	GameObject Wall;
 	SpriteRenderer sprite;
 	SpriteRenderer WallSprite;
 	Camera cam;
-	AudioSource audioSrc;
 
 	//ARKANOID STATS
 	[SerializeField] int _expandMaxLives = 6;
@@ -44,7 +47,8 @@ public class Bumper : MonoBehaviour {
 		_thisZ = transform.position.z;
 		_originalRot = transform.eulerAngles;
 		_moving = false;
-		audioSrc = GetComponent<AudioSource> ();
+		_audio = GetComponent<AudioSource> ();
+		_flipped = false;
 	}
 
 	void Start(){
@@ -82,13 +86,11 @@ public class Bumper : MonoBehaviour {
 					updatePowerups ();
 				}
 			}
-			if (!audioSrc.isPlaying) {
-				audioSrc.Play ();
-			}
+			if(_clipBumperHit)
+			MusicManager.Instance.playSound (_clipBumperHit);
+			
 			if (_particleObject && _particleObject.GetComponent<ParticleSystem> ()) {
-				Debug.Log (otro.transform.position);
 				_particleObject.transform.position = otro.transform.position;
-				Debug.Log (_particleObject.transform.position);
 				_particleObject.GetComponent<ParticleSystem> ().Play();
 			}
 			int multiplier = isLeft ? 1 : -1; 
@@ -154,24 +156,42 @@ public class Bumper : MonoBehaviour {
 	void UpdatePinball(){
 		if (_moving) {
 			if (isBumpLeftUp) {
-				if (Input.GetButton("W")) {
-					_Flipper.AddTorque (speed,ForceMode2D.Impulse);
+				if (Input.GetButton ("W")) {
+					_Flipper.AddTorque (speed, ForceMode2D.Impulse);
+					_audio.volume = MusicManager.Instance.sfxVolume;
+					if (!_flipped)
+						_audio.Play ();
+					_flipped = true;
 				}
-			}
-			if (isBumpLeftDown) {
-				if (Input.GetButton("S")) {
-					_Flipper.AddTorque (speed,ForceMode2D.Impulse);
+				else _flipped = false;
+			} else if (isBumpLeftDown) {
+				if (Input.GetButton ("S")) {
+					_Flipper.AddTorque (speed, ForceMode2D.Impulse);
+					_audio.volume = MusicManager.Instance.sfxVolume;
+					if (!_flipped)
+						_audio.Play ();
+					_flipped = true;
 				}
-			}
-			if (isBumpRightUp) {
-				if (Input.GetButton("Up")) {
-					_Flipper.AddTorque (speed,ForceMode2D.Impulse);
+				else _flipped = false;
+			} else if (isBumpRightUp) {
+				if (Input.GetButton ("Up")) {
+					_Flipper.AddTorque (speed, ForceMode2D.Impulse);
+					_audio.volume = MusicManager.Instance.sfxVolume;
+					if (!_flipped)
+						_audio.Play ();
+					_flipped = true;
 				}
-			}
-			if (isBumpRightDown) {
-				if (Input.GetButton("Down")) {
-					_Flipper.AddTorque (speed,ForceMode2D.Impulse);
-				}
+				else _flipped = false;
+			} else if (isBumpRightDown) {
+				if (Input.GetButton ("Down")) {
+					_Flipper.AddTorque (speed, ForceMode2D.Impulse);
+					_audio.volume = MusicManager.Instance.sfxVolume;
+					if (!_flipped)
+						_audio.Play ();
+					_flipped = true;
+				} else
+					_flipped = false;
+			
 			}
 		}
 	}
@@ -187,6 +207,7 @@ public class Bumper : MonoBehaviour {
 
 	public void stun(){
 		_spark.Play ();
+		MusicManager.Instance.playSound (_clipStunned);
 		_stunTimer = _stunTime;
 	}
 	public void updatePowerups(){
@@ -214,6 +235,9 @@ public class Bumper : MonoBehaviour {
 	public bool chargeActive{
 		get{ return _chargeActive; }
 		set{ _chargeActive = value; }
+	}
+	public ParticleSystem spark{
+		get{ return _spark; }
 	}
 		
 }

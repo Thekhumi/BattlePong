@@ -6,6 +6,7 @@ public class LaserPower : MonoBehaviour {
 	[SerializeField] GameObject _prefab;
 	[SerializeField] float _rateOfFire = 1f;
 	[SerializeField] int _maxAmmo = 5;
+	[SerializeField] AudioClip _clipLaserShoot;
 	float _timer;
 	bool _isLeft;
 	[SerializeField] bool _active = false;
@@ -47,6 +48,7 @@ public class LaserPower : MonoBehaviour {
 		_laser.transform.Translate (spawnSide, 0, 0);
 		_shootTimer = _rateOfFire;
 		_ammo--;
+		MusicManager.Instance.playSound (_clipLaserShoot);
 	}
 	public bool Active{
 		get{ return _active; }

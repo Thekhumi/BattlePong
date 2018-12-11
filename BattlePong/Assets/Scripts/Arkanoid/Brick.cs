@@ -5,15 +5,13 @@ using UnityEngine;
 public class Brick : MonoBehaviour {
 	[SerializeField] GameObject _prefab;
 	[SerializeField] float _dropChance = 20f;
+	[SerializeField] AudioClip _clipBrickBreak;
 	float delay;
-	AudioClip clip;
 	GameObject _powerUp;
-	void Awake () {
-		clip = GetComponent<AudioSource>().clip;
-	}
+
 	void OnTriggerEnter2D(Collider2D otro){
 		if (otro.gameObject.tag == "Laser") {
-			AudioSource.PlayClipAtPoint (clip, transform.position);
+			MusicManager.Instance.playSound (_clipBrickBreak);
 			spawnPowerUp (otro.GetComponent<Laser> ().dirMultiplier > 0 ? 1 : -1);
 			gameObject.SetActive (false);
 		}
@@ -27,7 +25,7 @@ public class Brick : MonoBehaviour {
 	*/
 
 	public void breakBrick(GameObject otro){
-		AudioSource.PlayClipAtPoint (clip, transform.position);
+		MusicManager.Instance.playSound (_clipBrickBreak);
 		spawnPowerUp (otro.GetComponent<Ball> ().Velocity.x > 0 ? 1 : -1);
 		gameObject.SetActive (false);
 	}

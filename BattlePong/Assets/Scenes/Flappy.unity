@@ -1080,7 +1080,7 @@ Prefab:
     - target: {fileID: 114837713455725708, guid: 4b05ab59af9d91d4cb8648a2007f01b5,
         type: 2}
       propertyPath: _player
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b05ab59af9d91d4cb8648a2007f01b5, type: 2}
@@ -3189,10 +3189,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4315107202320156, guid: 0451060bd46c325438bd493f2727b86f, type: 2}
       propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4210837544630550, guid: 0451060bd46c325438bd493f2727b86f, type: 2}
-      propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

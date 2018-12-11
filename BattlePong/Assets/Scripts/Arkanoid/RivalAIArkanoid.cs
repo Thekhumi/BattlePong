@@ -42,6 +42,7 @@ public class RivalAIArkanoid : MonoBehaviour {
 
 	void Update () {
 		if (_stunTimer <= 0 &&_target != null && _target.activeSelf && _target.GetComponent<Rigidbody2D> ().velocity.x < 0 && transform.position.x - _target.transform.position.x < _minDistance) {
+			GetComponent<Bumper> ().spark.Stop();
 			GoToTarget ();
 		} else {
 			_target = searchClosest("PowerUp");

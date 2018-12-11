@@ -10,6 +10,8 @@ public class Spring : MonoBehaviour {
 	[SerializeField] Sprite _jump2;
 	[SerializeField] Sprite _red;
 	[SerializeField] float _impulse;
+	[SerializeField] AudioClip _clipSpring;
+	private AudioSource _audio;
 	private bool _active;
 	private int _count;
 	private Rigidbody2D _body;
@@ -17,6 +19,8 @@ public class Spring : MonoBehaviour {
 
 	void Awake(){
 		_objSprite= GetComponent<SpriteRenderer>();
+		_audio = GetComponent<AudioSource> ();
+		_audio.clip = _clipSpring;
 	}
 	void Start(){
 		_active = true;
@@ -28,6 +32,8 @@ public class Spring : MonoBehaviour {
 				_body=otro.gameObject.GetComponent<Rigidbody2D> ();
 				_body.AddForce (transform.up*_impulse,ForceMode2D.Impulse);
 				Jump ();
+				_audio.volume = MusicManager.Instance.sfxVolume;
+				_audio.Play ();
 			}
 		}
 	}

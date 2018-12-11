@@ -359,6 +359,11 @@ Prefab:
       propertyPath: _ball
       value: 
       objectReference: {fileID: 1529059304}
+    - target: {fileID: 114296171293956830, guid: 317833a25ac388846a6c94c919afa2b6,
+        type: 2}
+      propertyPath: _clipBumperHit
+      value: 
+      objectReference: {fileID: 8300000, guid: 52a5894a6fd05e5438b8ca68fff3fb73, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 317833a25ac388846a6c94c919afa2b6, type: 2}
   m_IsPrefabAsset: 0
@@ -3206,6 +3211,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114192868878657276, guid: 43760139ea51ea24a91c29210bf08066,
+        type: 2}
+      propertyPath: _clipBumperHit
+      value: 
+      objectReference: {fileID: 8300000, guid: 52a5894a6fd05e5438b8ca68fff3fb73, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43760139ea51ea24a91c29210bf08066, type: 2}
   m_IsPrefabAsset: 0
