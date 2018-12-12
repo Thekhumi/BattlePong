@@ -12,6 +12,7 @@ public class MainMenuManager : MonoBehaviour {
 	[SerializeField] Text _1p;
 	[SerializeField] Text _2p;
 	[SerializeField] Text _credits;
+	[SerializeField] Text _settings;
 	[SerializeField] Text _exit;
 	[SerializeField] GameObject _quit;
 	[SerializeField] Text _yesQuit;
@@ -27,6 +28,7 @@ public class MainMenuManager : MonoBehaviour {
 	private bool _quitActive;
 	private bool _selected;
 	private float _timer;
+	private float _startMenuDelay = 1.5f;
 
 	void Start(){
 		Cursor.visible = false;
@@ -38,6 +40,12 @@ public class MainMenuManager : MonoBehaviour {
 		_quitActive = false;
 		MusicManager.Instance.music = _music;
 		_selected = false;
+		_sfxEnter.volume = _sfxMove.volume = MusicManager.Instance.musicVolume;
+
+		if (PlayerManager.Instance.skipIntro) {
+			_startPress = true;
+			_startMenuDelay = 0.0f;
+		}
 	}
 	void Update(){
 		
@@ -82,23 +90,24 @@ public class MainMenuManager : MonoBehaviour {
 				if (!_startPress) {
 					_sfxEnter.Play ();
 					_startPress = true;
+					PlayerManager.Instance.skipIntro = true;
 				}
 			}
 			if (_startPress) {
 				_pressStart.GetComponent<FlashColor> ().SetColorBlack ();
-				Invoke ("StartMenu", 1.5f);
+				Invoke ("StartMenu", _startMenuDelay);
 				if (!_selected) {
 					if (Input.GetButtonDown ("Up")) {
 						_sfxMove.Play ();
 						if (_menuSelect == 1 || _menuSelect == 0) {
-							_menuSelect = 4;
+							_menuSelect = 5;
 						} else {
 							_menuSelect--;
 						}
 					}
 					if (Input.GetButtonDown ("Down")) {
 						_sfxMove.Play ();
-						if (_menuSelect == 4) {
+						if (_menuSelect == 5) {
 							_menuSelect = 1;
 						} else {
 							_menuSelect++;
@@ -110,6 +119,7 @@ public class MainMenuManager : MonoBehaviour {
 						_1p.color = Color.yellow;
 						_2p.color = Color.white;
 						_credits.color = Color.white;
+						_settings.color = Color.white;
 						_exit.color = Color.white;
 						if (Input.GetButtonDown ("Submit")) {
 							_sfxEnter.Play ();
@@ -122,6 +132,7 @@ public class MainMenuManager : MonoBehaviour {
 						_1p.color = Color.white;
 						_2p.color = Color.yellow;
 						_credits.color = Color.white;
+						_settings.color = Color.white;
 						_exit.color = Color.white;
 						if (Input.GetButtonDown ("Submit")) {
 							_sfxEnter.Play ();
@@ -134,6 +145,7 @@ public class MainMenuManager : MonoBehaviour {
 						_1p.color = Color.white;
 						_2p.color = Color.white;
 						_credits.color = Color.yellow;
+						_settings.color = Color.white;
 						_exit.color = Color.white;
 						if (Input.GetButtonDown ("Submit")) {
 							_sfxEnter.Play ();
@@ -145,6 +157,19 @@ public class MainMenuManager : MonoBehaviour {
 						_1p.color = Color.white;
 						_2p.color = Color.white;
 						_credits.color = Color.white;
+						_settings.color = Color.yellow;
+						_exit.color = Color.white;
+						if (Input.GetButtonDown ("Submit")) {
+							_sfxEnter.Play ();
+							_selected = true;
+							_scene.LoadScene (8);
+						}
+						break;
+					case 5:
+						_1p.color = Color.white;
+						_2p.color = Color.white;
+						_credits.color = Color.white;
+						_settings.color = Color.white;
 						_exit.color = Color.yellow;
 						if (Input.GetButtonDown ("Submit")) {
 							_sfxEnter.Play ();

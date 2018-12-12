@@ -12,6 +12,7 @@ public class PlayerManager : MonoBehaviour {
 	public enum Diff {EASY,NORMAL,HARD}
 	[SerializeField] private Player _player;
 	[SerializeField] private Diff _difficulty;
+	[SerializeField] private bool _skipIntro = false;
 
 	void Awake(){
 		if (_instance != null && _instance != this) {
@@ -36,6 +37,10 @@ public class PlayerManager : MonoBehaviour {
 		get{return _player;}
 	}
 
+	public bool skipIntro{
+		get{return _skipIntro;}
+		set{_skipIntro = value;}
+	}
 	public Diff Difficulty{
 		get{return _difficulty;}
 	}

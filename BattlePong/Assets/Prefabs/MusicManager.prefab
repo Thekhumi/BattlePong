@@ -446,3 +446,4 @@ MonoBehaviour:
   flappy: {fileID: 8300000, guid: 0ff5f359556b91446adf71657a945ab4, type: 3}
   warp: {fileID: 8300000, guid: cfe2257b2822df6408ce39c882d99252, type: 3}
   pinball: {fileID: 8300000, guid: 3f7dc3e94804bf04689fa0c8204aa87f, type: 3}
+  bubble: {fileID: 8300000, guid: f80c1b095e71a0c48a4e1b76116475ca, type: 3}
