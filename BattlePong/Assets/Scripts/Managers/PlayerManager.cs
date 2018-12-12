@@ -43,5 +43,6 @@ public class PlayerManager : MonoBehaviour {
 	}
 	public Diff Difficulty{
 		get{return _difficulty;}
+		set{_difficulty = value; }
 	}
 }

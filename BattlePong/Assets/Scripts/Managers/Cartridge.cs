@@ -21,6 +21,9 @@ public class Cartridge : MonoBehaviour {
 	[SerializeField] GameObject[] _arrows;
 	[SerializeField] AudioClip _clipMove;
 	[SerializeField] AudioClip _clipSelect;
+	[SerializeField] Text _difficultyText;
+	[SerializeField] Text _zKey;
+	private PlayerManager.Diff _diff;
 	private SpriteRenderer[] _cartSprite;
 	private int _cont;
 	private int _activated;
@@ -34,6 +37,12 @@ public class Cartridge : MonoBehaviour {
 		}
 		foreach (var part in _particles) {
 			part.Stop ();
+		}
+		_diff = PlayerManager.Instance.Difficulty;
+		updateDiffText ();
+		if (PlayerManager.Instance.Players == PlayerManager.Player.ONEPLAYER) {
+			_difficultyText.enabled = true;
+			_zKey.enabled = true;
 		}
 	}
 	void Start(){
@@ -61,6 +70,15 @@ public class Cartridge : MonoBehaviour {
 			}
 			_press = true;
 			MusicManager.Instance.playSound (_clipSelect);
+		}
+		if (PlayerManager.Instance.Players == PlayerManager.Player.ONEPLAYER && Input.GetButtonDown ("Submit2")) {
+			if ((int)_diff == 2) {
+				_diff = 0;
+			} else {
+				_diff++;
+			}
+			PlayerManager.Instance.Difficulty = _diff;
+			updateDiffText ();
 		}
 		if (_press) {
 			switch (_activated) {
@@ -120,6 +138,22 @@ public class Cartridge : MonoBehaviour {
 	}
 	private void Scene(){
 			_scene.LoadScene (_cont+2);
+	}
+	public void updateDiffText(){
+		switch (_diff) {
+		case PlayerManager.Diff.EASY:
+			_difficultyText.color = Color.green;
+			_difficultyText.text = "EASY";
+			break;
+		case PlayerManager.Diff.NORMAL:
+			_difficultyText.color = Color.white;
+			_difficultyText.text = "NORMAL";
+			break;
+		case PlayerManager.Diff.HARD:
+			_difficultyText.color = Color.red;
+			_difficultyText.text = "HARD";
+			break;
+		}
 	}
 	public int Cont{
 		get{return _cont;}
