@@ -42,6 +42,7 @@ public class SettingsManager : MonoBehaviour {
 	public void setSfxVolume(float volume){
 		MusicManager.Instance.sfxVolume = volume;
 		MusicManager.Instance.updateVolume ();
+		PlayerPrefs.SetFloat ("pSfxVolume", volume);
 		if (_testOn) {
 			testSound ();
 		}
@@ -53,9 +54,11 @@ public class SettingsManager : MonoBehaviour {
 	public void setMusicVolume(float volume){
 		MusicManager.Instance.musicVolume = volume;
 		MusicManager.Instance.updateVolume ();
+		PlayerPrefs.SetFloat ("pMusicVolume", volume);
 	}
 
 	public void setFullscreen(bool fullscreen){
 		Screen.fullScreen = fullscreen;
+		PlayerPrefManager.setBool ("pFullscreen", fullscreen);
 	}
 }
