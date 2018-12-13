@@ -52,6 +52,9 @@ public class Cartridge : MonoBehaviour {
 		_checked = false;
 	}
 	void Update(){
+		if (!_press) {
+			Movement ();
+		}
 		if (Input.GetButtonDown ("Left")||Input.GetButtonDown ("Down")) {
 			if (_cont != 0) {
 				_cont--;
@@ -85,9 +88,10 @@ public class Cartridge : MonoBehaviour {
 			case 0:
 				for (int i = 0; i < _cartuchos.Length; i++) {
 					if (i == _cont) {
-						_cartuchos [i].transform.position = Vector3.MoveTowards (_cartuchos [i].transform.position, _mainTarget.position, _vel/2);
+						_cartuchos [i].transform.position = Vector3.MoveTowards (_cartuchos [i].transform.position, _mainTarget.position, _vel/3);
+						_cartSprite [i].sortingOrder = 1;
 					} else {
-						_cartuchos [i].transform.position = Vector3.MoveTowards (_cartuchos [i].transform.position, _target [i].position, _vel);
+						_cartuchos [i].transform.position = Vector3.MoveTowards (_cartuchos [i].transform.position, new Vector3(_cartuchos [i].transform.position.x,_cartuchos [i].transform.position.y-50,_cartuchos [i].transform.position.z) , _vel);
 						if (_cartuchos [_cont].transform.position == _mainTarget.position) {
 							Invoke ("Wait", _waitTime);
 						}
@@ -95,7 +99,7 @@ public class Cartridge : MonoBehaviour {
 				}
 				break;
 			case 1:
-				_cartuchos [_cont].transform.position = Vector3.MoveTowards (_cartuchos [_cont].transform.position, _aBitUp.position, _vel / 3);
+				_cartuchos [_cont].transform.position = Vector3.MoveTowards (_cartuchos [_cont].transform.position, _aBitUp.position, _vel / 5);
 				if (_cartuchos [_cont].transform.position == _aBitUp.position) {
 					_activated = 2;
 				}
@@ -157,5 +161,34 @@ public class Cartridge : MonoBehaviour {
 	}
 	public int Cont{
 		get{return _cont;}
+	}
+	private void Movement(){
+		if (_cont - 1 < 0) {
+			_cartuchos [3].transform.position = Vector3.MoveTowards (_cartuchos [3].transform.position, _target [3].position, _vel*3);
+			_cartuchos [4].transform.position = Vector3.MoveTowards (_cartuchos [4].transform.position, _target [4].position, _vel*3);
+		} else {
+			if (_cont - 2 < 0) {
+				_cartuchos [4].transform.position = Vector3.MoveTowards (_cartuchos [4].transform.position, _target [3].position, _vel*3);
+				_cartuchos [_cont - 1].transform.position = Vector3.MoveTowards (_cartuchos [_cont - 1].transform.position, _target [4].position, _vel*3);
+			} else {
+				_cartuchos [_cont - 2].transform.position = Vector3.MoveTowards (_cartuchos [_cont - 2].transform.position, _target [3].position, _vel*3);
+				_cartuchos [_cont - 1].transform.position = Vector3.MoveTowards (_cartuchos [_cont - 1].transform.position, _target [4].position, _vel*3);
+			}
+		}
+
+		_cartuchos [_cont].transform.position = Vector3.MoveTowards (_cartuchos [_cont].transform.position, _target [0].position, _vel*3);
+
+		if (_cont + 1 > 4) {
+			_cartuchos [0].transform.position = Vector3.MoveTowards (_cartuchos [0].transform.position, _target [1].position, _vel*3);
+			_cartuchos [1].transform.position = Vector3.MoveTowards (_cartuchos [1].transform.position, _target [2].position, _vel*3);
+		} else {
+			if (_cont + 2 > 4) {
+				_cartuchos [_cont + 1].transform.position = Vector3.MoveTowards (_cartuchos [_cont + 1].transform.position, _target [1].position, _vel*3);
+				_cartuchos [0].transform.position = Vector3.MoveTowards (_cartuchos [0].transform.position, _target [2].position, _vel*3);
+			} else {
+				_cartuchos [_cont + 1].transform.position = Vector3.MoveTowards (_cartuchos [_cont + 1].transform.position, _target [1].position, _vel*3);
+				_cartuchos [_cont + 2].transform.position = Vector3.MoveTowards (_cartuchos [_cont + 2].transform.position, _target [2].position, _vel*3);
+			}
+		}
 	}
 }
