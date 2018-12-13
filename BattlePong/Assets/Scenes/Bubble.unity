@@ -970,7 +970,13 @@ Prefab:
       value: 
       objectReference: {fileID: 21300004, guid: 3ce1d6b96040d1148ba7c78a0934da8c,
         type: 3}
-    m_RemovedComponents: []
+    - target: {fileID: 114322548749434416, guid: 553eb8a274ac6844aa70a3dc6b1c9617,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114142726824814746, guid: 553eb8a274ac6844aa70a3dc6b1c9617, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 553eb8a274ac6844aa70a3dc6b1c9617, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &94496129 stripped
@@ -1570,6 +1576,16 @@ Prefab:
         type: 2}
       propertyPath: _difficulty
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114837713455725708, guid: 4b05ab59af9d91d4cb8648a2007f01b5,
+        type: 2}
+      propertyPath: _skipIntro
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114837713455725708, guid: 4b05ab59af9d91d4cb8648a2007f01b5,
+        type: 2}
+      propertyPath: _player
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b05ab59af9d91d4cb8648a2007f01b5, type: 2}

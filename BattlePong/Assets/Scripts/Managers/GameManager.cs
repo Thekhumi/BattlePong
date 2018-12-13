@@ -137,6 +137,23 @@ public class GameManager : MonoBehaviour {
 			}
 			break;
 
+		case GameMode.Bubble:
+			switch (PlayerManager.Instance.Players) {
+		case PlayerManager.Player.ONEPLAYER:
+			_secondPlayer1.GetComponent<Bumper> ().enabled = false;
+			_secondPlayer1.GetComponent<RivalIA> ().enabled = true;
+			_1pCanvas.SetActive (true);
+			_2pCanvas.SetActive (false);
+			break;
+		case PlayerManager.Player.TWOPLAYERS:
+			_secondPlayer1.GetComponent<Bumper> ().enabled = true;
+			_secondPlayer1.GetComponent<RivalIA> ().enabled = false;
+			_1pCanvas.SetActive (false);
+			_2pCanvas.SetActive (true);
+			break;
+		}
+		break;
+
 		case GameMode.Arkanoid:
 			switch (PlayerManager.Instance.Players) {
 			case PlayerManager.Player.ONEPLAYER:
