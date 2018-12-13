@@ -728,7 +728,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4833982434000602, guid: 36dda202fffef8b419315bb35b38c513, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -10.7
+      value: -11.27
       objectReference: {fileID: 0}
     - target: {fileID: 4833982434000602, guid: 36dda202fffef8b419315bb35b38c513, type: 2}
       propertyPath: m_LocalPosition.z
@@ -913,70 +913,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114142726824814746, guid: 553eb8a274ac6844aa70a3dc6b1c9617,
-        type: 2}
-      propertyPath: _ball
-      value: 
-      objectReference: {fileID: 1529059304}
     - target: {fileID: 114322548749434416, guid: 553eb8a274ac6844aa70a3dc6b1c9617,
         type: 2}
       propertyPath: _ball
       value: 
       objectReference: {fileID: 1529059304}
-    - target: {fileID: 212006397419009284, guid: 553eb8a274ac6844aa70a3dc6b1c9617,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300006, guid: 3ce1d6b96040d1148ba7c78a0934da8c,
-        type: 3}
-    - target: {fileID: 4398892098498892, guid: 553eb8a274ac6844aa70a3dc6b1c9617, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 70475320705883716, guid: 553eb8a274ac6844aa70a3dc6b1c9617,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 70475320705883716, guid: 553eb8a274ac6844aa70a3dc6b1c9617,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 70475320705883716, guid: 553eb8a274ac6844aa70a3dc6b1c9617,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 3.0399997
-      objectReference: {fileID: 0}
-    - target: {fileID: 70312046452034822, guid: 553eb8a274ac6844aa70a3dc6b1c9617,
-        type: 2}
-      propertyPath: m_Offset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 70312046452034822, guid: 553eb8a274ac6844aa70a3dc6b1c9617,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114823030564125358, guid: 553eb8a274ac6844aa70a3dc6b1c9617,
-        type: 2}
-      propertyPath: _normal
-      value: 
-      objectReference: {fileID: 21300006, guid: 3ce1d6b96040d1148ba7c78a0934da8c,
-        type: 3}
-    - target: {fileID: 114823030564125358, guid: 553eb8a274ac6844aa70a3dc6b1c9617,
-        type: 2}
-      propertyPath: _light
-      value: 
-      objectReference: {fileID: 21300004, guid: 3ce1d6b96040d1148ba7c78a0934da8c,
-        type: 3}
-    - target: {fileID: 114322548749434416, guid: 553eb8a274ac6844aa70a3dc6b1c9617,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114142726824814746, guid: 553eb8a274ac6844aa70a3dc6b1c9617, type: 2}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 553eb8a274ac6844aa70a3dc6b1c9617, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &94496129 stripped
@@ -1262,7 +1204,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4833982434000602, guid: 36dda202fffef8b419315bb35b38c513, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 10.7
+      value: 10.85
       objectReference: {fileID: 0}
     - target: {fileID: 4833982434000602, guid: 36dda202fffef8b419315bb35b38c513, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2988,10 +2930,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1280, y: 720}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -19219,53 +19161,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4327767392243630, guid: 7b8200dc75121514f86fe34b6115eadb, type: 2}
       propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212744114897022590, guid: 7b8200dc75121514f86fe34b6115eadb,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 3ce1d6b96040d1148ba7c78a0934da8c,
-        type: 3}
-    - target: {fileID: 212744114897022590, guid: 7b8200dc75121514f86fe34b6115eadb,
-        type: 2}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4327767392243630, guid: 7b8200dc75121514f86fe34b6115eadb, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114234326676956126, guid: 7b8200dc75121514f86fe34b6115eadb,
-        type: 2}
-      propertyPath: _normal
-      value: 
-      objectReference: {fileID: 21300000, guid: 3ce1d6b96040d1148ba7c78a0934da8c,
-        type: 3}
-    - target: {fileID: 114234326676956126, guid: 7b8200dc75121514f86fe34b6115eadb,
-        type: 2}
-      propertyPath: _light
-      value: 
-      objectReference: {fileID: 21300002, guid: 3ce1d6b96040d1148ba7c78a0934da8c,
-        type: 3}
-    - target: {fileID: 70447762774747286, guid: 7b8200dc75121514f86fe34b6115eadb,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 70447762774747286, guid: 7b8200dc75121514f86fe34b6115eadb,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 70447762774747286, guid: 7b8200dc75121514f86fe34b6115eadb,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 3.0399997
-      objectReference: {fileID: 0}
-    - target: {fileID: 70162783551601398, guid: 7b8200dc75121514f86fe34b6115eadb,
-        type: 2}
-      propertyPath: m_Size.x
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

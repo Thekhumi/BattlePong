@@ -26,7 +26,6 @@ GameObject:
   - component: {fileID: 70475320705883716}
   - component: {fileID: 82837869428305544}
   - component: {fileID: 114322548749434416}
-  - component: {fileID: 114142726824814746}
   m_Layer: 8
   m_Name: LeftBumpBubble
   m_TagString: Bumper
@@ -75,7 +74,7 @@ Transform:
   m_GameObject: {fileID: 1223592875254494}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -9, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.7, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.7, z: 1}
   m_Children:
   - {fileID: 4884903971299426}
   - {fileID: 4644608463804548}
@@ -141,7 +140,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.35, y: 3.0499997}
+  m_Size: {x: 1, y: 3.0499997}
   m_Direction: 0
 --- !u!70 &70475320705883716
 CapsuleCollider2D:
@@ -156,7 +155,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.35, y: 3.0499997}
+  m_Size: {x: 0.8, y: 3.0399997}
   m_Direction: 0
 --- !u!82 &82837869428305544
 AudioSource:
@@ -253,25 +252,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &114142726824814746
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1223592875254494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24bf6ed543237064da17f07b4a53ab7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ball: {fileID: 0}
-  _hitVariance: 2
-  _easyVelocity: 7
-  _minDistanceEasy: 6
-  _normalVelocity: 8
-  _minDistanceNormal: 8
-  _hardVelocity: 9
-  _minDistanceHard: 10
 --- !u!114 &114322548749434416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -306,8 +286,8 @@ MonoBehaviour:
   speed: 10
   _particleObject: {fileID: 1454225421392560}
   _spark: {fileID: 0}
-  _clipBumperHit: {fileID: 0}
-  _clipLaserShoot: {fileID: 0}
+  _clipBumperHit: {fileID: 8300000, guid: 52a5894a6fd05e5438b8ca68fff3fb73, type: 3}
+  _clipStunned: {fileID: 0}
   _expandMaxLives: 6
   _stunTime: 2
   isBumpLeftUp: 0
@@ -325,8 +305,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4fdd82e86b60484fb7135b3df088e4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _normal: {fileID: 21300000, guid: 3c77f32c46e561a47bae532b265fcbab, type: 3}
-  _light: {fileID: 21300000, guid: 711dcbf017ac76f44ac41260ba08a805, type: 3}
+  _normal: {fileID: 21300006, guid: 3ce1d6b96040d1148ba7c78a0934da8c, type: 3}
+  _light: {fileID: 21300004, guid: 3ce1d6b96040d1148ba7c78a0934da8c, type: 3}
   _lightDelay: 0.1
   _isPinball: 0
 --- !u!198 &198510288336115444
@@ -4963,7 +4943,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3c77f32c46e561a47bae532b265fcbab, type: 3}
+  m_Sprite: {fileID: 21300006, guid: 3ce1d6b96040d1148ba7c78a0934da8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -538,6 +538,30 @@ Prefab:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114849492102720312, guid: 7c70f3aafb3887e46ae5ec39a746893c,
+        type: 2}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114849492102720312, guid: 7c70f3aafb3887e46ae5ec39a746893c,
+        type: 2}
+      propertyPath: m_ReferenceResolution.x
+      value: 1280
+      objectReference: {fileID: 0}
+    - target: {fileID: 114849492102720312, guid: 7c70f3aafb3887e46ae5ec39a746893c,
+        type: 2}
+      propertyPath: m_ReferenceResolution.y
+      value: 720
+      objectReference: {fileID: 0}
+    - target: {fileID: 1355073403569618, guid: 7c70f3aafb3887e46ae5ec39a746893c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224752390515919966, guid: 7c70f3aafb3887e46ae5ec39a746893c,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -261
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c70f3aafb3887e46ae5ec39a746893c, type: 2}
   m_IsPrefabAsset: 0

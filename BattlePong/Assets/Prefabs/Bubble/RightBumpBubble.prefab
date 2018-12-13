@@ -86,7 +86,7 @@ Transform:
   m_GameObject: {fileID: 1888074180150454}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 9, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.7, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.7, z: 1}
   m_Children:
   - {fileID: 4707792202085218}
   - {fileID: 4119072942450328}
@@ -139,7 +139,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.35, y: 3.0499997}
+  m_Size: {x: 1, y: 3.0499997}
   m_Direction: 0
 --- !u!70 &70447762774747286
 CapsuleCollider2D:
@@ -154,7 +154,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.35, y: 3.0499997}
+  m_Size: {x: 0.8, y: 3.0399997}
   m_Direction: 0
 --- !u!82 &82594018493303222
 AudioSource:
@@ -262,8 +262,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4fdd82e86b60484fb7135b3df088e4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _normal: {fileID: 21300000, guid: ab882a498b4a48a4ab4e6e4d319a8043, type: 3}
-  _light: {fileID: 21300000, guid: 8d3685b19e4d6c549b00958a588766de, type: 3}
+  _normal: {fileID: 21300000, guid: 3ce1d6b96040d1148ba7c78a0934da8c, type: 3}
+  _light: {fileID: 21300002, guid: 3ce1d6b96040d1148ba7c78a0934da8c, type: 3}
   _lightDelay: 0.1
   _isPinball: 0
 --- !u!114 &114721739618679120
@@ -281,8 +281,8 @@ MonoBehaviour:
   speed: 10
   _particleObject: {fileID: 1102731022766390}
   _spark: {fileID: 0}
-  _clipBumperHit: {fileID: 0}
-  _clipLaserShoot: {fileID: 0}
+  _clipBumperHit: {fileID: 8300000, guid: 52a5894a6fd05e5438b8ca68fff3fb73, type: 3}
+  _clipStunned: {fileID: 0}
   _expandMaxLives: 6
   _stunTime: 2
   isBumpLeftUp: 0
@@ -4923,9 +4923,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ab882a498b4a48a4ab4e6e4d319a8043, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3ce1d6b96040d1148ba7c78a0934da8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
