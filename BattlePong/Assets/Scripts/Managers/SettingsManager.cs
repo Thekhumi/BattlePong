@@ -13,6 +13,8 @@ public class SettingsManager : MonoBehaviour {
 	private bool _testOn;
 
 	void Start(){
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
 		_musicSlider.value = MusicManager.Instance.musicVolume;
 		_sfxSlider.value = MusicManager.Instance.sfxVolume;
 		_isFullscreen.isOn = Screen.fullScreen;

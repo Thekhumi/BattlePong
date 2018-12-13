@@ -32,6 +32,7 @@ public class MainMenuManager : MonoBehaviour {
 
 	void Start(){
 		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.None;
 		_version.text = "V " + Application.version;
 		_startPress = false;
 		_menuSelect = 0;

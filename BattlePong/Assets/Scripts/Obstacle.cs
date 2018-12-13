@@ -4,19 +4,11 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour {
 
-	AudioSource audioSrc;
-	void Awake () {
-		audioSrc = GetComponent<AudioSource> ();
-	}
+	[SerializeField] AudioClip _clipCollide; 
 
 	void OnCollisionEnter2D(Collision2D otro){
 		if (otro.gameObject.tag == "Ball") {
-			audioSrc.Play ();
+			MusicManager.Instance.playSound (_clipCollide);
 		}
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 }

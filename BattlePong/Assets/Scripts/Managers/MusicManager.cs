@@ -98,11 +98,13 @@ public class MusicManager : MonoBehaviour {
 	}
 	public float sfxVolume{
 		get{ return _sfxVolume; }
-		set{ _sfxVolume = value;}
+		set{ _sfxVolume = value;
+			updateVolume ();}
 	}
 
 	public float musicVolume{
 		get{ return _musicVolume; }
-		set{ _musicVolume = value;}
+		set{ _musicVolume = value;
+			updateVolume ();}
 	}
 }

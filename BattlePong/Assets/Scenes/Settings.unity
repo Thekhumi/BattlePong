@@ -562,7 +562,62 @@ Prefab:
       propertyPath: m_AnchoredPosition.x
       value: -261
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1096217460785306, guid: 7c70f3aafb3887e46ae5ec39a746893c, type: 2}
+      propertyPath: m_Name
+      value: Settings Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 114836279756366666, guid: 7c70f3aafb3887e46ae5ec39a746893c,
+        type: 2}
+      propertyPath: m_Navigation.m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114805028662677098, guid: 7c70f3aafb3887e46ae5ec39a746893c,
+        type: 2}
+      propertyPath: m_Navigation.m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114712661311166754, guid: 7c70f3aafb3887e46ae5ec39a746893c,
+        type: 2}
+      propertyPath: m_Navigation.m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114805028662677098, guid: 7c70f3aafb3887e46ae5ec39a746893c,
+        type: 2}
+      propertyPath: m_Navigation.m_SelectOnUp
+      value: 
+      objectReference: {fileID: 18829281}
+    - target: {fileID: 114805028662677098, guid: 7c70f3aafb3887e46ae5ec39a746893c,
+        type: 2}
+      propertyPath: m_Navigation.m_SelectOnLeft
+      value: 
+      objectReference: {fileID: 18829281}
+    - target: {fileID: 114805028662677098, guid: 7c70f3aafb3887e46ae5ec39a746893c,
+        type: 2}
+      propertyPath: m_Navigation.m_SelectOnRight
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114805028662677098, guid: 7c70f3aafb3887e46ae5ec39a746893c,
+        type: 2}
+      propertyPath: m_Navigation.m_SelectOnDown
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114315734327934304, guid: 7c70f3aafb3887e46ae5ec39a746893c,
+        type: 2}
+      propertyPath: m_Navigation.m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114315734327934304, guid: 7c70f3aafb3887e46ae5ec39a746893c,
+        type: 2}
+      propertyPath: m_Navigation.m_SelectOnLeft
+      value: 
+      objectReference: {fileID: 1603597870}
+    - target: {fileID: 114315734327934304, guid: 7c70f3aafb3887e46ae5ec39a746893c,
+        type: 2}
+      propertyPath: m_Navigation.m_SelectOnDown
+      value: 
+      objectReference: {fileID: 237471659}
+    m_RemovedComponents:
+    - {fileID: 114582815085098762, guid: 7c70f3aafb3887e46ae5ec39a746893c, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 7c70f3aafb3887e46ae5ec39a746893c, type: 2}
   m_IsPrefabAsset: 0
 --- !u!114 &1603597870 stripped
