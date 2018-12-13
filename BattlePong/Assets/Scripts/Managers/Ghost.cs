@@ -11,6 +11,9 @@ public class Ghost : MonoBehaviour {
 	[SerializeField] Transform _inTarget;
 	[SerializeField] Transform _leftB;
 	[SerializeField] Transform _rightB;
+	[SerializeField] Sprite _whiteGhost;
+	[SerializeField] Sprite _blueGhost;
+	[SerializeField] Sprite _redGhost;
 	private bool _inside;
 	private bool _doubting;
 	private bool _atkLeft;
@@ -33,7 +36,6 @@ public class Ghost : MonoBehaviour {
 	}
 
 	void Update () {
-		Debug.Log (_timer);
 		if (_active) {
 			if (!_inside) {
 				transform.position = Vector3.MoveTowards (transform.position, _inTarget.position, _mag * Time.deltaTime);
@@ -65,10 +67,12 @@ public class Ghost : MonoBehaviour {
 				case false:
 					switch (_atkLeft) {
 					case true:
-						transform.position = Vector3.MoveTowards (transform.position, (_leftB.position +  new Vector3 (-2f, 0f, 0f)), _mag * Time.deltaTime);
+						transform.position = Vector3.MoveTowards (transform.position, (_leftB.position + new Vector3 (-2f, 0f, 0f)), _mag * Time.deltaTime);
+						gameObject.GetComponent<SpriteRenderer> ().sprite = _redGhost;
 						break;
 					case false:
 						transform.position = Vector3.MoveTowards (transform.position, (_rightB.position + new Vector3 (2f, 0f, 0f)), _mag * Time.deltaTime);
+						gameObject.GetComponent<SpriteRenderer> ().sprite = _blueGhost;
 						break;
 					}
 					break;
@@ -77,6 +81,7 @@ public class Ghost : MonoBehaviour {
 		}
 	}
 	public void Reset(){
+		gameObject.GetComponent<SpriteRenderer> ().sprite = _whiteGhost;
 		_active = false;
 		_doubting = true;
 		_timer = 0;

@@ -10,6 +10,7 @@ public class Warp : MonoBehaviour {
 	private Vector2 _origVel;
 	private bool _startDelay;
 	private Color _color;
+	[SerializeField] bool _isBubble;
 	[SerializeField] private bool _onScreen;
 	[SerializeField] private float _ballDelay;
 	[SerializeField] private float _delay;
@@ -39,7 +40,9 @@ public class Warp : MonoBehaviour {
 		if(_startDelay){
 			if (!_out) {
 				if (otro.tag == "Ball") {
-					MusicManager.Instance.playSound (_clipWarp);
+					if (!_isBubble) {
+						MusicManager.Instance.playSound (_clipWarp);
+					}
 					_origVel = otro.GetComponent<Rigidbody2D> ().velocity;
 					_ball.gameObject.GetComponent<TrailRenderer> ().enabled = false;
 					_ball.Stop ();

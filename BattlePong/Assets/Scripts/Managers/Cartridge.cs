@@ -58,11 +58,11 @@ public class Cartridge : MonoBehaviour {
 		if (Input.GetButtonDown ("Left")||Input.GetButtonDown ("Down")) {
 			if (_cont != 0) {
 				_cont--;
-			} else {_cont = 4;}
+			} else {_cont = 5;}
 			MusicManager.Instance.playSound (_clipMove);
 		}
 		if (Input.GetButtonDown ("Right")||Input.GetButtonDown ("Up")) {
-			if (_cont != 4) {
+			if (_cont != 5) {
 				_cont++;
 			} else {_cont = 0;}
 			MusicManager.Instance.playSound (_clipMove);
@@ -164,11 +164,11 @@ public class Cartridge : MonoBehaviour {
 	}
 	private void Movement(){
 		if (_cont - 1 < 0) {
-			_cartuchos [3].transform.position = Vector3.MoveTowards (_cartuchos [3].transform.position, _target [3].position, _vel*3);
-			_cartuchos [4].transform.position = Vector3.MoveTowards (_cartuchos [4].transform.position, _target [4].position, _vel*3);
+			_cartuchos [4].transform.position = Vector3.MoveTowards (_cartuchos [4].transform.position, _target [3].position, _vel*3);
+			_cartuchos [5].transform.position = Vector3.MoveTowards (_cartuchos [5].transform.position, _target [4].position, _vel*3);
 		} else {
 			if (_cont - 2 < 0) {
-				_cartuchos [4].transform.position = Vector3.MoveTowards (_cartuchos [4].transform.position, _target [3].position, _vel*3);
+				_cartuchos [5].transform.position = Vector3.MoveTowards (_cartuchos [4].transform.position, _target [3].position, _vel*3);
 				_cartuchos [_cont - 1].transform.position = Vector3.MoveTowards (_cartuchos [_cont - 1].transform.position, _target [4].position, _vel*3);
 			} else {
 				_cartuchos [_cont - 2].transform.position = Vector3.MoveTowards (_cartuchos [_cont - 2].transform.position, _target [3].position, _vel*3);
@@ -178,11 +178,11 @@ public class Cartridge : MonoBehaviour {
 
 		_cartuchos [_cont].transform.position = Vector3.MoveTowards (_cartuchos [_cont].transform.position, _target [0].position, _vel*3);
 
-		if (_cont + 1 > 4) {
+		if (_cont + 1 > 5) {
 			_cartuchos [0].transform.position = Vector3.MoveTowards (_cartuchos [0].transform.position, _target [1].position, _vel*3);
 			_cartuchos [1].transform.position = Vector3.MoveTowards (_cartuchos [1].transform.position, _target [2].position, _vel*3);
 		} else {
-			if (_cont + 2 > 4) {
+			if (_cont + 2 > 5) {
 				_cartuchos [_cont + 1].transform.position = Vector3.MoveTowards (_cartuchos [_cont + 1].transform.position, _target [1].position, _vel*3);
 				_cartuchos [0].transform.position = Vector3.MoveTowards (_cartuchos [0].transform.position, _target [2].position, _vel*3);
 			} else {

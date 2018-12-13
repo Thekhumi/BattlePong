@@ -7,10 +7,15 @@ public class Tube : MonoBehaviour {
 	[SerializeField] bool _isRising = false;
 	[SerializeField] float _switchTime = 3f;
 	[SerializeField] float speed = 1;
+	[SerializeField] bool _isBubble;
 	float timer;
 	// Use this for initialization
 	void Start () {
-		_startTime = Random.Range (1f, 3f);
+		if (!_isBubble) {
+			_startTime = Random.Range (1f, 3f);
+		} else {
+			_startTime = 0f;
+		}
 		Invoke ("Move", _startTime);
 	}
 	

@@ -199,7 +199,7 @@ public class GameManager : MonoBehaviour {
 	void Update(){
 		if (_gameMode == GameMode.Bubble) {
 			_timer += Time.deltaTime;
-			if (_timer >= 15) {
+			if (_timer >= 20) {
 				if (!_ghost.Active) {
 					_ghost.Active= true;
 				}

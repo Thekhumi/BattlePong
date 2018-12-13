@@ -150,7 +150,7 @@ public class MainMenuManager : MonoBehaviour {
 						if (Input.GetButtonDown ("Submit")) {
 							_sfxEnter.Play ();
 							_selected = true;
-							_scene.LoadScene (7);
+							_scene.LoadScene (8);
 						}
 						break;
 					case 4:
@@ -162,7 +162,7 @@ public class MainMenuManager : MonoBehaviour {
 						if (Input.GetButtonDown ("Submit")) {
 							_sfxEnter.Play ();
 							_selected = true;
-							_scene.LoadScene (8);
+							_scene.LoadScene (9);
 						}
 						break;
 					case 5:

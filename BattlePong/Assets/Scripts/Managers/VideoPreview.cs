@@ -9,6 +9,7 @@ public class VideoPreview : MonoBehaviour {
 	[SerializeField] GameObject _video3;
 	[SerializeField] GameObject _video4;
 	[SerializeField] GameObject _video5;
+	[SerializeField] GameObject _video6;
 	[SerializeField] bool _is1P;
 	Cartridge _cart2p;
 	Cartridge1P _cart1p;
@@ -37,6 +38,7 @@ public class VideoPreview : MonoBehaviour {
 			_video3.SetActive(false);
 			_video4.SetActive(false);
 			_video5.SetActive(false);
+			_video6.SetActive(false);
 			break;
 		case 1:
 			_video1.SetActive(false);
@@ -44,6 +46,7 @@ public class VideoPreview : MonoBehaviour {
 			_video3.SetActive(false);
 			_video4.SetActive(false);
 			_video5.SetActive(false);
+			_video6.SetActive(false);
 			break;
 		case 2:
 			_video1.SetActive(false);
@@ -51,6 +54,7 @@ public class VideoPreview : MonoBehaviour {
 			_video3.SetActive(true);
 			_video4.SetActive(false);
 			_video5.SetActive(false);
+			_video6.SetActive(false);
 			break;
 		case 3:
 			_video1.SetActive(false);
@@ -58,6 +62,7 @@ public class VideoPreview : MonoBehaviour {
 			_video3.SetActive(false);
 			_video4.SetActive(true);
 			_video5.SetActive(false);
+			_video6.SetActive(false);
 			break;
 		case 4:
 			_video1.SetActive(false);
@@ -65,6 +70,15 @@ public class VideoPreview : MonoBehaviour {
 			_video3.SetActive(false);
 			_video4.SetActive(false);
 			_video5.SetActive(true);
+			_video6.SetActive(false);
+			break;
+		case 5:
+			_video1.SetActive(false);
+			_video2.SetActive(false);
+			_video3.SetActive(false);
+			_video4.SetActive(false);
+			_video5.SetActive(false);
+			_video6.SetActive(true);
 			break;
 		}
 	}

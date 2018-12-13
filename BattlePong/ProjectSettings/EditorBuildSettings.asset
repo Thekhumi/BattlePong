@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Warp.unity
     guid: ef8a8e14930a0aa41a505541f6f4fe3d
   - enabled: 1
+    path: Assets/Scenes/Bubble.unity
+    guid: c423fa059430b4148a69fab873bbe7d1
+  - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 0dee2a518b3029447a037d1b91ffc418
   - enabled: 1
