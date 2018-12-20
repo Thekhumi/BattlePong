@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 82011733}
   - component: {fileID: 82011732}
   m_Layer: 5
-  m_Name: Names (1)
+  m_Name: "\xF1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -180,8 +180,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\n\n                                                                         -\n\n
-    \           -\n\n                  -"
+  m_Text: "\n\n                                                                         \n\n
+    \           -\n\n                  "
 --- !u!222 &82011733
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -341,9 +341,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "- http://hawksmont.com\n- http://www.studiotypo.com/\n- https://www.creativefabrica.com/\n
-    \    product/delicious-2/\n- https://creativemarket.com/JumboDesign/\n     1754812-Jewel-Display-Font?u=cruzine\n-
-    www.pizzadude.dk\n- https://wallpaperstudio10.com/\n      wallpaper-abstract_3d-105443.html"
+  m_Text: "-Delicious  font  by  darrell  flood :\n    https://www.creativefabrica.com/\n
+    \    product/delicious-2/\n\n-Karmatic  Arcade  Font by  vic  fieger :\n    http://www.vicfieger.com/\n\n-Jewel
+    font by  peter  olexa:\n    https://creativemarket.com/JumboDesign/\n     1754812-Jewel-Display-Font?u=cruzine\n\n-Arcade
+    Classic  &  Insane  hours  fonts  by     \n   pizzadude:\n     www.pizzadude.dk"
 --- !u!222 &726167994
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -484,11 +485,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "-Leonardo Perugini: Artista principal, Programador, Level designer: Warp,
-    Pinball; Game designer, Diseno de AI.\r\n\n-Nunez Gaspar: Programador, Level designer:
-    Clasico, Arkanoid, Flappy; Game designer, SFX, Diseno de AI.\n\n-Maximiliano Abel
-    Duarte:  Audio, Musico.\r\n\n-Facundo Cedolini: Tester.\r\n\n-Ramiro Salto: Primer
-    concept art."
+  m_Text: "-Leonardo  Perugini:  Main  artist, Programmer, Level designer  for  Warp
+    &  Pinball, Game designer, AI programmer.\r\n\r\n-Nunez Gaspar:  Programmer, Level
+    designer  for Classic, Arkanoid & Flappy, Game  designer, SFX, AI  programmer.\r\n\r\n-Maximiliano
+    \ Abel Duarte:  Sound designer & Music composer.\r\n\r\n-Facundo  Cedolini:  Tester.\r\n\r\n-Ramiro
+    \ Salto:   First concept art."
 --- !u!222 &1017325301
 CanvasRenderer:
   m_ObjectHideFlags: 0
