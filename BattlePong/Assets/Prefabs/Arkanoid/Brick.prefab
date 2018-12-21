@@ -175,7 +175,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prefab: {fileID: 1522954304285970, guid: 2bf1cfedafa3017438ca24d437b2cb94, type: 2}
-  _dropChance: 30
+  _dropChance: 20
+  _clipBrickBreak: {fileID: 0}
 --- !u!212 &212683336482592686
 SpriteRenderer:
   m_ObjectHideFlags: 1

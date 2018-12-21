@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour {
 	private string _result;
 	private bool _init;
 	private float _timer;
+	private GameObject [] _powerUps;
 
 	void Awake(){
 		if (instance == null){
@@ -418,9 +419,17 @@ public class GameManager : MonoBehaviour {
 				bumper.GetComponent<Bumper> ().ResetPos ();
 			}
 		}
-		if (_gameMode==GameMode.Warp) {
+		if (_gameMode == GameMode.Warp) {
 			foreach (var warp in _warps) {
-				warp.DeactivateDelay();
+				warp.DeactivateDelay ();
+			}
+		} else if (_gameMode == GameMode.Arkanoid) {
+		
+			_powerUps = GameObject.FindGameObjectsWithTag ("PowerUp");
+			if (_powerUps != null ) {
+				foreach (var powerUp in _powerUps) {
+					Destroy (powerUp.gameObject);
+				}
 			}
 		}
 	}
